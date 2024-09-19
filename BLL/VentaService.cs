@@ -9,34 +9,19 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class VentaService
+    public class VentaService : AbstractService<ClienteVenta>
     {
-        private InventarioMapper inventarioMapper = new InventarioMapper();
+        private VentaMapper ventaMapper = new VentaMapper();
 
-        public void Alta(Cliente cliente, Inventario inventario, int qty)
+        public VentaService() 
         {
-            if (inventario.Stock >= qty)
-            {
-                Venta venta = new Venta();
-                ClienteVenta clienteVenta = new ClienteVenta();
-
-                venta.Qty = qty;
-                venta.PrecioVenta = inventario.Producto.ObtenerPrecio();
-                venta.Producto = inventario.Producto;
-
-                
-               
-                //ventaMapper.Alta(venta);
-
-                Inventario inventarioNuevo = (Inventario)inventario.Clone();
-                inventarioNuevo.Stock -= qty;
-
-                inventarioMapper.Update(inventario, inventarioNuevo);
-            }
-            else
-            {
-                throw new StockException("No hay stock suficiente");
-            }
+            base.Mapper = new ClienteVentaMapper();
         }
+
+        public override int Create(ClienteVenta entity)
+        {
+            return 1;
+        }
+
     }
 }

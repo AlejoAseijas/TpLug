@@ -24,7 +24,7 @@ namespace Presentacion.views
         {
             AuthDTO authDTO = new AuthDTO();
             authDTO.DNI = this.textBox1.Text;
-            authDTO.password = this.textBox2.Text;
+            authDTO.password = authService.GenerateHash(this.textBox2.Text);
 
             if (authService.LogIn(authDTO))
             {

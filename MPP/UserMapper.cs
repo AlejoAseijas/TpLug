@@ -33,8 +33,7 @@ namespace MPP
 
         public void DeleteById(int Id)
         {
-            SqlCommand sqlCommand = new SqlCommand("Delete FROM Users Where Id = @Id");
-            sqlCommand.Parameters.AddWithValue("@Id", Id);
+            SqlCommand sqlCommand = new SqlCommand($"Delete FROM Users Where Id = {Id}");
 
             try 
             {
@@ -44,6 +43,7 @@ namespace MPP
             { }
             catch(Exception ex) 
             { }
+
         }
 
         public List<User> GetAll()

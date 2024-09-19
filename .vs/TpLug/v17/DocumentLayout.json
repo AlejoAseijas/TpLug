@@ -1,24 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\presentacion\\views\\productosview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\views\\productosview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\mpp\\productomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|solutionrelative:mpp\\productomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\bll\\productoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|solutionrelative:bll\\productoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\bll\\inventarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|solutionrelative:bll\\inventarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -26,63 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProductosView.cs",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Presentacion\\views\\ProductosView.cs",
-              "RelativeDocumentMoniker": "Presentacion\\views\\ProductosView.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Presentacion\\views\\ProductosView.cs",
-              "RelativeToolTip": "Presentacion\\views\\ProductosView.cs",
-              "ViewState": "AgIAADUAAAAAAAAAAAAcwE0AAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-19T22:06:19.277Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductoService.cs",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\BLL\\ProductoService.cs",
-              "RelativeDocumentMoniker": "BLL\\ProductoService.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\BLL\\ProductoService.cs",
-              "RelativeToolTip": "BLL\\ProductoService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-19T22:00:36.418Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "InventarioService.cs",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\BLL\\InventarioService.cs",
-              "RelativeDocumentMoniker": "BLL\\InventarioService.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\BLL\\InventarioService.cs",
-              "RelativeToolTip": "BLL\\InventarioService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-19T22:00:12.833Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductoMapper.cs",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\MPP\\ProductoMapper.cs",
-              "RelativeDocumentMoniker": "MPP\\ProductoMapper.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\MPP\\ProductoMapper.cs",
-              "RelativeToolTip": "MPP\\ProductoMapper.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAkwEUAAAD0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-19T21:42:58.19Z",
-              "EditorCaption": ""
             }
           ]
         }

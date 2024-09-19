@@ -45,10 +45,7 @@ namespace BLL
 
             if(user != null)
             {
-
-                string regenrateHash = GenerateHash(authDto.password);
-
-                if (regenrateHash.Equals(user.Password))
+                if (authDto.password.Equals(user.Password))
                 {
                     valid = true;
                 }

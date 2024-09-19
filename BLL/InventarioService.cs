@@ -14,7 +14,7 @@ namespace BLL
         private ProductoService productoService = new ProductoService();
         public InventarioService() 
         {
-            base.Mapper = (IGestor<Inventario>)new InventarioMapper();
+            base.Mapper = new InventarioMapper();
         }
     }
 }

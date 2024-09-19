@@ -9,6 +9,6 @@ namespace BE.models
     public class ClienteVenta
     {
         public Cliente Cliente { get; set; }
-        public List<Venta> ventas { get; set; }
+        public List<Venta> Ventas { get; set; }
     }
 }
