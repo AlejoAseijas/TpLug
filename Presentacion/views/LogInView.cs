@@ -30,6 +30,7 @@ namespace Presentacion.views
             {
                 Form menu = new MenuView();
                 menu.Show(this);
+                this.Hide();
             } else
             {
                 MessageBox.Show("La contra es incorrecta");

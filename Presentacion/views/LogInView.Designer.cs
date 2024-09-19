@@ -46,6 +46,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(12, 77);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(347, 20);
             this.textBox2.TabIndex = 1;
             // 
@@ -77,7 +78,7 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Password";
             // 
-            // LogIn
+            // LogInView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -87,7 +88,7 @@
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
-            this.Name = "LogIn";
+            this.Name = "LogInView";
             this.Text = "LogIn";
             this.ResumeLayout(false);
             this.PerformLayout();
