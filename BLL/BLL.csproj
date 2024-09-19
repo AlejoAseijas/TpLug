@@ -43,8 +43,10 @@
   <ItemGroup>
     <Compile Include="AuthService.cs" />
     <Compile Include="ClienteService.cs" />
+    <Compile Include="InventarioService.cs" />
     <Compile Include="ProductoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentaService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Abstraccion\Abstraccion.csproj">
@@ -55,9 +57,9 @@
       <Project>{eb0d6c76-fe23-485d-8322-1b412d45a05e}</Project>
       <Name>BE</Name>
     </ProjectReference>
-    <ProjectReference Include="..\MPP\MPP.csproj">
+    <ProjectReference Include="..\MPP\MPL.csproj">
       <Project>{e06ff64c-1b59-4a75-a6ea-999cd79a8894}</Project>
-      <Name>MPP</Name>
+      <Name>MPL</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

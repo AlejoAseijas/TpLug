@@ -8,36 +8,19 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class ProductoService
+    public class ProductoService : AbstractService<Producto>
     {
-        private InventarioMapper inventarioMapper = new InventarioMapper();
-        private ProductoMapper productoMapper = new ProductoMapper();
+        private ProductoMapper mapper = new ProductoMapper();
 
-        public List<Inventario> GetAll() 
+        public ProductoService() 
         {
-            return inventarioMapper.GetAll();
+            base.Mapper = mapper;
         }
 
-        public int Create(Inventario inventario) 
+        public List<Proveedor> GetProveedores()
         {
-            return inventarioMapper.Create(inventario); 
+            return mapper.ObtenerProveedores();
         }
-
-        public List<Proveedor> GetProveedores() 
-        {
-            return productoMapper.ObtenerProveedores();
-        }
-
-        public void Update(Inventario inventario, Inventario inventario1) {
-        inventarioMapper.Update(inventario, inventario1);
-        }
-
-
-        public void Delete(Inventario inventario) 
-        {
-            inventarioMapper.DeleteById(inventario.Id);
-        }
-
 
     }
 }

@@ -41,8 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="execptions\StockException.cs" />
     <Compile Include="models\AuthDTO.cs" />
     <Compile Include="models\Cliente.cs" />
+    <Compile Include="models\ClienteVenta.cs" />
     <Compile Include="models\Inventario.cs" />
     <Compile Include="models\Producto.cs" />
     <Compile Include="models\ProductoAlimenticio.cs" />
@@ -50,6 +52,7 @@
     <Compile Include="models\Proveedor.cs" />
     <Compile Include="models\TipoDeProducto.cs" />
     <Compile Include="models\User.cs" />
+    <Compile Include="models\Venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

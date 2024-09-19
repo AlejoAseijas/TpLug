@@ -42,10 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteMapper.cs" />
+    <Compile Include="ClienteVentaMapper.cs" />
     <Compile Include="InventarioMapper.cs" />
     <Compile Include="ProductoMapper.cs" />
     <Compile Include="UserMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentaMapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Abstraccion\Abstraccion.csproj">

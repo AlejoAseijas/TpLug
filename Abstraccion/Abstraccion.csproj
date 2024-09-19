@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AbstracEntity.cs" />
+    <Compile Include="AbstractService.cs" />
     <Compile Include="IGestor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

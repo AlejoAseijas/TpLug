@@ -15,11 +15,7 @@ namespace MPP
     {
         public int Create(Cliente entity)
         {
-            SqlCommand sqlCommand = new SqlCommand("INSERT INTO Clientes (Nombre, Apellido, DNI) VALUES (@Nombre, @Apellido, @DNI)");
-
-            sqlCommand.Parameters.AddWithValue("@Nombre", entity.Nombre);
-            sqlCommand.Parameters.AddWithValue("@Apellido", entity.Apellido);
-            sqlCommand.Parameters.AddWithValue("@DNI", entity.DNI);
+            SqlCommand sqlCommand = new SqlCommand($"INSERT INTO Clientes (Nombre, Apellido, DNI) VALUES ('{entity.Nombre}', '{entity.Apellido}', '{entity.DNI}')");
 
             int id = -1;
 

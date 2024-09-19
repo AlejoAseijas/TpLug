@@ -1,35 +1,18 @@
-﻿using BE.models;
+﻿using Abstraccion;
+using BE.models;
+using BLL;
 using MPP;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class ClienteService
+    public class ClienteService : AbstractService<Cliente>
     {
-        private ClienteMapper clienteMapper = new ClienteMapper();
-
-        public List<Cliente> GetAll()
+        public ClienteService() 
         {
-            return clienteMapper.GetAll();
+            base.Mapper = new ClienteMapper();
         }
-
-        public void Create(Cliente cliente) 
-        {
-            clienteMapper.Create(cliente);
-        }
-
-        public void Update(Cliente cliente, Cliente cliente1)
-        {
-            clienteMapper.Update(cliente, cliente1);
-        }
-
-        public void Delete(Cliente cliente)
-        {
-            clienteMapper.DeleteById(cliente.Id);
-        }
+    
     }
+
 }

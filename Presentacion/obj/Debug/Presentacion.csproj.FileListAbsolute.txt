@@ -71,3 +71,4 @@ C:\Users\AlejoAseijas\Desktop\TpLug\Presentacion\bin\Debug\BLL.pdb
 C:\Users\AlejoAseijas\Desktop\TpLug\Presentacion\bin\Debug\MPP.pdb
 C:\Users\AlejoAseijas\Desktop\TpLug\Presentacion\bin\Debug\DAL.pdb
 C:\Users\AlejoAseijas\Desktop\TpLug\Presentacion\obj\Debug\Presenta.BC77CD05.Up2Date
+C:\Users\AlejoAseijas\Desktop\TpLug\Presentacion\obj\Debug\Presentacion.views.VentasView.resources

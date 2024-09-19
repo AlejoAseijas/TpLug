@@ -20,15 +20,17 @@ namespace Presentacion.views
         }
 
         private ProductoService productoService = new ProductoService();
+        private InventarioService inventarioService = new InventarioService();
+
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Inventario producto = getProductoFromUI();
+            Inventario inventario = getProductoFromUI();
 
-            if (producto != null)
+            if (inventario != null)
             {
-                int idProducto = productoService.Create(producto);
-                MessageBox.Show($"El id del producto es {idProducto}");
+                int idProducto = inventarioService.Create(inventario);
+                MessageBox.Show($"El id del inventario es {inventario}");
             }
 
             refresh();
@@ -107,7 +109,7 @@ namespace Presentacion.views
             Inventario inventario = (Inventario)this.dataGridView1.CurrentRow.DataBoundItem;
             Inventario nuevoInventario = getProductoFromUI();
 
-            productoService.Update(inventario, nuevoInventario);
+            inventarioService.Update(inventario, nuevoInventario);
 
             refresh();
         }
@@ -115,7 +117,7 @@ namespace Presentacion.views
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             Inventario inventario = (Inventario)this.dataGridView1.CurrentRow.DataBoundItem;
-            productoService.Delete(inventario);
+            inventarioService.DeleteById(inventario.Id);
             refresh();
         }
 
@@ -130,7 +132,7 @@ namespace Presentacion.views
 
 
             this.dataGridView1.DataSource = null;
-            this.dataGridView1.DataSource = productoService.GetAll();
+            this.dataGridView1.DataSource = inventarioService.GetAll();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)

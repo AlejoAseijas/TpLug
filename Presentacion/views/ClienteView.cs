@@ -1,4 +1,5 @@
-﻿using BE.models;
+﻿using Abstraccion;
+using BE.models;
 using BLL;
 using System;
 using System.Collections.Generic;
@@ -14,11 +15,11 @@ namespace Presentacion.views
 {
     public partial class ClienteView : Form
     {
+        private ClienteService clienteService = new ClienteService();
         public ClienteView()
         {
             InitializeComponent();
         }
-        private ClienteService clienteService = new ClienteService();
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -98,7 +99,7 @@ namespace Presentacion.views
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             Cliente cliente = (Cliente)this.dataGridView1.CurrentRow.DataBoundItem;
-            clienteService.Delete(cliente);
+            clienteService.DeleteById(cliente.Id);
             refreshDataSource();
         }
 

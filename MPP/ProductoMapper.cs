@@ -66,7 +66,32 @@ namespace MPP
 
         public List<Producto> GetAll()
         {
-            throw new NotImplementedException();
+            List<Producto> productos = new List<Producto>();
+            string query = "SELECT p.Id, p.Categoria, p.SubCategoria, p.Nombre, po.Id as 'IdProveedor', po.Nombre as 'Proveedor', p.Consumo, p.FechaDeVencimiento, p.PrecioCosto FROM Productos p INNER JOIN Proveedores po ON p.IdProveedor = po.Id";
+            DataTable Tabla = null;
+
+            try
+            {
+                Tabla = DatabaseSql.Read(new SqlCommand(query));
+
+                if (Tabla != null && Tabla.Rows.Count > 0)
+                {
+                    foreach (DataRow fila in Tabla.Rows)
+                    {
+                        productos.Add(ToMap(fila));
+                    }
+                }
+
+            }
+            catch (SqlException)
+            {
+            }
+            catch (Exception ex)
+            {
+            }
+
+
+            return productos;
         }
 
         public Producto GetById(string Id)

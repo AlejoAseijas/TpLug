@@ -33,7 +33,7 @@ namespace BE.models
 
         public override float ObtenerPrecio()
         {
-            throw new NotImplementedException();
+            return (float)(this.PrecioCosto * 0.5 + this.PrecioCosto);
         }
     }
 }

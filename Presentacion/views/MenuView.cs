@@ -49,6 +49,10 @@ namespace Presentacion.views
             new LogInView().Show();
             this.Hide();
         }
-        
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            manageMdi(new VentasView());
+        }
     }
 }
