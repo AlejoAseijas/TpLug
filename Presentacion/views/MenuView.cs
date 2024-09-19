@@ -39,5 +39,16 @@ namespace Presentacion.views
         {
             manageMdi(new ProductosView());
         }
+
+        private void eXITToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Form form in this.MdiChildren)
+            {
+                form.Close();
+            }
+            new LogInView().Show();
+            this.Hide();
+        }
+        
     }
 }
