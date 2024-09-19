@@ -17,18 +17,54 @@ namespace MPP
 
         public int Create(Inventario entity)
         {
-            throw new NotImplementedException();
+            int id = -1;
+            
+            if (entity != null && entity.Producto != null)
+            {
+                int idProducto = -1;
+
+                try
+                {
+                    idProducto = productoMapper.Create(entity.Producto);
+
+                    if (idProducto != -1)
+                    {
+                        SqlCommand sqlCommand = new SqlCommand($"INSERT INTO Inventarios(IdProducto, Stock) VALUES ({idProducto}, {entity.Stock})");
+                        id = DatabaseSql.WriteAndReturnId(sqlCommand);
+                    }
+                }
+                catch(SqlException ex) { }
+                catch (Exception ex)
+                {
+
+                }
+            }
+
+            return id;
         }
 
         public void DeleteById(int Id)
         {
-            throw new NotImplementedException();
+            Inventario inventario = GetById(Id.ToString());
+
+            if(inventario != null)
+            {
+                try 
+                {
+                    productoMapper.DeleteById(inventario.Producto.Id);
+                    DatabaseSql.Write(new SqlCommand($"DELETE FROM Inventarios Where Id = {Id}"));
+                }
+                catch (SqlException ex)
+                { }
+                catch(Exception ex) { }
+            }
+
         }
 
         public List<Inventario> GetAll()
         {
             List<Inventario> inventarios = new List<Inventario>();
-            string query = @"SELECT i.Id, i.Stock, p.Id as 'IdProducto', p.Nombre, p.Categoria, p.SubCategoria, p.FechaDeVencimiento, p.PrecioCosto ,p.Consumo, po.Id as 'IdProveedor', po.Nombre as 'Proveedor' FROM Inventario i INNER JOIN Producto p ON i.IdProducto = p.Id INNER JOIN Proveedores po ON po.Id = p.IdProveedor";
+            string query = @"SELECT i.Id, i.Stock, p.Id as 'IdProducto', p.Nombre, p.Categoria, p.SubCategoria, p.FechaDeVencimiento, p.PrecioCosto ,p.Consumo, po.Id as 'IdProveedor', po.Nombre as 'Proveedor' FROM Inventarios i INNER JOIN Productos p ON i.IdProducto = p.Id INNER JOIN Proveedores po ON po.Id = p.IdProveedor";
             DataTable Tabla = null;
 
             try
@@ -42,7 +78,7 @@ namespace MPP
             {
             }
 
-            if (Tabla.Rows.Count > 0)
+            if (Tabla != null && Tabla.Rows.Count > 0)
             {
                 foreach (DataRow fila in Tabla.Rows)
                 {
@@ -54,7 +90,29 @@ namespace MPP
 
         public Inventario GetById(string Id)
         {
-            throw new NotImplementedException();
+            Inventario inventario = null;
+            string query = $"SELECT i.Id, i.Stock, p.Id as 'IdProducto', p.Nombre, p.Categoria, p.SubCategoria, p.FechaDeVencimiento, p.PrecioCosto ,p.Consumo, po.Id as 'IdProveedor', po.Nombre as 'Proveedor' FROM Inventarios i INNER JOIN Productos p ON i.IdProducto = p.Id INNER JOIN Proveedores po ON po.Id = p.IdProveedor WHERE i.Id = {Id}";
+            DataTable Tabla = null;
+
+            try
+            {
+                Tabla = DatabaseSql.Read(new SqlCommand(query));
+            }
+            catch (SqlException)
+            {
+            }
+            catch (Exception ex)
+            {
+            }
+
+            if (Tabla != null && Tabla.Rows.Count > 0)
+            {
+                foreach (DataRow fila in Tabla.Rows)
+                {
+                    inventario = ToMap(fila);
+                }
+            }
+            return inventario;
         }
 
         public Inventario ToMap(DataRow row)
@@ -70,7 +128,19 @@ namespace MPP
 
         public void Update(Inventario docToUpdate, Inventario newData)
         {
-            throw new NotImplementedException();
+            try
+            {
+                productoMapper.Update(docToUpdate.Producto, newData.Producto);
+                string setData = $"Stock = '{newData.Stock}'";
+
+                DatabaseSql.Write(new SqlCommand($"UPDATE Inventarios SET {setData} WHERE Id = {docToUpdate.Id}"));
+            }
+            catch (SqlException)
+            {
+            }
+            catch (Exception ex)
+            {
+            }
         }
     }
 }

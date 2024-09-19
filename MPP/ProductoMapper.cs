@@ -15,8 +15,8 @@ namespace MPP
     {
         public int Create(Producto entity)
         {
-            string columns = "Categoria, SubCategoria, Nombre, IdProveedor";
-            string values = $"'{entity.Categoria}', '{entity.SubCategoria}', '{entity.Nombre}', '{entity.Proveedor.Id}'";
+            string columns = "Categoria, SubCategoria, Nombre, IdProveedor, PrecioCosto";
+            string values = $"'{entity.Categoria}', '{entity.SubCategoria}', '{entity.Nombre}', '{entity.Proveedor.Id}', {entity.PrecioCosto}";
 
             if (entity is ProductoElectronico)
             {
@@ -29,7 +29,8 @@ namespace MPP
                 ProductoAlimenticio productoAlimenticio = (ProductoAlimenticio)entity;
                 columns += ", FechaDeVencimiento";
                 DateTime date = productoAlimenticio.FechaDeVencimiento;
-                values += $", '{date.ToShortDateString()}'";
+                values += $", '{date.ToString("yyyy-MM-dd")}'";
+
             }
 
             int id = -1;
@@ -51,7 +52,16 @@ namespace MPP
 
         public void DeleteById(int Id)
         {
-            throw new NotImplementedException();
+            SqlCommand sqlCommand = new SqlCommand($"Delete FROM Productos Where Id = {Id}");
+
+            try
+            {
+                DatabaseSql.Write(sqlCommand);
+            }
+            catch (SqlException ex)
+            { }
+            catch (Exception ex)
+            { }
         }
 
         public List<Producto> GetAll()
@@ -93,7 +103,33 @@ namespace MPP
 
         public void Update(Producto docToUpdate, Producto newData)
         {
-            throw new NotImplementedException();
+            string setData = $"Categoria = '{newData.Categoria}' , SubCategoria = '{newData.SubCategoria}' , Nombre = '{newData.Nombre}' , IdProveedor = {newData.Proveedor.Id}, PrecioCosto = {newData.PrecioCosto}";
+
+            if (newData is ProductoElectronico)
+            {
+                ProductoElectronico productoElectronico = (ProductoElectronico)newData;
+                setData += $" , Consumo = '{productoElectronico.Consumo}', FechaDeVencimiento = null";
+            }
+            else
+            {
+                ProductoAlimenticio productoAlimenticio = (ProductoAlimenticio)newData;
+                DateTime date = productoAlimenticio.FechaDeVencimiento;
+
+                setData += $" , FechaDeVencimiento = '{date.ToString("yyyy-MM-dd")}', Consumo = null";
+            }
+
+            try
+            {
+                DatabaseSql.Write(new SqlCommand($"UPDATE Productos SET {setData} WHERE Id = {docToUpdate.Id}"));
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         public List<Proveedor> ObtenerProveedores()

@@ -13,7 +13,7 @@ namespace BE.models
         public ProductoAlimenticio(string categoria, string subcategoria, string nombre, Proveedor proveedor, float precioCosto, DateTime fechaDeVencimiento)
         {
             base.Categoria = categoria;
-            base.Categoria = subcategoria;
+            base.SubCategoria = subcategoria;
             base.Nombre = nombre;
             base.Proveedor = proveedor;
             base.PrecioCosto = precioCosto;
@@ -24,7 +24,7 @@ namespace BE.models
         {
             base.Id = id;
             base.Categoria = categoria;
-            base.Categoria = subcategoria;
+            base.SubCategoria = subcategoria;
             base.Nombre = nombre;
             base.Proveedor = proveedor;
             base.PrecioCosto = precioCosto;

@@ -10,5 +10,10 @@ namespace BE.models
     public class Proveedor : AbstracEntity
     {
         public string Nombre { get; set; }
+
+        public override string ToString()
+        {
+            return this.Nombre;
+        }
     }
 }

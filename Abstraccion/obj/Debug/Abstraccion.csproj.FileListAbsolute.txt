@@ -10,3 +10,9 @@ C:\Users\AlejoAseijas\source\repos\TP-LUG\Abstraccion\obj\Debug\Abstraccion.cspr
 C:\Users\AlejoAseijas\source\repos\TP-LUG\Abstraccion\obj\Debug\Abstraccion.csproj.CoreCompileInputs.cache
 C:\Users\AlejoAseijas\source\repos\TP-LUG\Abstraccion\obj\Debug\Abstraccion.dll
 C:\Users\AlejoAseijas\source\repos\TP-LUG\Abstraccion\obj\Debug\Abstraccion.pdb
+C:\Users\AlejoAseijas\Desktop\TpLug\Abstraccion\bin\Debug\Abstraccion.dll
+C:\Users\AlejoAseijas\Desktop\TpLug\Abstraccion\bin\Debug\Abstraccion.pdb
+C:\Users\AlejoAseijas\Desktop\TpLug\Abstraccion\obj\Debug\Abstraccion.csproj.AssemblyReference.cache
+C:\Users\AlejoAseijas\Desktop\TpLug\Abstraccion\obj\Debug\Abstraccion.csproj.CoreCompileInputs.cache
+C:\Users\AlejoAseijas\Desktop\TpLug\Abstraccion\obj\Debug\Abstraccion.dll
+C:\Users\AlejoAseijas\Desktop\TpLug\Abstraccion\obj\Debug\Abstraccion.pdb

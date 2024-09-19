@@ -18,5 +18,9 @@ namespace BE.models
 
         public abstract float ObtenerPrecio();
 
+        public override string ToString()
+        {
+            return this.Categoria + "   " + this.SubCategoria + "  "  + this.Nombre;
+        }
     }
 }

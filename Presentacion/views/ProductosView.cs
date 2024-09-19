@@ -34,7 +34,7 @@ namespace Presentacion.views
             refresh();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void ProductosView_Load(object sender, EventArgs e)
         {
             this.groupBox3.Enabled = false;
 
@@ -45,20 +45,6 @@ namespace Presentacion.views
             this.comboBox3.DataSource = productoService.GetProveedores();
 
             refresh();
-        }
-
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            this.groupBox3.Enabled = true;
-            this.comboBox1.Enabled = true;
-            this.dateTimePicker1.Enabled = false;
-        }
-
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
-        {
-            this.groupBox3.Enabled = true;
-            this.comboBox1.Enabled = false;
-            this.dateTimePicker1.Enabled = true;
         }
 
         private Inventario getProductoFromUI()
@@ -83,27 +69,26 @@ namespace Presentacion.views
 
             #region Valido que radioButton esta checked para generar sus correspondiete Producto
             TipoDeProducto tipoDeProducto = (TipoDeProducto)this.comboBox2.SelectedItem;
+            float precioCosto = float.Parse(this.txtPrecioCosto.Text);
 
             if (TipoDeProducto.ELECTRONICO.Equals(tipoDeProducto))
             {
                 string consumo = this.comboBox1.SelectedItem.ToString();
-                producto = new ProductoElectronico(categoria, subCategoria, nombreProducto, consumo);
+                producto = new ProductoElectronico(categoria, subCategoria, nombreProducto, provedor, precioCosto, consumo);
             }
 
             if (TipoDeProducto.ALIMENTICIO.Equals(tipoDeProducto))
             {
                 DateTime fecha = dateTimePicker1.Value;
-                producto = new ProductoAlimenticio(categoria, subCategoria, nombreProducto, fecha);
+                producto = new ProductoAlimenticio(categoria, subCategoria, nombreProducto, provedor, precioCosto, fecha);
             }
             #endregion
 
             try
             {
-                int stock = Int32.Parse(this.txtStock.Text);
-                float precioCosto = float.Parse(this.txtPrecioCosto.Text);
-
                 inventario = new Inventario();
-                inventario.Stock = stock;
+
+                inventario.Stock = Int32.Parse(this.txtStock.Text);
                 inventario.Producto = producto;
 
             }
@@ -117,7 +102,7 @@ namespace Presentacion.views
             return inventario;
         }
 
-        private void btnModificar_Click(object sender, EventArgs e)
+        private void btnModificar_Click_1(object sender, EventArgs e)
         {
             Inventario inventario = (Inventario)this.dataGridView1.CurrentRow.DataBoundItem;
             Inventario nuevoInventario = getProductoFromUI();
@@ -127,7 +112,7 @@ namespace Presentacion.views
             refresh();
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
+        private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             Inventario inventario = (Inventario)this.dataGridView1.CurrentRow.DataBoundItem;
             productoService.Delete(inventario);
@@ -136,13 +121,20 @@ namespace Presentacion.views
 
         public void refresh()
         {
+
+            this.txtCategoria.Text = string.Empty;
+            this.txtSubCategoria.Text = string.Empty;
+            this.txtProducto.Text = string.Empty;
+            this.txtPrecioCosto.Text = string.Empty;
+            this.txtStock.Text = string.Empty;
+
+
             this.dataGridView1.DataSource = null;
             this.dataGridView1.DataSource = productoService.GetAll();
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             if (this.comboBox2.SelectedItem != null)
             {
                 TipoDeProducto tipoDeProducto = (TipoDeProducto)this.comboBox2.SelectedItem;
@@ -162,7 +154,7 @@ namespace Presentacion.views
             }
         }
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             Inventario inventario = (Inventario)this.dataGridView1.CurrentRow.DataBoundItem;
 
@@ -191,5 +183,6 @@ namespace Presentacion.views
                 }
             }
         }
+
     }
 }
