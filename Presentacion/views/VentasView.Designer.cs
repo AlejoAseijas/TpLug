@@ -34,19 +34,21 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dataGridViewProductos = new System.Windows.Forms.DataGridView();
             this.dataGridViewClientes = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtQty);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.btnAgregar);
             this.groupBox2.Location = new System.Drawing.Point(944, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(219, 91);
+            this.groupBox2.Size = new System.Drawing.Size(436, 60);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
@@ -55,7 +57,7 @@
             // 
             this.txtQty.Location = new System.Drawing.Point(55, 28);
             this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(158, 20);
+            this.txtQty.Size = new System.Drawing.Size(381, 20);
             this.txtQty.TabIndex = 6;
             // 
             // label1
@@ -69,11 +71,11 @@
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(9, 57);
+            this.btnAgregar.Location = new System.Drawing.Point(944, 78);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(207, 23);
+            this.btnAgregar.Size = new System.Drawing.Size(436, 23);
             this.btnAgregar.TabIndex = 3;
-            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.Text = "Vender";
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
@@ -92,14 +94,36 @@
             this.dataGridViewClientes.Name = "dataGridViewClientes";
             this.dataGridViewClientes.Size = new System.Drawing.Size(495, 422);
             this.dataGridViewClientes.TabIndex = 4;
+            this.dataGridViewClientes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClientes_CellClick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(944, 107);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(436, 23);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Eliminar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(944, 136);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(436, 298);
+            this.dataGridView1.TabIndex = 7;
             // 
             // VentasView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1171, 451);
+            this.ClientSize = new System.Drawing.Size(1392, 449);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridViewProductos);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dataGridViewClientes);
             this.Name = "VentasView";
             this.Text = "VentasView";
@@ -108,6 +132,7 @@
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -120,5 +145,7 @@
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dataGridViewProductos;
         private System.Windows.Forms.DataGridView dataGridViewClientes;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

@@ -11,16 +11,16 @@ namespace BLL
 {
     public class VentaService : AbstractService<ClienteVenta>
     {
-        private VentaMapper ventaMapper = new VentaMapper();
+        private ClienteVentaMapper clienteVentaMapper = new ClienteVentaMapper();
 
         public VentaService() 
         {
-            base.Mapper = new ClienteVentaMapper();
+            base.Mapper = clienteVentaMapper;
         }
 
-        public override int Create(ClienteVenta entity)
+        public List<Venta> GetVentasByIdCliente(int IdCliente)
         {
-            return 1;
+            return clienteVentaMapper.GetVentasByIdCliente(IdCliente);
         }
 
     }

@@ -1,20 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\presentacion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\presentacion\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\presentacion\\views\\loginview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\views\\loginview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -22,49 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Presentacion\\Program.cs",
-              "RelativeDocumentMoniker": "Presentacion\\Program.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Presentacion\\Program.cs",
-              "RelativeToolTip": "Presentacion\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-19T22:56:48.183Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "App.config",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Presentacion\\App.config",
-              "RelativeDocumentMoniker": "Presentacion\\App.config",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Presentacion\\App.config",
-              "RelativeToolTip": "Presentacion\\App.config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-09-19T22:56:47.061Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LogInView.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Presentacion\\views\\LogInView.cs",
-              "RelativeDocumentMoniker": "Presentacion\\views\\LogInView.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Presentacion\\views\\LogInView.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Presentacion\\views\\LogInView.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-19T22:55:53.017Z",
-              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

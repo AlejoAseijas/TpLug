@@ -37,7 +37,7 @@ namespace MPP
 
         public void DeleteById(int Id)
         {
-            SqlCommand sqlCommand = new SqlCommand($"Delete FROM Ventas Where Id = {Id}");
+            SqlCommand sqlCommand = new SqlCommand($"Delete FROM Ventas Where IdVenta = {Id}");
 
             try
             {
@@ -87,7 +87,7 @@ namespace MPP
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand("SELECT * FROM Ventas"));
+                Tabla = DatabaseSql.Read(new SqlCommand($"SELECT * FROM Ventas WHERE IdVenta = {Id}"));
             }
             catch (SqlException ex)
             {
@@ -113,7 +113,7 @@ namespace MPP
         {
             Venta venta = new Venta();
 
-            venta.Id = Convert.ToInt32(row["Id"]);
+            venta.Id = Convert.ToInt32(row["IdVenta"]);
             venta.Producto = row["Producto"].ToString();
             venta.PrecioVenta = row["PrecioVenta"].ToString() != null ? float.Parse(row["PrecioVenta"].ToString()) : -1;
             venta.Qty = Convert.ToInt32(row["Qty"]);
@@ -126,7 +126,7 @@ namespace MPP
         {
             try
             {
-                DatabaseSql.Write(new SqlCommand($"UPDATE Ventas SET Producto = '{newData.Producto}', PrecioVenta = '{newData.PrecioVenta}', Qty = '{newData.Qty}' WHERE Id = {docToUpdate.Id}"));
+                DatabaseSql.Write(new SqlCommand($"UPDATE Ventas SET Producto = '{newData.Producto}', PrecioVenta = '{newData.PrecioVenta}', Qty = '{newData.Qty}' WHERE IdVenta = {docToUpdate.Id}"));
             }
             catch (SqlException ex)
             {

@@ -19,12 +19,13 @@ namespace Presentacion.views
             InitializeComponent();
         }
         private ClienteService clienteService = new ClienteService();
-        private ProductoService productoService = new ProductoService();
-
+        private InventarioService inventarioService = new InventarioService();
+        private VentaService ventaService = new VentaService();
         private void VentasView_Load(object sender, EventArgs e)
         {
             refreshClientes();
             refreshProductos();
+            refreshVentasByCliente(null);
         }
 
         private void refreshClientes()
@@ -38,7 +39,7 @@ namespace Presentacion.views
 
             List<Producto> productos = new List<Producto>();
             this.dataGridViewProductos.DataSource = null;
-            this.dataGridViewProductos.DataSource = productoService.GetAll();
+            this.dataGridViewProductos.DataSource = inventarioService.GetAll();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -51,13 +52,56 @@ namespace Presentacion.views
             {
                 try
                 {
-                   // ventaService.Alta(cliente, inventario, qty);
+                    ClienteVenta clientevVenta = new ClienteVenta();
+                    Venta venta = new Venta();
+
+                    venta.Producto = inventario.Producto.Categoria + "  " + inventario.Producto.SubCategoria + "    " + inventario.Producto.Nombre;
+                    venta.PrecioVenta = inventario.Producto.ObtenerPrecio();
+                    venta.Qty = qty;
+
+                    clientevVenta.Cliente = cliente;
+                    clientevVenta.Ventas = new List<Venta>();
+                    clientevVenta.Ventas.Add(venta);
+
+                    ventaService.Create(clientevVenta);
+                    this.txtQty.Text = string.Empty;
+                    refreshVentasByCliente(ventaService.GetVentasByIdCliente(cliente.Id));
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Cliente cliente = (Cliente)this.dataGridViewClientes.CurrentRow.DataBoundItem;
+            Venta venta = this.dataGridView1.CurrentRow != null ? (Venta)this.dataGridView1.CurrentRow.DataBoundItem : null;
+
+            if (cliente != null && venta != null) 
+            {
+                ventaService.DeleteById(venta.Id);
+                refreshVentasByCliente(ventaService.GetVentasByIdCliente(cliente.Id));
+            }
+
+        }
+
+        private void dataGridViewClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Cliente cliente = (Cliente)this.dataGridViewClientes.CurrentRow.DataBoundItem;
+
+            if (cliente != null) 
+            {
+                refreshVentasByCliente(ventaService.GetVentasByIdCliente(cliente.Id));
+            }
+
+        }
+
+        private void refreshVentasByCliente(List<Venta> ventas)
+        {
+            this.dataGridView1.DataSource = null;
+            this.dataGridView1.DataSource = ventas;
         }
     }
 }

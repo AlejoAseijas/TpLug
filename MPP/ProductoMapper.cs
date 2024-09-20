@@ -52,7 +52,7 @@ namespace MPP
 
         public void DeleteById(int Id)
         {
-            SqlCommand sqlCommand = new SqlCommand($"Delete FROM Productos Where Id = {Id}");
+            SqlCommand sqlCommand = new SqlCommand($"Delete FROM Productos Where IdProducto = {Id}");
 
             try
             {
@@ -67,7 +67,7 @@ namespace MPP
         public List<Producto> GetAll()
         {
             List<Producto> productos = new List<Producto>();
-            string query = "SELECT p.Id, p.Categoria, p.SubCategoria, p.Nombre, po.Id as 'IdProveedor', po.Nombre as 'Proveedor', p.Consumo, p.FechaDeVencimiento, p.PrecioCosto FROM Productos p INNER JOIN Proveedores po ON p.IdProveedor = po.Id";
+            string query = "SELECT p.IdProducto, p.Categoria, p.SubCategoria, p.Nombre, po.IdProveedor as 'IdProveedor', po.Nombre as 'Proveedor', p.Consumo, p.FechaDeVencimiento, p.PrecioCosto FROM Productos p INNER JOIN Proveedores po ON p.IdProveedor = po.IdProveedor";
             DataTable Tabla = null;
 
             try
@@ -103,7 +103,7 @@ namespace MPP
         {
             Producto producto;
 
-            int Id = Convert.ToInt32(row["Id"]);
+            int Id = Convert.ToInt32(row["IdProducto"]);
             string Categoria = row["Categoria"].ToString();
             string SubCategoria = row["SubCategoria"].ToString();
             string Nombre = row["Nombre"].ToString();
@@ -145,7 +145,7 @@ namespace MPP
 
             try
             {
-                DatabaseSql.Write(new SqlCommand($"UPDATE Productos SET {setData} WHERE Id = {docToUpdate.Id}"));
+                DatabaseSql.Write(new SqlCommand($"UPDATE Productos SET {setData} WHERE IdProducto = {docToUpdate.Id}"));
             }
             catch (SqlException ex)
             {
@@ -181,7 +181,7 @@ namespace MPP
                 {
                     Proveedor proveedor = new Proveedor();
 
-                    proveedor.Id = Convert.ToInt32(fila["Id"]);
+                    proveedor.Id = Convert.ToInt32(fila["IdProveedor"]);
                     proveedor.Nombre = fila["Nombre"].ToString();
 
                     proveedors.Add(proveedor);

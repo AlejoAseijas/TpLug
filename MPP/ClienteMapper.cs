@@ -38,7 +38,7 @@ namespace MPP
         {
             try
             {
-                DatabaseSql.Write(new SqlCommand($"DELETE FROM Clientes WHERE Id = {Id}"));
+                DatabaseSql.Write(new SqlCommand($"DELETE FROM Clientes WHERE IdCliente = {Id}"));
             }
             catch (SqlException ex)
             {
@@ -57,7 +57,7 @@ namespace MPP
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand("SELECT Id, Nombre, Apellido, DNI FROM Clientes"));
+                Tabla = DatabaseSql.Read(new SqlCommand("SELECT IdCliente, Nombre, Apellido, DNI FROM Clientes"));
             }
             catch (SqlException ex)
             {
@@ -81,14 +81,39 @@ namespace MPP
 
         public Cliente GetById(string Id)
         {
-            throw new NotImplementedException();
+            Cliente clientes = new Cliente();
+
+            DataTable Tabla = null;
+
+            try
+            {
+                Tabla = DatabaseSql.Read(new SqlCommand("SELECT IdCliente, Nombre, Apellido, DNI FROM Clientes"));
+            }
+            catch (SqlException ex)
+            {
+
+            }
+            catch (Exception ex)
+            {
+
+            }
+
+            if (Tabla != null && Tabla.Rows.Count > 0)
+            {
+                foreach (DataRow fila in Tabla.Rows)
+                {
+                    clientes = ToMap(fila);
+                }
+            }
+
+            return clientes;
         }
 
         public Cliente ToMap(DataRow row)
         {
             Cliente cliente = new Cliente();
 
-            cliente.Id = Convert.ToInt32(row["Id"]);
+            cliente.Id = Convert.ToInt32(row["IdCliente"]);
             cliente.Nombre = row["Nombre"].ToString();
             cliente.Apellido = row["Apellido"].ToString();
             cliente.DNI = row["DNI"].ToString();
@@ -100,7 +125,7 @@ namespace MPP
         {
             try
             {
-                DatabaseSql.Write(new SqlCommand($"UPDATE Clientes SET Nombre = '{newData.Nombre}', Apellido = '{newData.Apellido}', DNI = '{newData.DNI}' WHERE Id = {docToUpdate.Id}"));
+                DatabaseSql.Write(new SqlCommand($"UPDATE Clientes SET Nombre = '{newData.Nombre}', Apellido = '{newData.Apellido}', DNI = '{newData.DNI}' WHERE IdCliente = {docToUpdate.Id}"));
             }
             catch (SqlException ex)
             {

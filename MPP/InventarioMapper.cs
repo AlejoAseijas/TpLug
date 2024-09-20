@@ -52,7 +52,7 @@ namespace MPP
                 try 
                 {
                     productoMapper.DeleteById(inventario.Producto.Id);
-                    DatabaseSql.Write(new SqlCommand($"DELETE FROM Inventarios Where Id = {Id}"));
+                    DatabaseSql.Write(new SqlCommand($"DELETE FROM Inventarios Where IdInventario = {Id}"));
                 }
                 catch (SqlException ex)
                 { }
@@ -64,7 +64,7 @@ namespace MPP
         public List<Inventario> GetAll()
         {
             List<Inventario> inventarios = new List<Inventario>();
-            string query = @"SELECT i.Id, i.Stock, p.Id as 'IdProducto', p.Nombre, p.Categoria, p.SubCategoria, p.FechaDeVencimiento, p.PrecioCosto ,p.Consumo, po.Id as 'IdProveedor', po.Nombre as 'Proveedor' FROM Inventarios i INNER JOIN Productos p ON i.IdProducto = p.Id INNER JOIN Proveedores po ON po.Id = p.IdProveedor";
+            string query = @"SELECT i.IdInventario, i.Stock, p.IdProducto as 'IdProducto', p.Nombre, p.Categoria, p.SubCategoria, p.FechaDeVencimiento, p.PrecioCosto ,p.Consumo, po.IdProveedor as 'IdProveedor', po.Nombre as 'Proveedor' FROM Inventarios i INNER JOIN Productos p ON i.IdProducto = p.IdProducto INNER JOIN Proveedores po ON po.IdProveedor = p.IdProveedor";
             DataTable Tabla = null;
 
             try
@@ -91,7 +91,7 @@ namespace MPP
         public Inventario GetById(string Id)
         {
             Inventario inventario = null;
-            string query = $"SELECT i.Id, i.Stock, p.Id as 'IdProducto', p.Nombre, p.Categoria, p.SubCategoria, p.FechaDeVencimiento, p.PrecioCosto ,p.Consumo, po.Id as 'IdProveedor', po.Nombre as 'Proveedor' FROM Inventarios i INNER JOIN Productos p ON i.IdProducto = p.Id INNER JOIN Proveedores po ON po.Id = p.IdProveedor WHERE i.Id = {Id}";
+            string query = $"SELECT i.IdInventario, i.Stock, p.IdProducto as 'IdProducto', p.Nombre, p.Categoria, p.SubCategoria, p.FechaDeVencimiento, p.PrecioCosto ,p.Consumo, po.IdProveedor as 'IdProveedor', po.Nombre as 'Proveedor' FROM Inventarios i INNER JOIN Productos p ON i.IdProducto = p.IdProducto INNER JOIN Proveedores po ON po.IdProveedor = p.IdProveedor WHERE i.IdInventario = {Id}";
             DataTable Tabla = null;
 
             try
@@ -119,7 +119,7 @@ namespace MPP
         {
             Inventario inventario = new Inventario();
 
-            inventario.Id = Convert.ToInt32(row["Id"]);
+            inventario.Id = Convert.ToInt32(row["IdInventario"]);
             inventario.Stock = Convert.ToInt32(row["Stock"].ToString());
             inventario.Producto = productoMapper.ToMap(row);
 
@@ -133,7 +133,7 @@ namespace MPP
                 productoMapper.Update(docToUpdate.Producto, newData.Producto);
                 string setData = $"Stock = '{newData.Stock}'";
 
-                DatabaseSql.Write(new SqlCommand($"UPDATE Inventarios SET {setData} WHERE Id = {docToUpdate.Id}"));
+                DatabaseSql.Write(new SqlCommand($"UPDATE Inventarios SET {setData} WHERE IdInventario = {docToUpdate.Id}"));
             }
             catch (SqlException)
             {

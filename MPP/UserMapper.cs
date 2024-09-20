@@ -33,7 +33,7 @@ namespace MPP
 
         public void DeleteById(int Id)
         {
-            SqlCommand sqlCommand = new SqlCommand($"Delete FROM Users Where Id = {Id}");
+            SqlCommand sqlCommand = new SqlCommand($"Delete FROM Users Where IdUser = {Id}");
 
             try 
             {
@@ -113,7 +113,7 @@ namespace MPP
         {
             User user = new User();
 
-            user.Id = Convert.ToInt32(row["Id"]);
+            user.Id = Convert.ToInt32(row["IdUser"]);
             user.DNI = row["DNI"].ToString();
             user.Password = row["Password"].ToString();
 
