@@ -192,5 +192,14 @@ namespace Presentacion.views
             }
         }
 
+        private void txtPrecioCosto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsNumber(e.KeyChar);
+        }
+
+        private void txtStock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsNumber(e.KeyChar);
+        }
     }
 }
