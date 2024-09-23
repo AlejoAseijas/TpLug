@@ -33,5 +33,10 @@ namespace BE.models
         {
             return obj == null ? 1 : this.Nombre.CompareTo(obj.Nombre);
         }
+
+        public override string ToString()
+        {
+            return this.Nombre + "  " + this.Apellido + "   " +  this.DNI;
+        }
     }
 }

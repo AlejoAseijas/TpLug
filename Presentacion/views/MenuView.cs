@@ -54,5 +54,10 @@ namespace Presentacion.views
         {
             manageMdi(new VentasView());
         }
+
+        private void informesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            manageMdi(new InformesView());
+        }
     }
 }
