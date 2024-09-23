@@ -30,7 +30,7 @@ namespace Presentacion.views
             if (inventario != null)
             {
                 int idProducto = inventarioService.Create(inventario);
-                MessageBox.Show($"El id del inventario es {inventario}");
+                MessageBox.Show($"El id del inventario es {idProducto}");
             }
 
             refresh();
@@ -51,45 +51,50 @@ namespace Presentacion.views
 
         private Inventario getProductoFromUI()
         {
-            BE.models.Producto producto = null;
+            Producto producto = null;
 
             #region Datos Producto
             string categoria = this.txtCategoria.Text;
             string subCategoria = this.txtSubCategoria.Text;
             string nombreProducto = this.txtProducto.Text;
-            #endregion
-
-            Inventario inventario = null;
-            #region Datos Inventario
-
-            #endregion
-
-            #region Provedor
-            Proveedor provedor = (Proveedor)this.comboBox3.SelectedItem;
-
-            #endregion
-
-            #region Valido que radioButton esta checked para generar sus correspondiete Producto
-            TipoDeProducto tipoDeProducto = (TipoDeProducto)this.comboBox2.SelectedItem;
             float precioCosto = float.Parse(this.txtPrecioCosto.Text);
 
-            if (TipoDeProducto.ELECTRONICO.Equals(tipoDeProducto))
+            #region Provedor
+            if (this.comboBox2.SelectedItem != null && this.comboBox3.SelectedItem != null) 
             {
-                string consumo = this.comboBox1.SelectedItem.ToString();
-                producto = new ProductoElectronico(categoria, subCategoria, nombreProducto, provedor, precioCosto, consumo);
-            }
+                Proveedor provedor = (Proveedor)this.comboBox3.SelectedItem;
 
-            if (TipoDeProducto.ALIMENTICIO.Equals(tipoDeProducto))
+                #region Valido que radioButton esta checked para generar sus correspondiete Producto
+                TipoDeProducto tipoDeProducto = (TipoDeProducto)this.comboBox2.SelectedItem;
+
+                if (TipoDeProducto.ELECTRONICO.Equals(tipoDeProducto))
+                {
+                    string consumo = this.comboBox1.SelectedItem.ToString();
+                    producto = new ProductoElectronico(categoria, subCategoria, nombreProducto, provedor, precioCosto, consumo);
+                }
+
+                if (TipoDeProducto.ALIMENTICIO.Equals(tipoDeProducto))
+                {
+                    DateTime fecha = dateTimePicker1.Value;
+                    producto = new ProductoAlimenticio(categoria, subCategoria, nombreProducto, provedor, precioCosto, fecha);
+                }
+                #endregion
+            }
+            else
             {
-                DateTime fecha = dateTimePicker1.Value;
-                producto = new ProductoAlimenticio(categoria, subCategoria, nombreProducto, provedor, precioCosto, fecha);
+                MessageBox.Show("No se completaron todos los campos");
             }
             #endregion
+
+
+            #endregion
+
+
+            #region Datos Inventario
+            Inventario inventario = new Inventario();
 
             try
             {
-                inventario = new Inventario();
-
                 inventario.Stock = Int32.Parse(this.txtStock.Text);
                 inventario.Producto = producto;
 
@@ -100,6 +105,7 @@ namespace Presentacion.views
                 return null;
             }
 
+            #endregion
 
             return inventario;
         }

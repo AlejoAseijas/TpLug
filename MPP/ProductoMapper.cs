@@ -165,7 +165,7 @@ namespace MPP
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand("SELECT Id, Nombre FROM Proveedores"));
+                Tabla = DatabaseSql.Read(new SqlCommand("SELECT IdProveedor, Nombre FROM Proveedores"));
             }
             catch (SqlException ex)
             {

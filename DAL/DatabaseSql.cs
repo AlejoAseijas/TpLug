@@ -20,9 +20,12 @@ namespace DAL
             DataTable tabla = new DataTable();
             using (SqlConnection connection = GetConnection())
             {
+                SqlTransaction transaction;
+
                 try
                 {
                     query.Connection = connection;
+
                     using (SqlDataAdapter da = new SqlDataAdapter(query))
                     {
                         connection.Open();
@@ -45,20 +48,26 @@ namespace DAL
         {
             using (SqlConnection connection = GetConnection())
             {
-                try
+                connection.Open();
+                using(SqlTransaction transaction = connection.BeginTransaction())
                 {
                     query.Connection = connection;
-                    connection.Open();
-                    int respuesta = query.ExecuteNonQuery();
-                    return respuesta > 0;
-                }
-                catch (SqlException ex)
-                {
-                    throw ex;
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
+                    query.Transaction = transaction;
+                    try
+                    {
+                        int respuesta = query.ExecuteNonQuery();
+                        transaction.Commit();
+                        return respuesta > 0;
+                    }
+                    catch (SqlException ex)
+                    {
+                        transaction.Rollback();
+                        throw new Exception($"No se pudo insertar el dato en la BD {ex.Message}");
+                    }
+                    catch (Exception ex)
+                    {
+                        throw ex;
+                    }
                 }
             }
         }
@@ -67,33 +76,41 @@ namespace DAL
         {
             using (SqlConnection connection = GetConnection())
             {
-                try
+                connection.Open();
+                using (SqlTransaction transaction = connection.BeginTransaction())
                 {
-                    query.Connection = connection;
-                    connection.Open();
-
-                    query.CommandText += "; SELECT SCOPE_IDENTITY();";
-
-                    object result = query.ExecuteScalar();
-
-                    if (result != null && int.TryParse(result.ToString(), out int id))
+                    try
                     {
-                        return id;
+                        query.Connection = connection;
+                        query.Transaction = transaction;
+
+                        // Asegurar que se seleccione el ID generado
+                        query.CommandText += "; SELECT SCOPE_IDENTITY();";
+
+                        object result = query.ExecuteScalar();
+                        transaction.Commit();
+
+                        if (result != null && int.TryParse(result.ToString(), out int id))
+                        {
+                            return id;
+                        }
+                        else
+                        {
+                            throw new Exception("No se pudo obtener el ID del nuevo registro.");
+                        }
                     }
-                    else
+                    catch(SqlException ex)
                     {
-                        throw new Exception("No se pudo obtener el ID del nuevo registro.");
+                        transaction.Rollback();
+                        throw new Exception($"No se pudo insertar el dato en la BD {ex.Message}");
                     }
-                }
-                catch (SqlException ex)
-                {
-                    throw ex;
-                }
-                catch (Exception ex)
-                {
-                    throw ex;
+                    catch(Exception ex) 
+                    {
+                        throw ex;
+                    }
                 }
             }
         }
+
     }
 }
