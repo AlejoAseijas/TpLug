@@ -9,11 +9,30 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class AuthService
+    public class AuthService : AbstractService<User>
     {
         private UnicodeEncoding unicodeEncoding = new UnicodeEncoding();
         private SHA1CryptoServiceProvider algorit = new SHA1CryptoServiceProvider();
         private UserMapper mapper = new UserMapper();
+
+        public AuthService() 
+        {
+            base.Mapper = mapper;
+        }
+
+        public bool LogIn(AuthDTO authDto)
+        {
+            bool valid = false;
+
+            User user = mapper.GetById(authDto.DNI);
+
+            if(user != null)
+            {
+                valid = authDto.password.Equals(user.Password);
+            }
+
+            return valid;
+        }
 
         public string GenerateHash(string plainText)
         {
@@ -26,7 +45,7 @@ namespace BLL
                 return Convert.ToBase64String(ByteHash);
 
             }
-            catch(CryptographicException ex)
+            catch (CryptographicException ex)
             {
 
             }
@@ -37,43 +56,5 @@ namespace BLL
             return hash;
         }
 
-        public bool LogIn(AuthDTO authDto)
-        {
-            bool valid = false;
-
-            User user = mapper.GetById(authDto.DNI);
-
-            if(user != null)
-            {
-                if (authDto.password.Equals(user.Password))
-                {
-                    valid = true;
-                }
-            }
-
-            return valid;
-        }
-
-        public void SaveUser(User user)
-        {
-            if (user != null)
-            {
-                user.Password = GenerateHash(user.Password);
-                mapper.Create(user);
-            }
-        }
-
-        public void DeleteUser(User user) 
-        {
-            if (user != null)
-            {
-                mapper.DeleteById(user.Id);
-            }
-        }
-
-        public List<User> GetAll() 
-        {
-            return mapper.GetAll();
-        }
-     }
     }
+}

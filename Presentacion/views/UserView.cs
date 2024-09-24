@@ -23,10 +23,12 @@ namespace Presentacion.views
         private void button1_Click(object sender, EventArgs e)
         {
             User user = new User();
-            user.DNI = this.textBox1.Text;
-            user.Password = this.textBox2.Text;
 
-            authService.SaveUser(user);
+            user.DNI = this.textBox1.Text;
+            user.Password = authService.GenerateHash(this.textBox2.Text);
+
+            authService.Create(user);
+
             Clear();
 
         }
@@ -56,7 +58,7 @@ namespace Presentacion.views
 
             if (user != null)
             {
-                authService.DeleteUser(user);
+                authService.DeleteById(user.Id);
                 refresh();
             }
         }
