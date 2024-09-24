@@ -178,7 +178,7 @@ namespace MPP
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand($"SELECT cv.Id as 'IdClienteVenta', cv.IdCliente, cv.IdVenta, v.Id as 'IdVenta', v.PrecioVenta, v.Producto, v.Qty FROM ClienteVenta cv INNER JOIN Ventas v ON cv.IdVenta = v.Id Where cv.IdCliente = {IdCliente}"));
+                Tabla = DatabaseSql.Read(new SqlCommand($"SELECT cv.IdClienteVenta as 'IdClienteVenta', cv.IdCliente, cv.IdVenta, v.IdVenta as 'IdVenta', v.PrecioVenta, v.Producto, v.Qty FROM ClienteVenta cv INNER JOIN Ventas v ON cv.IdVenta = v.IdVenta Where cv.IdCliente = {IdCliente}"));
             }
             catch (SqlException ex)
             {

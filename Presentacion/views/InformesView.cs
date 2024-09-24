@@ -23,9 +23,8 @@ namespace Presentacion.views
         {
             this.textBox1.Text = service.TOTAL_FACTURADO.ToString();
             this.textBox2.Text = service.QTY_PRODUCTOS_VENDIDOS.ToString();
-            this.textBox3.Text = service.CLIENTE_CON_MAS_VENTAS.Keys.First().ToString();
+            this.textBox3.Text = service.CLIENTE_CON_MAS_VENTAS != null ? service.CLIENTE_CON_MAS_VENTAS.Keys.First().ToString() : string.Empty;
         }
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
