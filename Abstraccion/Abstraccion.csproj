@@ -43,7 +43,7 @@
   <ItemGroup>
     <Compile Include="AbstracEntity.cs" />
     <Compile Include="AbstractService.cs" />
-    <Compile Include="IGestor.cs" />
+    <Compile Include="IMappable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

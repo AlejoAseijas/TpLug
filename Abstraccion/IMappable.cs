@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Abstraccion
 {
-    public interface IGestor<T>
+    public interface IMappable<T>
     {
         T GetById(string Id);
         List<T> GetAll();

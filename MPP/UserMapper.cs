@@ -11,7 +11,7 @@ using DAL;
 
 namespace MPP
 {
-    public class UserMapper : IGestor<User>
+    public class UserMapper : IMappable<User>
     {
         public int Create(User entity)
         {

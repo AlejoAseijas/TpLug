@@ -10,7 +10,7 @@ namespace BLL
 {
     public abstract class AbstractService<T> 
     {
-        public IGestor<T> Mapper { get; set; }
+        public IMappable<T> Mapper { get; set; }
 
         public virtual int Create(T entity)
         {

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MPP
 {
-    public class ClienteMapper : IGestor<Cliente>
+    public class ClienteMapper : IMappable<Cliente>
     {
         public int Create(Cliente entity)
         {

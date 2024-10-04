@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MPP
 {
-    public class ClienteVentaMapper : IGestor<ClienteVenta>
+    public class ClienteVentaMapper : IMappable<ClienteVenta>
     {
         private VentaMapper VentaMapper = new VentaMapper();
         private ClienteMapper clienteMapper = new ClienteMapper();

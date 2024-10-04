@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MPP
 {
-    public class ProductoMapper : IGestor<Producto>
+    public class ProductoMapper : IMappable<Producto>
     {
         public int Create(Producto entity)
         {

@@ -3,32 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\presentacion\\views\\productosview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\views\\productosview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\bll\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|solutionrelative:bll\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7ECD3990-39DC-4C6F-8CD2-8267C4151653}|Abstraccion\\Abstraccion.csproj|C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\abstraccion\\igestor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7ECD3990-39DC-4C6F-8CD2-8267C4151653}|Abstraccion\\Abstraccion.csproj|solutionrelative:abstraccion\\igestor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\presentacion\\views\\productosview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\views\\productosview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\mpp\\productomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|solutionrelative:mpp\\productomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\mpp\\clientemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|solutionrelative:mpp\\clientemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{7ECD3990-39DC-4C6F-8CD2-8267C4151653}|Abstraccion\\Abstraccion.csproj|C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\abstraccion\\abstractservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{7ECD3990-39DC-4C6F-8CD2-8267C4151653}|Abstraccion\\Abstraccion.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\abstraccion\\abstractservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7ECD3990-39DC-4C6F-8CD2-8267C4151653}|Abstraccion\\Abstraccion.csproj|solutionrelative:abstraccion\\abstractservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\bll\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|solutionrelative:bll\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\mpp\\ventamapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|solutionrelative:mpp\\ventamapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\mpp\\usermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|solutionrelative:mpp\\usermapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\mpp\\productomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|solutionrelative:mpp\\productomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\mpp\\inventariomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|solutionrelative:mpp\\inventariomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\mpp\\clienteventamapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|solutionrelative:mpp\\clienteventamapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\mpp\\clientemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|solutionrelative:mpp\\clientemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\bll\\clienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|solutionrelative:bll\\clienteservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7ECD3990-39DC-4C6F-8CD2-8267C4151653}|Abstraccion\\Abstraccion.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\abstraccion\\imappable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7ECD3990-39DC-4C6F-8CD2-8267C4151653}|Abstraccion\\Abstraccion.csproj|solutionrelative:abstraccion\\imappable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\bll\\productoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|solutionrelative:bll\\productoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\bll\\informeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|solutionrelative:bll\\informeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7ECD3990-39DC-4C6F-8CD2-8267C4151653}|Abstraccion\\Abstraccion.csproj|c:\\users\\alejoaseijas\\desktop\\tplug\\abstraccion\\abstracentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7ECD3990-39DC-4C6F-8CD2-8267C4151653}|Abstraccion\\Abstraccion.csproj|solutionrelative:abstraccion\\abstracentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -46,87 +70,172 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ProductosView.cs",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Presentacion\\views\\ProductosView.cs",
-              "RelativeDocumentMoniker": "Presentacion\\views\\ProductosView.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Presentacion\\views\\ProductosView.cs",
-              "RelativeToolTip": "Presentacion\\views\\ProductosView.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAmwDcAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "VentaMapper.cs",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\MPP\\VentaMapper.cs",
+              "RelativeDocumentMoniker": "MPP\\VentaMapper.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\MPP\\VentaMapper.cs",
+              "RelativeToolTip": "MPP\\VentaMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T18:27:15.748Z",
+              "WhenOpened": "2024-10-04T03:07:53.276Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductosView.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Presentacion\\views\\ProductosView.cs",
-              "RelativeDocumentMoniker": "Presentacion\\views\\ProductosView.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Presentacion\\views\\ProductosView.cs [Dise\u00F1o]*",
-              "RelativeToolTip": "Presentacion\\views\\ProductosView.cs [Dise\u00F1o]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T18:27:05Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "IGestor.cs",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Abstraccion\\IGestor.cs",
-              "RelativeDocumentMoniker": "Abstraccion\\IGestor.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Abstraccion\\IGestor.cs",
-              "RelativeToolTip": "Abstraccion\\IGestor.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T18:22:55.459Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "UserMapper.cs",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\MPP\\UserMapper.cs",
+              "RelativeDocumentMoniker": "MPP\\UserMapper.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\MPP\\UserMapper.cs",
+              "RelativeToolTip": "MPP\\UserMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T03:07:50.506Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ProductoMapper.cs",
               "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\MPP\\ProductoMapper.cs",
               "RelativeDocumentMoniker": "MPP\\ProductoMapper.cs",
               "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\MPP\\ProductoMapper.cs",
               "RelativeToolTip": "MPP\\ProductoMapper.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAwwGQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T18:22:19.759Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ClienteMapper.cs",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\MPP\\ClienteMapper.cs",
-              "RelativeDocumentMoniker": "MPP\\ClienteMapper.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\MPP\\ClienteMapper.cs",
-              "RelativeToolTip": "MPP\\ClienteMapper.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAH8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T17:31:33.733Z"
+              "WhenOpened": "2024-10-04T03:07:47.297Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "InventarioMapper.cs",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\MPP\\InventarioMapper.cs",
+              "RelativeDocumentMoniker": "MPP\\InventarioMapper.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\MPP\\InventarioMapper.cs",
+              "RelativeToolTip": "MPP\\InventarioMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T03:07:40.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ClienteVentaMapper.cs",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\MPP\\ClienteVentaMapper.cs",
+              "RelativeDocumentMoniker": "MPP\\ClienteVentaMapper.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\MPP\\ClienteVentaMapper.cs",
+              "RelativeToolTip": "MPP\\ClienteVentaMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T03:07:37.924Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IMappable.cs",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Abstraccion\\IMappable.cs",
+              "RelativeDocumentMoniker": "Abstraccion\\IMappable.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Abstraccion\\IMappable.cs",
+              "RelativeToolTip": "Abstraccion\\IMappable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T03:05:37.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "AbstractService.cs",
               "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Abstraccion\\AbstractService.cs",
               "RelativeDocumentMoniker": "Abstraccion\\AbstractService.cs",
               "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Abstraccion\\AbstractService.cs",
               "RelativeToolTip": "Abstraccion\\AbstractService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwB8AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T17:30:36.901Z"
+              "WhenOpened": "2024-10-04T03:03:04.422Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
               "Title": "AuthService.cs",
               "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\BLL\\AuthService.cs",
               "RelativeDocumentMoniker": "BLL\\AuthService.cs",
               "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\BLL\\AuthService.cs",
               "RelativeToolTip": "BLL\\AuthService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAlwCAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-24T03:18:05.752Z"
+              "WhenOpened": "2024-10-04T03:04:01.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ProductoService.cs",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\BLL\\ProductoService.cs",
+              "RelativeDocumentMoniker": "BLL\\ProductoService.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\BLL\\ProductoService.cs",
+              "RelativeToolTip": "BLL\\ProductoService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T03:04:08.305Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "InformeService.cs",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\BLL\\InformeService.cs",
+              "RelativeDocumentMoniker": "BLL\\InformeService.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\BLL\\InformeService.cs",
+              "RelativeToolTip": "BLL\\InformeService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T03:04:03.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ClienteMapper.cs",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\MPP\\ClienteMapper.cs",
+              "RelativeDocumentMoniker": "MPP\\ClienteMapper.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\MPP\\ClienteMapper.cs",
+              "RelativeToolTip": "MPP\\ClienteMapper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T03:03:34.844Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ClienteService.cs",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\BLL\\ClienteService.cs",
+              "RelativeDocumentMoniker": "BLL\\ClienteService.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\BLL\\ClienteService.cs",
+              "RelativeToolTip": "BLL\\ClienteService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T03:03:26.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AbstracEntity.cs",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Abstraccion\\AbstracEntity.cs",
+              "RelativeDocumentMoniker": "Abstraccion\\AbstracEntity.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\Desktop\\TpLug\\Abstraccion\\AbstracEntity.cs",
+              "RelativeToolTip": "Abstraccion\\AbstracEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T03:03:00.66Z",
+              "EditorCaption": ""
             }
           ]
         }

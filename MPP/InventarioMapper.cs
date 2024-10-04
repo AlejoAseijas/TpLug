@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace MPP
 {
-    public class InventarioMapper : IGestor<Inventario>
+    public class InventarioMapper : IMappable<Inventario>
     {
         private ProductoMapper productoMapper = new ProductoMapper();
 
