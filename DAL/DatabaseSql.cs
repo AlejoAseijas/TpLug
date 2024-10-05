@@ -20,8 +20,6 @@ namespace DAL
             DataTable tabla = new DataTable();
             using (SqlConnection connection = GetConnection())
             {
-                SqlTransaction transaction;
-
                 try
                 {
                     query.Connection = connection;
@@ -66,6 +64,7 @@ namespace DAL
                     }
                     catch (Exception ex)
                     {
+                        transaction.Rollback();
                         throw ex;
                     }
                 }
@@ -106,6 +105,7 @@ namespace DAL
                     }
                     catch(Exception ex) 
                     {
+                        transaction.Rollback();
                         throw ex;
                     }
                 }
