@@ -8,6 +8,7 @@ using BE.models;
 using System.Data;
 using System.Data.SqlClient;
 using DAL;
+using System.Collections;
 
 namespace MPP
 {
@@ -16,13 +17,16 @@ namespace MPP
         public int Create(User entity)
         {
             int id = -1;
-            SqlCommand sqlCommand = new SqlCommand($"Insert Into Users(DNI, Password) VALUES (@DNI, @Password)");
-            sqlCommand.Parameters.AddWithValue("@DNI", entity.DNI);
-            sqlCommand.Parameters.AddWithValue("@Password", entity.Password);
+            SqlCommand sqlCommand = new SqlCommand("CreateUser");
+
+            Hashtable queryParams = new Hashtable();
+
+            queryParams.Add("@DNI", entity.DNI);
+            queryParams.Add("@Password", entity.Password);
 
             try
             {
-                id = DatabaseSql.WriteAndReturnId(sqlCommand);
+                id = DatabaseSql.WriteAndReturnId(sqlCommand, queryParams);
             }
             catch (SqlException ex) 
             { }
@@ -33,11 +37,12 @@ namespace MPP
 
         public void DeleteById(int Id)
         {
-            SqlCommand sqlCommand = new SqlCommand($"Delete FROM Users Where IdUser = {Id}");
+            SqlCommand sqlCommand = new SqlCommand("DeleteUserById");
+            Hashtable queryParams = new Hashtable { { "@IdUser", Id } };
 
             try 
             {
-                DatabaseSql.Write(sqlCommand);
+                DatabaseSql.Write(sqlCommand, queryParams);
             }
             catch (SqlException ex) 
             { }
@@ -49,11 +54,11 @@ namespace MPP
         public List<User> GetAll()
         {
             List<User> list = new List<User>();
-            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Users");
+            SqlCommand sqlCommand = new SqlCommand("GetAllUsers");
 
             try 
             {
-                DataTable Tabla = DatabaseSql.Read(sqlCommand);
+                DataTable Tabla = DatabaseSql.Read(sqlCommand, null);
 
                 if(Tabla != null && Tabla.Rows.Count > 0)
                 {
@@ -80,9 +85,10 @@ namespace MPP
             {
                 try
                 {
-                    SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Users Where DNI = @Id");
-                    sqlCommand.Parameters.AddWithValue("@Id", Id);
-                    DataTable Tabla = DatabaseSql.Read(sqlCommand);
+                    SqlCommand sqlCommand = new SqlCommand("GetUserByDNI");
+                    Hashtable queryParams = new Hashtable { { "@DNI", int.Parse(Id) } };
+
+                    DataTable Tabla = DatabaseSql.Read(sqlCommand, queryParams);
 
                     if (Tabla != null && Tabla.Rows.Count > 0)
                     {

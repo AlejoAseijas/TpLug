@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace DAL
 {
@@ -15,7 +16,7 @@ namespace DAL
             return new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ProductosV2;Integrated Security=True;Encrypt=False");
         }
 
-        public static DataTable Read(SqlCommand query)
+        public static DataTable Read(SqlCommand query, Hashtable queryParams)
         {
             DataTable tabla = new DataTable();
             using (SqlConnection connection = GetConnection())
@@ -23,6 +24,9 @@ namespace DAL
                 try
                 {
                     query.Connection = connection;
+                    query.CommandType = CommandType.StoredProcedure;
+
+                    AddParamsToQuery(query, queryParams);
 
                     using (SqlDataAdapter da = new SqlDataAdapter(query))
                     {
@@ -42,7 +46,7 @@ namespace DAL
             return tabla;
         }
 
-        public static bool Write(SqlCommand query)
+        public static bool Write(SqlCommand query, Hashtable queryParams)
         {
             using (SqlConnection connection = GetConnection())
             {
@@ -51,6 +55,9 @@ namespace DAL
                 {
                     query.Connection = connection;
                     query.Transaction = transaction;
+                    query.CommandType = CommandType.StoredProcedure;
+
+                    AddParamsToQuery(query, queryParams);
                     try
                     {
                         int respuesta = query.ExecuteNonQuery();
@@ -71,7 +78,7 @@ namespace DAL
             }
         }
 
-        public static int WriteAndReturnId(SqlCommand query)
+        public static int WriteAndReturnId(SqlCommand query, Hashtable queryParams)
         {
             using (SqlConnection connection = GetConnection())
             {
@@ -82,35 +89,44 @@ namespace DAL
                     {
                         query.Connection = connection;
                         query.Transaction = transaction;
+                        query.CommandType = CommandType.StoredProcedure;
 
-                        // Asegurar que se seleccione el ID generado
-                        query.CommandText += "; SELECT SCOPE_IDENTITY();";
+                        AddParamsToQuery(query, queryParams);
 
-                        object result = query.ExecuteScalar();
+                        SqlParameter outputIdParam = new SqlParameter("@NewUserId", SqlDbType.Int)
+                        {
+                            Direction = ParameterDirection.Output
+                        };
+                        query.Parameters.Add(outputIdParam);
+
+                        query.ExecuteNonQuery();
                         transaction.Commit();
 
-                        if (result != null && int.TryParse(result.ToString(), out int id))
-                        {
-                            return id;
-                        }
-                        else
-                        {
-                            throw new Exception("No se pudo obtener el ID del nuevo registro.");
-                        }
+                        return (int)query.Parameters["@NewUserId"].Value;
                     }
-                    catch(SqlException ex)
+                    catch (SqlException ex)
                     {
                         transaction.Rollback();
-                        throw new Exception($"No se pudo insertar el dato en la BD {ex.Message}");
+                        throw new Exception($"No se pudo insertar el dato en la BD: {ex.Message}");
                     }
-                    catch(Exception ex) 
+                    catch (Exception ex)
                     {
                         transaction.Rollback();
-                        throw ex;
+                        throw;
                     }
                 }
             }
         }
 
+        private static void AddParamsToQuery(SqlCommand query, Hashtable queryParams) 
+        {
+            if (queryParams != null && queryParams.Count > 0) 
+            {
+                foreach (string queryParam in queryParams.Keys)
+                {
+                    query.Parameters.AddWithValue(queryParam, queryParams[queryParam]);
+                }
+            }
+        }
     }
 }

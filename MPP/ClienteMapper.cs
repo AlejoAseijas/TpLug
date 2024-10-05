@@ -2,6 +2,7 @@
 using BE.models;
 using DAL;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -15,13 +16,14 @@ namespace MPP
     {
         public int Create(Cliente entity)
         {
-            SqlCommand sqlCommand = new SqlCommand($"INSERT INTO Clientes (Nombre, Apellido, DNI) VALUES ('{entity.Nombre}', '{entity.Apellido}', '{entity.DNI}')");
+            Hashtable queryParams = new Hashtable { { "@Nombre", entity.Nombre}, {"@Apellido", entity.Apellido}, { "@DNI", entity.DNI} };
+            SqlCommand sqlCommand = new SqlCommand("CreateCliente");
 
             int id = -1;
 
             try
             {
-                id = DatabaseSql.WriteAndReturnId(sqlCommand);
+                id = DatabaseSql.WriteAndReturnId(sqlCommand, queryParams);
             }
             catch (SqlException ex)
             {
@@ -38,7 +40,9 @@ namespace MPP
         {
             try
             {
-                DatabaseSql.Write(new SqlCommand($"DELETE FROM Clientes WHERE IdCliente = {Id}"));
+                Hashtable queryParams = new Hashtable { { "@IdCliente", Id } };
+
+                DatabaseSql.Write(new SqlCommand("DeleteClienteById"), queryParams);
             }
             catch (SqlException ex)
             {
@@ -57,7 +61,7 @@ namespace MPP
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand("SELECT IdCliente, Nombre, Apellido, DNI FROM Clientes"));
+                Tabla = DatabaseSql.Read(new SqlCommand("GetAllClientes"), null);
             }
             catch (SqlException ex)
             {
@@ -87,7 +91,8 @@ namespace MPP
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand("SELECT IdCliente, Nombre, Apellido, DNI FROM Clientes"));
+                Hashtable queryParams = new Hashtable { { "@IdCliente", int.Parse(Id) } };
+                Tabla = DatabaseSql.Read(new SqlCommand("GetClienteById"), null);
             }
             catch (SqlException ex)
             {
@@ -125,7 +130,8 @@ namespace MPP
         {
             try
             {
-                DatabaseSql.Write(new SqlCommand($"UPDATE Clientes SET Nombre = '{newData.Nombre}', Apellido = '{newData.Apellido}', DNI = '{newData.DNI}' WHERE IdCliente = {docToUpdate.Id}"));
+                Hashtable queryParams = new Hashtable { { "@IdClienteActualizar", docToUpdate.Id }, { "@NombreNuevo", newData.Nombre }, { "@ApellidoNuevo", newData.Apellido }, { "@DNINuevo", newData.DNI} };
+                DatabaseSql.Write(new SqlCommand($"UpdateClienteById"), queryParams);
             }
             catch (SqlException ex)
             {

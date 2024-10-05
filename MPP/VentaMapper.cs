@@ -2,6 +2,7 @@
 using BE.models;
 using DAL;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -16,13 +17,15 @@ namespace MPP
         public int Create(Venta entity)
         {
 
-            SqlCommand sqlCommand = new SqlCommand($"INSERT INTO Ventas (Producto, PrecioVenta, Qty) VALUES ('{entity.Producto}', '{entity.PrecioVenta}', '{entity.Qty}')");
+            SqlCommand sqlCommand = new SqlCommand("CreateVenta");
+
+            Hashtable queryParams = new Hashtable { { "@Producto", entity.Producto }, { "@Qty", entity.Qty }, { "@PrecioVenta", entity.PrecioVenta } };
 
             int id = -1;
 
             try
             {
-                id = DatabaseSql.WriteAndReturnId(sqlCommand);
+                id = DatabaseSql.WriteAndReturnId(sqlCommand, queryParams);
             }
             catch (SqlException ex)
             {
@@ -37,11 +40,12 @@ namespace MPP
 
         public void DeleteById(int Id)
         {
-            SqlCommand sqlCommand = new SqlCommand($"Delete FROM Ventas Where IdVenta = {Id}");
+            SqlCommand sqlCommand = new SqlCommand("DeleteVentaById");
 
+            Hashtable queryParams = new Hashtable { { "@IdVenta",  Id } };
             try
             {
-                DatabaseSql.Write(sqlCommand);
+                DatabaseSql.Write(sqlCommand, queryParams);
             }
             catch (SqlException ex)
             { }
@@ -57,7 +61,7 @@ namespace MPP
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand("SELECT * FROM Ventas"));
+                Tabla = DatabaseSql.Read(new SqlCommand("GetAllVentas"), null);
             }
             catch (SqlException ex)
             {
@@ -87,7 +91,8 @@ namespace MPP
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand($"SELECT * FROM Ventas WHERE IdVenta = {Id}"));
+                Hashtable queryParams = new Hashtable { { "@IdVenta", int.Parse(Id)} };
+                Tabla = DatabaseSql.Read(new SqlCommand("GetVentaById"), queryParams);
             }
             catch (SqlException ex)
             {
@@ -126,7 +131,8 @@ namespace MPP
         {
             try
             {
-                DatabaseSql.Write(new SqlCommand($"UPDATE Ventas SET Producto = '{newData.Producto}', PrecioVenta = '{newData.PrecioVenta}', Qty = '{newData.Qty}' WHERE IdVenta = {docToUpdate.Id}"));
+                Hashtable queryParams = new Hashtable { { "@Producto", newData.Producto }, { "@Qty", newData.Qty }, { "@PrecioVenta", newData.PrecioVenta }, { "@IdVenta", docToUpdate.Id } };
+                DatabaseSql.Write(new SqlCommand("UpdateVentaById"), queryParams);
             }
             catch (SqlException ex)
             {
