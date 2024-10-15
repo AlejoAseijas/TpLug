@@ -11,3 +11,16 @@ C:\Users\AlejoAseijas\Desktop\TpLug\MPP\obj\Debug\MPL.csproj.CoreCompileInputs.c
 C:\Users\AlejoAseijas\Desktop\TpLug\MPP\obj\Debug\MPL.csproj.Up2Date
 C:\Users\AlejoAseijas\Desktop\TpLug\MPP\obj\Debug\MPP.dll
 C:\Users\AlejoAseijas\Desktop\TpLug\MPP\obj\Debug\MPP.pdb
+C:\Users\AlejoAseijas\source\repos\TpLug\MPP\obj\Debug\MPL.csproj.AssemblyReference.cache
+C:\Users\AlejoAseijas\source\repos\TpLug\MPP\obj\Debug\MPL.csproj.CoreCompileInputs.cache
+C:\Users\AlejoAseijas\source\repos\TpLug\MPP\obj\Debug\MPP.dll
+C:\Users\AlejoAseijas\source\repos\TpLug\MPP\obj\Debug\MPP.pdb
+C:\Users\AlejoAseijas\source\repos\TpLug\MPP\bin\Debug\MPP.dll
+C:\Users\AlejoAseijas\source\repos\TpLug\MPP\bin\Debug\MPP.pdb
+C:\Users\AlejoAseijas\source\repos\TpLug\MPP\bin\Debug\Abstraccion.dll
+C:\Users\AlejoAseijas\source\repos\TpLug\MPP\bin\Debug\BE.dll
+C:\Users\AlejoAseijas\source\repos\TpLug\MPP\bin\Debug\DAL.dll
+C:\Users\AlejoAseijas\source\repos\TpLug\MPP\bin\Debug\Abstraccion.pdb
+C:\Users\AlejoAseijas\source\repos\TpLug\MPP\bin\Debug\BE.pdb
+C:\Users\AlejoAseijas\source\repos\TpLug\MPP\bin\Debug\DAL.pdb
+C:\Users\AlejoAseijas\source\repos\TpLug\MPP\obj\Debug\MPL.csproj.Up2Date

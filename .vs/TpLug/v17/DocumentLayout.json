@@ -1,7 +1,24 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\mpp\\clienteventamapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|solutionrelative:mpp\\clienteventamapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\mpp\\clientemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|solutionrelative:mpp\\clientemapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\dal\\databasesql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|solutionrelative:dal\\databasesql.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\mpp\\productomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E06FF64C-1B59-4A75-A6EA-999CD79A8894}|MPP\\MPL.csproj|solutionrelative:mpp\\productomapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +26,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ClienteVentaMapper.cs",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\MPP\\ClienteVentaMapper.cs",
+              "RelativeDocumentMoniker": "MPP\\ClienteVentaMapper.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\MPP\\ClienteVentaMapper.cs",
+              "RelativeToolTip": "MPP\\ClienteVentaMapper.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAtwCIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T05:10:42.436Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ClienteMapper.cs",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\MPP\\ClienteMapper.cs",
+              "RelativeDocumentMoniker": "MPP\\ClienteMapper.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\MPP\\ClienteMapper.cs",
+              "RelativeToolTip": "MPP\\ClienteMapper.cs",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T05:10:35.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DatabaseSql.cs",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DatabaseSql.cs",
+              "RelativeDocumentMoniker": "DAL\\DatabaseSql.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DatabaseSql.cs",
+              "RelativeToolTip": "DAL\\DatabaseSql.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T05:10:24.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductoMapper.cs",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\MPP\\ProductoMapper.cs",
+              "RelativeDocumentMoniker": "MPP\\ProductoMapper.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\MPP\\ProductoMapper.cs",
+              "RelativeToolTip": "MPP\\ProductoMapper.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAswJwAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-15T05:10:10.806Z",
+              "EditorCaption": ""
             }
           ]
         }

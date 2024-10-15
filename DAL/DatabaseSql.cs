@@ -78,45 +78,6 @@ namespace DAL
             }
         }
 
-        public static int WriteAndReturnId(SqlCommand query, Hashtable queryParams)
-        {
-            using (SqlConnection connection = GetConnection())
-            {
-                connection.Open();
-                using (SqlTransaction transaction = connection.BeginTransaction())
-                {
-                    try
-                    {
-                        query.Connection = connection;
-                        query.Transaction = transaction;
-                        query.CommandType = CommandType.StoredProcedure;
-
-                        AddParamsToQuery(query, queryParams);
-
-                        SqlParameter outputIdParam = new SqlParameter("@NewUserId", SqlDbType.Int)
-                        {
-                            Direction = ParameterDirection.Output
-                        };
-                        query.Parameters.Add(outputIdParam);
-
-                        query.ExecuteNonQuery();
-                        transaction.Commit();
-
-                        return (int)query.Parameters["@NewUserId"].Value;
-                    }
-                    catch (SqlException ex)
-                    {
-                        transaction.Rollback();
-                        throw new Exception($"No se pudo insertar el dato en la BD: {ex.Message}");
-                    }
-                    catch (Exception ex)
-                    {
-                        transaction.Rollback();
-                        throw;
-                    }
-                }
-            }
-        }
 
         private static void AddParamsToQuery(SqlCommand query, Hashtable queryParams) 
         {

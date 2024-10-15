@@ -31,7 +31,7 @@ namespace MPP
                     if (idProducto != -1)
                     {
                         Hashtable queryParams = new Hashtable { { "@IdProducto", idProducto }, { "@Stock", entity.Stock } };
-                        id = DatabaseSql.WriteAndReturnId(new SqlCommand("Inventarios"), queryParams);
+                        DatabaseSql.Write(new SqlCommand("Inventarios"), queryParams);
                     }
                 }
                 catch(SqlException ex) { }

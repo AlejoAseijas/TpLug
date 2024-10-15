@@ -25,3 +25,12 @@ C:\Users\AlejoAseijas\Desktop\TpLug\BE\obj\Debug\BE.csproj.CoreCompileInputs.cac
 C:\Users\AlejoAseijas\Desktop\TpLug\BE\obj\Debug\BE.csproj.Up2Date
 C:\Users\AlejoAseijas\Desktop\TpLug\BE\obj\Debug\BE.dll
 C:\Users\AlejoAseijas\Desktop\TpLug\BE\obj\Debug\BE.pdb
+C:\Users\AlejoAseijas\source\repos\TpLug\BE\bin\Debug\BE.dll
+C:\Users\AlejoAseijas\source\repos\TpLug\BE\bin\Debug\BE.pdb
+C:\Users\AlejoAseijas\source\repos\TpLug\BE\bin\Debug\Abstraccion.dll
+C:\Users\AlejoAseijas\source\repos\TpLug\BE\bin\Debug\Abstraccion.pdb
+C:\Users\AlejoAseijas\source\repos\TpLug\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+C:\Users\AlejoAseijas\source\repos\TpLug\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\AlejoAseijas\source\repos\TpLug\BE\obj\Debug\BE.csproj.Up2Date
+C:\Users\AlejoAseijas\source\repos\TpLug\BE\obj\Debug\BE.dll
+C:\Users\AlejoAseijas\source\repos\TpLug\BE\obj\Debug\BE.pdb

@@ -2,6 +2,7 @@
 using BE.models;
 using DAL;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -30,8 +31,8 @@ namespace MPP
 
                     if (IdVenta != -1)
                     {
-                        SqlCommand sqlCommand = new SqlCommand($"INSERT INTO ClienteVenta(IdVenta, IdCliente) VALUES ({IdVenta}, {entity.Cliente.Id})");
-                        id = DatabaseSql.WriteAndReturnId(sqlCommand);
+                        Hashtable queryParams = new Hashtable { { "@IdVenta", IdVenta }, { "@IdCliente",  entity.Cliente.Id} };
+                        DatabaseSql.Write(new SqlCommand("CreateClienteVenta"), queryParams);
                     }
                 }
                 catch (SqlException ex) { }
@@ -46,12 +47,12 @@ namespace MPP
 
         public void DeleteById(int Id)
         {
-            SqlCommand sqlCommand = new SqlCommand($"Delete FROM ClienteVenta Where IdClienteVenta = {Id}");
 
             try
             {
                 VentaMapper.DeleteById(Id);
-                DatabaseSql.Write(sqlCommand);
+                Hashtable queryParams = new Hashtable { { "@IdClienteVenta", Id } };
+                DatabaseSql.Write(new SqlCommand("DeleteClienteVentaById"), queryParams);
             }
             catch (SqlException ex)
             { }
@@ -67,7 +68,7 @@ namespace MPP
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand("SELECT * FROM ClienteVenta cv  INNER JOIN Clientes c ON cv.IdCliente = c.IdCliente INNER JOIN Ventas v ON cv.IdVenta = v.IdVenta ORDER BY cv.IdCliente"));
+                Tabla = DatabaseSql.Read(new SqlCommand("GetAllClienteVenta"), null);
             }
             catch (SqlException ex)
             {
@@ -122,7 +123,7 @@ namespace MPP
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand("SELECT * FROM ClienteVenta cv  INNER JOIN Clientes c ON cv.IdCliente = c.IdCliente INNER JOIN Ventas v ON cv.IdVenta = v.IdVenta ORDER BY cv.IdCliente"));
+                Tabla = DatabaseSql.Read(new SqlCommand("GetAllClienteVenta"), null);
             }
             catch (SqlException ex)
             {
@@ -178,7 +179,8 @@ namespace MPP
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand($"SELECT cv.IdClienteVenta as 'IdClienteVenta', cv.IdCliente, cv.IdVenta, v.IdVenta as 'IdVenta', v.PrecioVenta, v.Producto, v.Qty FROM ClienteVenta cv INNER JOIN Ventas v ON cv.IdVenta = v.IdVenta Where cv.IdCliente = {IdCliente}"));
+                Hashtable queryParams = new Hashtable { { "@IdCliente", IdCliente } };
+                Tabla = DatabaseSql.Read(new SqlCommand("GetVentasByIdCliente"), queryParams);
             }
             catch (SqlException ex)
             {
@@ -209,10 +211,9 @@ namespace MPP
         {
             try
             {
-                var query = $"UPDATE ClienteVenta SET IdCliente = {newData.Cliente.Id}, IdVenta = {newData.Ventas[0].Id} " +
-                            $"WHERE IdCliente = {docToUpdate.Cliente.Id} AND IdVenta = {docToUpdate.Ventas[0].Id}";
+                Hashtable queryParams = new Hashtable { { "@NuevoIdCliente", newData.Cliente.Id }, { "@NuevoIdVenta", newData.Ventas[0].Id }, { "@IdClienteModificar", docToUpdate.Cliente.Id }, { "@IdVentaModificar", docToUpdate.Ventas[0].Id } };
 
-                DatabaseSql.Write(new SqlCommand(query));
+                DatabaseSql.Write(new SqlCommand("UpdateClienteVentaById"), queryParams);
             }
             catch (SqlException ex)
             {

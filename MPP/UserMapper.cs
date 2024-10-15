@@ -26,7 +26,7 @@ namespace MPP
 
             try
             {
-                id = DatabaseSql.WriteAndReturnId(sqlCommand, queryParams);
+                DatabaseSql.Write(sqlCommand, queryParams);
             }
             catch (SqlException ex) 
             { }
