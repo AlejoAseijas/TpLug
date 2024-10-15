@@ -2,6 +2,7 @@
 using BE.models;
 using DAL;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -15,29 +16,30 @@ namespace MPP
     {
         public int Create(Producto entity)
         {
-            string columns = "Categoria, SubCategoria, Nombre, IdProveedor, PrecioCosto";
-            string values = $"'{entity.Categoria}', '{entity.SubCategoria}', '{entity.Nombre}', '{entity.Proveedor.Id}', {entity.PrecioCosto}";
+
+            SqlCommand sqlCommand = new SqlCommand("CreateVenta");
+
+            Hashtable queryParams = new Hashtable { { "@Categoria", entity.Categoria}, { "@SubCategoria", entity.SubCategoria}, { "@Nombre", entity.Nombre }, { "@IdProveedor", entity.Proveedor.Id }, { "@PrecioCosto", entity.PrecioCosto } };
 
             if (entity is ProductoElectronico)
             {
                 ProductoElectronico productoElectronico = (ProductoElectronico)entity;
-                columns += ", Consumo";
-                values += $", '{productoElectronico.Consumo}'";
+                queryParams.Add("@FechaDeVencimiento", null);
+                queryParams.Add("@Consumo", productoElectronico.Consumo);
             }
             else
             {
                 ProductoAlimenticio productoAlimenticio = (ProductoAlimenticio)entity;
-                columns += ", FechaDeVencimiento";
                 DateTime date = productoAlimenticio.FechaDeVencimiento;
-                values += $", '{date.ToString("yyyy-MM-dd")}'";
-
+                queryParams.Add("@FechaDeVencimiento", date.ToString("yyyy-MM-dd"));
+                queryParams.Add("@Consumo", null);
             }
 
             int id = -1;
 
             try
             {
-                id = DatabaseSql.WriteAndReturnId(new SqlCommand($"INSERT INTO Productos ({columns}) VALUES ({values})"));
+                id = DatabaseSql.WriteAndReturnId(sqlCommand, queryParams);
             }
             catch (SqlException ex)
             {
@@ -52,11 +54,12 @@ namespace MPP
 
         public void DeleteById(int Id)
         {
-            SqlCommand sqlCommand = new SqlCommand($"Delete FROM Productos Where IdProducto = {Id}");
+            SqlCommand sqlCommand = new SqlCommand("DeleteProductoById");
+            Hashtable queryParams = new Hashtable { { "@IdProducto", Id } };
 
             try
             {
-                DatabaseSql.Write(sqlCommand);
+                DatabaseSql.Write(sqlCommand, queryParams);
             }
             catch (SqlException ex)
             { }
@@ -67,12 +70,11 @@ namespace MPP
         public List<Producto> GetAll()
         {
             List<Producto> productos = new List<Producto>();
-            string query = "SELECT p.IdProducto, p.Categoria, p.SubCategoria, p.Nombre, po.IdProveedor as 'IdProveedor', po.Nombre as 'Proveedor', p.Consumo, p.FechaDeVencimiento, p.PrecioCosto FROM Productos p INNER JOIN Proveedores po ON p.IdProveedor = po.IdProveedor";
             DataTable Tabla = null;
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand(query));
+                Tabla = DatabaseSql.Read(new SqlCommand("GetAllProductos"), null);
 
                 if (Tabla != null && Tabla.Rows.Count > 0)
                 {
@@ -128,24 +130,25 @@ namespace MPP
 
         public void Update(Producto docToUpdate, Producto newData)
         {
-            string setData = $"Categoria = '{newData.Categoria}' , SubCategoria = '{newData.SubCategoria}' , Nombre = '{newData.Nombre}' , IdProveedor = {newData.Proveedor.Id}, PrecioCosto = {newData.PrecioCosto}";
+            Hashtable queryParams = new Hashtable { { "@Categoria", newData.Categoria }, { "@SubCategoria", newData.SubCategoria }, { "@Nombre", newData.Nombre }, { "@IdProveedor", newData.Proveedor.Id }, { "@PrecioCosto", newData.PrecioCosto } };
 
             if (newData is ProductoElectronico)
             {
                 ProductoElectronico productoElectronico = (ProductoElectronico)newData;
-                setData += $" , Consumo = '{productoElectronico.Consumo}', FechaDeVencimiento = null";
+                queryParams.Add("@FechaDeVencimiento", null);
+                queryParams.Add("@Consumo", productoElectronico.Consumo);
             }
             else
             {
                 ProductoAlimenticio productoAlimenticio = (ProductoAlimenticio)newData;
                 DateTime date = productoAlimenticio.FechaDeVencimiento;
-
-                setData += $" , FechaDeVencimiento = '{date.ToString("yyyy-MM-dd")}', Consumo = null";
+                queryParams.Add("@FechaDeVencimiento", date.ToString("yyyy-MM-dd"));
+                queryParams.Add("@Consumo", null);
             }
 
             try
             {
-                DatabaseSql.Write(new SqlCommand($"UPDATE Productos SET {setData} WHERE IdProducto = {docToUpdate.Id}"));
+                DatabaseSql.Write(new SqlCommand("UpdateProductoById"), queryParams);
             }
             catch (SqlException ex)
             {
@@ -165,7 +168,7 @@ namespace MPP
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand("SELECT IdProveedor, Nombre FROM Proveedores"));
+                Tabla = DatabaseSql.Read(new SqlCommand("GetAllProveedores"), null);
             }
             catch (SqlException ex)
             {

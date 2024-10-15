@@ -2,6 +2,7 @@
 using BE.models;
 using DAL;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -29,8 +30,8 @@ namespace MPP
 
                     if (idProducto != -1)
                     {
-                        SqlCommand sqlCommand = new SqlCommand($"INSERT INTO Inventarios(IdProducto, Stock) VALUES ({idProducto}, {entity.Stock})");
-                        id = DatabaseSql.WriteAndReturnId(sqlCommand);
+                        Hashtable queryParams = new Hashtable { { "@IdProducto", idProducto }, { "@Stock", entity.Stock } };
+                        id = DatabaseSql.WriteAndReturnId(new SqlCommand("Inventarios"), queryParams);
                     }
                 }
                 catch(SqlException ex) { }
@@ -52,7 +53,8 @@ namespace MPP
                 try 
                 {
                     productoMapper.DeleteById(inventario.Producto.Id);
-                    DatabaseSql.Write(new SqlCommand($"DELETE FROM Inventarios Where IdInventario = {Id}"));
+                    Hashtable queryParams = new Hashtable { { "@IdInventario", Id } };
+                    DatabaseSql.Write(new SqlCommand("DeleteInventarioById"), queryParams);
                 }
                 catch (SqlException ex)
                 { }
@@ -64,12 +66,11 @@ namespace MPP
         public List<Inventario> GetAll()
         {
             List<Inventario> inventarios = new List<Inventario>();
-            string query = @"SELECT i.IdInventario, i.Stock, p.IdProducto as 'IdProducto', p.Nombre, p.Categoria, p.SubCategoria, p.FechaDeVencimiento, p.PrecioCosto ,p.Consumo, po.IdProveedor as 'IdProveedor', po.Nombre as 'Proveedor' FROM Inventarios i INNER JOIN Productos p ON i.IdProducto = p.IdProducto INNER JOIN Proveedores po ON po.IdProveedor = p.IdProveedor";
             DataTable Tabla = null;
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand(query));
+                Tabla = DatabaseSql.Read(new SqlCommand("GetAllInventarios"), null);
             }
             catch (SqlException)
             {
@@ -91,12 +92,12 @@ namespace MPP
         public Inventario GetById(string Id)
         {
             Inventario inventario = null;
-            string query = $"SELECT i.IdInventario, i.Stock, p.IdProducto as 'IdProducto', p.Nombre, p.Categoria, p.SubCategoria, p.FechaDeVencimiento, p.PrecioCosto ,p.Consumo, po.IdProveedor as 'IdProveedor', po.Nombre as 'Proveedor' FROM Inventarios i INNER JOIN Productos p ON i.IdProducto = p.IdProducto INNER JOIN Proveedores po ON po.IdProveedor = p.IdProveedor WHERE i.IdInventario = {Id}";
             DataTable Tabla = null;
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand(query));
+                Hashtable queryParams = new Hashtable { { "@IdInventario", int.Parse(Id) } };
+                Tabla = DatabaseSql.Read(new SqlCommand("GetInventarioById"), queryParams);
             }
             catch (SqlException)
             {
@@ -131,9 +132,10 @@ namespace MPP
             try
             {
                 productoMapper.Update(docToUpdate.Producto, newData.Producto);
-                string setData = $"Stock = '{newData.Stock}'";
 
-                DatabaseSql.Write(new SqlCommand($"UPDATE Inventarios SET {setData} WHERE IdInventario = {docToUpdate.Id}"));
+                Hashtable queryParams = new Hashtable { { "@Stock", newData.Stock } };
+
+                DatabaseSql.Write(new SqlCommand("UpdateInventarioById"), queryParams);
             }
             catch (SqlException)
             {
