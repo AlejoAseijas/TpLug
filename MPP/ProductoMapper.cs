@@ -17,7 +17,7 @@ namespace MPP
         public int Create(Producto entity)
         {
 
-            SqlCommand sqlCommand = new SqlCommand("CreateVenta");
+            SqlCommand sqlCommand = new SqlCommand("CreateProducto");
 
             Hashtable queryParams = new Hashtable { { "@Categoria", entity.Categoria}, { "@SubCategoria", entity.SubCategoria}, { "@Nombre", entity.Nombre }, { "@IdProveedor", entity.Proveedor.Id }, { "@PrecioCosto", entity.PrecioCosto } };
 
@@ -39,7 +39,7 @@ namespace MPP
 
             try
             {
-                DatabaseSql.Write(sqlCommand, queryParams);
+               id = DatabaseSql.WriteAndGetId(sqlCommand, queryParams, "@NewProductoID");
             }
             catch (SqlException ex)
             {
@@ -130,7 +130,7 @@ namespace MPP
 
         public void Update(Producto docToUpdate, Producto newData)
         {
-            Hashtable queryParams = new Hashtable { { "@Categoria", newData.Categoria }, { "@SubCategoria", newData.SubCategoria }, { "@Nombre", newData.Nombre }, { "@IdProveedor", newData.Proveedor.Id }, { "@PrecioCosto", newData.PrecioCosto } };
+            Hashtable queryParams = new Hashtable { { "@Categoria", newData.Categoria }, { "@SubCategoria", newData.SubCategoria }, { "@Nombre", newData.Nombre }, { "@IdProveedor", newData.Proveedor.Id }, { "@PrecioCosto", newData.PrecioCosto }, { "@IdProductoModificar", docToUpdate.Id } };
 
             if (newData is ProductoElectronico)
             {

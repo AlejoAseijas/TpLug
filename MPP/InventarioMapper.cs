@@ -28,11 +28,8 @@ namespace MPP
                 {
                     idProducto = productoMapper.Create(entity.Producto);
 
-                    if (idProducto != -1)
-                    {
-                        Hashtable queryParams = new Hashtable { { "@IdProducto", idProducto }, { "@Stock", entity.Stock } };
-                        DatabaseSql.Write(new SqlCommand("Inventarios"), queryParams);
-                    }
+                    Hashtable queryParams = new Hashtable { { "@IdProducto", idProducto }, { "@Stock", entity.Stock } };
+                    id = DatabaseSql.WriteAndGetId(new SqlCommand("CreateInventario"), queryParams, "@NewInventarioID");
                 }
                 catch(SqlException ex) { }
                 catch (Exception ex)
@@ -133,7 +130,7 @@ namespace MPP
             {
                 productoMapper.Update(docToUpdate.Producto, newData.Producto);
 
-                Hashtable queryParams = new Hashtable { { "@Stock", newData.Stock } };
+                Hashtable queryParams = new Hashtable { { "@Stock", newData.Stock }, { "@IdInventarioModificar", docToUpdate.Id} };
 
                 DatabaseSql.Write(new SqlCommand("UpdateInventarioById"), queryParams);
             }

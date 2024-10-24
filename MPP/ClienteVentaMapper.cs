@@ -32,7 +32,7 @@ namespace MPP
                     if (IdVenta != -1)
                     {
                         Hashtable queryParams = new Hashtable { { "@IdVenta", IdVenta }, { "@IdCliente",  entity.Cliente.Id} };
-                        DatabaseSql.Write(new SqlCommand("CreateClienteVenta"), queryParams);
+                        id = DatabaseSql.WriteAndGetId(new SqlCommand("CreateClienteVenta"), queryParams, "@IdClienteVenta");
                     }
                 }
                 catch (SqlException ex) { }

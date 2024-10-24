@@ -78,6 +78,50 @@ namespace DAL
             }
         }
 
+        public static int WriteAndGetId(SqlCommand query, Hashtable queryParams, string outputParamName)
+        {
+            using (SqlConnection connection = GetConnection())
+            {
+                connection.Open();
+                using (SqlTransaction transaction = connection.BeginTransaction())
+                {
+                    query.Connection = connection;
+                    query.Transaction = transaction;
+                    query.CommandType = CommandType.StoredProcedure;
+
+                    // Agregar parámetros a la consulta
+                    AddParamsToQuery(query, queryParams);
+
+                    // Definir el parámetro de salida para el ID
+                    SqlParameter outputParam = new SqlParameter(outputParamName, SqlDbType.Int)
+                    {
+                        Direction = ParameterDirection.Output
+                    };
+                    query.Parameters.Add(outputParam); // Asegúrate de agregar el parámetro de salida
+
+                    try
+                    {
+                        query.ExecuteNonQuery(); // Ejecutar el stored procedure
+                        transaction.Commit();
+
+                        // Capturar y retornar el valor del parámetro de salida
+                        int newId = (int)outputParam.Value;
+                        return newId;
+                    }
+                    catch (SqlException ex)
+                    {
+                        transaction.Rollback();
+                        throw new Exception($"No se pudo insertar el dato en la BD {ex.Message}");
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+                        throw ex;
+                    }
+                }
+            }
+        }
+
 
         private static void AddParamsToQuery(SqlCommand query, Hashtable queryParams) 
         {

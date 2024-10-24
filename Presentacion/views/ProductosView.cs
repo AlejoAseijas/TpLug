@@ -69,7 +69,7 @@ namespace Presentacion.views
 
                 if (TipoDeProducto.ELECTRONICO.Equals(tipoDeProducto))
                 {
-                    string consumo = this.comboBox1.SelectedItem.ToString();
+                    string consumo = this.comboBox1.SelectedItem != null ? this.comboBox1.SelectedItem.ToString() : null;
                     producto = new ProductoElectronico(categoria, subCategoria, nombreProducto, provedor, precioCosto, consumo);
                 }
 

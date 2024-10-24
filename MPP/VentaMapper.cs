@@ -25,7 +25,7 @@ namespace MPP
 
             try
             {
-                DatabaseSql.Write(sqlCommand, queryParams);
+                id = DatabaseSql.WriteAndGetId(sqlCommand, queryParams, "@IdVenta");
             }
             catch (SqlException ex)
             {

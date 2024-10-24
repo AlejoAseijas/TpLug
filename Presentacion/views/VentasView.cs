@@ -63,9 +63,17 @@ namespace Presentacion.views
                     clientevVenta.Ventas = new List<Venta>();
                     clientevVenta.Ventas.Add(venta);
 
-                    ventaService.Create(clientevVenta);
-                    this.txtQty.Text = string.Empty;
-                    refreshVentasByCliente(ventaService.GetVentasByIdCliente(cliente.Id));
+                    if(ventaService.checkVenta(inventario, qty)) 
+                    {
+                        ventaService.Create(clientevVenta);
+                        this.txtQty.Text = string.Empty;
+                        refreshVentasByCliente(ventaService.GetVentasByIdCliente(cliente.Id));
+                        refreshProductos();
+                    } else
+                    {
+                        MessageBox.Show("Stock no valido");
+                    }
+
                 }
                 catch (Exception ex)
                 {
