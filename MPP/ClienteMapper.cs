@@ -14,6 +14,8 @@ namespace MPP
 {
     public class ClienteMapper : IMappable<Cliente>
     {
+        public string TABLE_NAME => "Clientes";
+
         public int Create(Cliente entity)
         {
             Hashtable queryParams = new Hashtable { { "@Nombre", entity.Nombre}, {"@Apellido", entity.Apellido}, { "@DNI", entity.DNI} };

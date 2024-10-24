@@ -16,6 +16,8 @@ namespace MPP
     {
         private ProductoMapper productoMapper = new ProductoMapper();
 
+        public string TABLE_NAME => "Inventarios";
+
         public int Create(Inventario entity)
         {
             int id = -1;
