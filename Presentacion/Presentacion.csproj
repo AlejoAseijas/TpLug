@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserAuthForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserAuthForm.Designer.cs">
+      <DependentUpon>UserAuthForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="views\ClienteView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserAuthForm.resx">
+      <DependentUpon>UserAuthForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="views\ClienteView.resx">
       <DependentUpon>ClienteView.cs</DependentUpon>
     </EmbeddedResource>

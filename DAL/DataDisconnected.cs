@@ -12,21 +12,33 @@ namespace DAL
 {
     public class DataDisconnected
     {
-        public static DataSet Read(SqlCommand query, Hashtable queryParams)
+        private static DataSet dataSet = null;
+
+        public static DataSet Read(string tableName, bool force) 
         {
-            DataSet dataSet = new DataSet();
+
+            if (dataSet == null | force) 
+            {
+                dataSet = Read(tableName);
+            }
+
+            return dataSet;
+        }
+
+        private static DataSet Read(string tableName)
+        {
+
             using (SqlConnection connection = DatabaseSql.GetConnection())
             {
+                SqlCommand query = new SqlCommand("SELECT * FROM " + tableName);
                 try
                 {
                     query.Connection = connection;
-                    query.CommandType = CommandType.StoredProcedure;
-
-                    AddParamsToQuery(query, queryParams);
 
                     using (SqlDataAdapter adapter = new SqlDataAdapter(query))
                     {
                         connection.Open();
+                        dataSet = new DataSet();
                         adapter.Fill(dataSet);
                     }
                 }
@@ -42,26 +54,26 @@ namespace DAL
             return dataSet;
         }
 
-        public static void Update(SqlCommand query, DataSet dataSet, string tableName)
+        public static void Update(DataSet dataSet, string tableName)
         {
             using (SqlConnection connection = DatabaseSql.GetConnection())
             {
                 try
                 {
+                    SqlCommand query = new SqlCommand("SELECT * FROM " + tableName);
                     query.Connection = connection;
-                    query.CommandType = CommandType.StoredProcedure;
 
                     using (SqlDataAdapter adapter = new SqlDataAdapter(query))
                     {
-                        SqlCommandBuilder commandBuilder = new SqlCommandBuilder(adapter);
+                        SqlCommandBuilder Cb = new SqlCommandBuilder(adapter);
 
-                        adapter.UpdateCommand = commandBuilder.GetUpdateCommand();
-                        adapter.DeleteCommand = commandBuilder.GetDeleteCommand();
-                        adapter.InsertCommand = commandBuilder.GetInsertCommand();
+                        adapter.UpdateCommand = Cb.GetUpdateCommand();
+                        adapter.DeleteCommand = Cb.GetDeleteCommand();
+                        adapter.InsertCommand = Cb.GetInsertCommand();
+                        adapter.ContinueUpdateOnError = true;
+                        adapter.Fill(dataSet);
 
-                        connection.Open();
-
-                        adapter.Update(dataSet, tableName);
+                        adapter.Update(dataSet.Tables[0]);
                     }
                 }
                 catch (SqlException ex)
@@ -75,17 +87,6 @@ namespace DAL
             }
         }
 
-        // Método privado para agregar parámetros al SqlCommand
-        private static void AddParamsToQuery(SqlCommand query, Hashtable queryParams)
-        {
-            if (queryParams != null && queryParams.Count > 0)
-            {
-                foreach (string queryParam in queryParams.Keys)
-                {
-                    query.Parameters.AddWithValue(queryParam, queryParams[queryParam]);
-                }
-            }
-        }
     }
 
 }

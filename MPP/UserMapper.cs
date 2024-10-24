@@ -14,6 +14,8 @@ namespace MPP
 {
     public class UserMapper : IMappable<User>
     {
+        public string TABLE_NAME => "Users";
+
         public int Create(User entity)
         {
             int id = -1;

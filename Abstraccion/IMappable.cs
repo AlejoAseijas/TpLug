@@ -9,6 +9,7 @@ namespace Abstraccion
 {
     public interface IMappable<T>
     {
+        string TABLE_NAME { get; }
         T GetById(string Id);
         List<T> GetAll();
         int Create(T entity);

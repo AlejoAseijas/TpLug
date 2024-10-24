@@ -1,7 +1,9 @@
 ﻿using BE.models;
+using DAL;
 using MPP;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -18,6 +20,29 @@ namespace BLL
         public AuthService() 
         {
             base.Mapper = mapper;
+        }
+
+        public DataSet GetAll()
+        {
+            List<User> users = new List<User>();
+            DataSet dataSet = DataDisconnected.Read(base.Mapper.TABLE_NAME, false);
+            
+            return dataSet;
+        }
+
+        public bool SaveData(DataSet dataSet)
+        {
+            try 
+            {
+                DataDisconnected.Update(dataSet, base.Mapper.TABLE_NAME);
+                DataDisconnected.Read(base.Mapper.TABLE_NAME, true);
+                return true;
+            }
+            catch(Exception ex) 
+            { 
+                return false; 
+            }
+         
         }
 
         public bool LogIn(AuthDTO authDto)
