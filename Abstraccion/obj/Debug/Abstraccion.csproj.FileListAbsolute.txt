@@ -22,3 +22,6 @@ C:\Users\AlejoAseijas\source\repos\TpLug\Abstraccion\obj\Debug\Abstraccion.cspro
 C:\Users\AlejoAseijas\source\repos\TpLug\Abstraccion\obj\Debug\Abstraccion.csproj.CoreCompileInputs.cache
 C:\Users\AlejoAseijas\source\repos\TpLug\Abstraccion\obj\Debug\Abstraccion.dll
 C:\Users\AlejoAseijas\source\repos\TpLug\Abstraccion\obj\Debug\Abstraccion.pdb
+C:\Users\AlejoAseijas\source\repos\TpLug\Abstraccion\bin\Debug\DAL.dll
+C:\Users\AlejoAseijas\source\repos\TpLug\Abstraccion\bin\Debug\DAL.pdb
+C:\Users\AlejoAseijas\source\repos\TpLug\Abstraccion\obj\Debug\Abstracc.2A96EC9B.Up2Date

@@ -16,18 +16,9 @@ namespace BLL
         private UnicodeEncoding unicodeEncoding = new UnicodeEncoding();
         private SHA1CryptoServiceProvider algorit = new SHA1CryptoServiceProvider();
         private UserMapper mapper = new UserMapper();
-
         public AuthService() 
         {
             base.Mapper = mapper;
-        }
-
-        public DataSet GetAll()
-        {
-            List<User> users = new List<User>();
-            DataSet dataSet = DataDisconnected.Read(base.Mapper.TABLE_NAME, false);
-            
-            return dataSet;
         }
 
         public bool SaveData(DataSet dataSet)

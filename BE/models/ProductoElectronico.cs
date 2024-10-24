@@ -10,6 +10,8 @@ namespace BE.models
     {
         public string Consumo { get; set; }
 
+        public ProductoElectronico() { }
+
         public ProductoElectronico(string categoria, string subcategoria, string nombre, Proveedor proveedor, float precioCosto, string consumo)
         {
             base.Categoria = categoria;

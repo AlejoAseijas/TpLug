@@ -10,6 +10,8 @@ namespace BE.models
     {
         public DateTime FechaDeVencimiento { get; set; }
 
+        public ProductoAlimenticio() { }    
+
         public ProductoAlimenticio(string categoria, string subcategoria, string nombre, Proveedor proveedor, float precioCosto, DateTime fechaDeVencimiento)
         {
             base.Categoria = categoria;

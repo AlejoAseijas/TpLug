@@ -39,20 +39,16 @@ namespace Presentacion.views
 
         private void refreshDataSource()
         {
-            List<Cliente> clientes = clienteService.GetAll();
-
-            clientes.Sort();
-            Clear();
-
             this.dataGridView1.DataSource = null;
-            this.dataGridView1.DataSource = clientes;
+            this.dataGridView1.DataSource = clienteService.GetAll();
             this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            Clear();
         }
 
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            Cliente cliente = (Cliente)this.dataGridView1.CurrentRow.DataBoundItem;
+            Cliente cliente = GetClienteByDataGridView();
 
             if (cliente != null)
             {
@@ -77,6 +73,23 @@ namespace Presentacion.views
 
                 //refreshVentas(ventasDelCliente);
             }
+        }
+
+        public Cliente GetClienteByDataGridView() 
+        {
+            Cliente cliente = new Cliente();
+            DataGridViewRow data = (DataGridViewRow)this.dataGridView1.CurrentRow;
+
+            if (data != null) 
+            {
+                cliente.Id = Convert.ToInt32(data.Cells["IdCliente"].Value.ToString());
+                cliente.Nombre = data.Cells["Nombre"].Value.ToString();
+                cliente.Apellido = data.Cells["Apellido"].Value.ToString();
+                cliente.DNI = data.Cells["DNI"].Value.ToString();
+            }
+
+
+            return cliente;
         }
 
         private void btnModificar_Click(object sender, EventArgs e)

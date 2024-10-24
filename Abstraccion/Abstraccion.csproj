@@ -44,7 +44,14 @@
     <Compile Include="AbstracEntity.cs" />
     <Compile Include="AbstractService.cs" />
     <Compile Include="IMappable.cs" />
+    <Compile Include="PersistibleService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{1886b02d-601d-4662-a555-28e715175683}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

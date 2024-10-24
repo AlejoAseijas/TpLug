@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="DatabaseSql.cs" />
     <Compile Include="DataDisconnected.cs" />
+    <Compile Include="DataManager.cs" />
+    <Compile Include="DataXml.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -69,22 +69,42 @@ namespace MPP
             { }
         }
 
-        public List<Producto> GetAll()
+        //public List<Producto> GetAll()
+        //{
+        //    List<Producto> productos = new List<Producto>();
+        //    DataTable Tabla = null;
+
+        //    try
+        //    {
+        //        Tabla = DatabaseSql.Read(new SqlCommand("GetAllProductos"), null).Tables[0];
+
+        //        if (Tabla != null && Tabla.Rows.Count > 0)
+        //        {
+        //            foreach (DataRow fila in Tabla.Rows)
+        //            {
+        //                productos.Add(ToMap(fila));
+        //            }
+        //        }
+
+        //    }
+        //    catch (SqlException)
+        //    {
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //    }
+
+
+        //    return productos;
+        //}
+
+        public DataSet GetAll()
         {
-            List<Producto> productos = new List<Producto>();
-            DataTable Tabla = null;
+            DataSet dataSet = null;
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand("GetAllProductos"), null).Tables[0];
-
-                if (Tabla != null && Tabla.Rows.Count > 0)
-                {
-                    foreach (DataRow fila in Tabla.Rows)
-                    {
-                        productos.Add(ToMap(fila));
-                    }
-                }
+                dataSet = DatabaseSql.Read(new SqlCommand("GetAllProductos"), null);
 
             }
             catch (SqlException)
@@ -95,7 +115,7 @@ namespace MPP
             }
 
 
-            return productos;
+            return dataSet;
         }
 
         public Producto GetById(string Id)

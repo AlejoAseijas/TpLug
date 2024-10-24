@@ -60,12 +60,6 @@
     <Compile Include="views\ClienteView.Designer.cs">
       <DependentUpon>ClienteView.cs</DependentUpon>
     </Compile>
-    <Compile Include="views\InformesView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="views\InformesView.Designer.cs">
-      <DependentUpon>InformesView.cs</DependentUpon>
-    </Compile>
     <Compile Include="views\LogInView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,9 +104,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="views\ClienteView.resx">
       <DependentUpon>ClienteView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="views\InformesView.resx">
-      <DependentUpon>InformesView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="views\LogInView.resx">
       <DependentUpon>LogInView.cs</DependentUpon>

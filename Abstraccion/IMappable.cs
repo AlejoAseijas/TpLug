@@ -11,7 +11,7 @@ namespace Abstraccion
     {
         string TABLE_NAME { get; }
         T GetById(string Id);
-        List<T> GetAll();
+        DataSet GetAll();
         int Create(T entity);
         void DeleteById(int Id);
         void Update(T docToUpdate, T newData);

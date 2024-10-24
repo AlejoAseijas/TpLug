@@ -53,30 +53,48 @@ namespace MPP
 
         }
 
-        public List<User> GetAll()
+        //public List<User> GetAll()
+        //{
+        //    List<User> list = new List<User>();
+        //    SqlCommand sqlCommand = new SqlCommand("GetAllUsers");
+
+        //    try 
+        //    {
+        //        DataTable Tabla = DatabaseSql.Read(sqlCommand, null).Tables[0];
+
+        //        if(Tabla != null && Tabla.Rows.Count > 0)
+        //        {
+        //            foreach (DataRow row in Tabla.Rows)
+        //            {
+        //                list.Add(ToMap(row));
+        //            }
+        //        } 
+
+        //    }
+        //    catch (SqlException ex) 
+        //    { }
+        //    catch(Exception ex) 
+        //    { }
+
+        //    return list;
+        //}
+
+        public DataSet GetAll()
         {
-            List<User> list = new List<User>();
+            DataSet dataSet = new DataSet();
             SqlCommand sqlCommand = new SqlCommand("GetAllUsers");
 
-            try 
+            try
             {
-                DataTable Tabla = DatabaseSql.Read(sqlCommand, null).Tables[0];
-
-                if(Tabla != null && Tabla.Rows.Count > 0)
-                {
-                    foreach (DataRow row in Tabla.Rows)
-                    {
-                        list.Add(ToMap(row));
-                    }
-                } 
+                dataSet = DatabaseSql.Read(sqlCommand, null);
 
             }
-            catch (SqlException ex) 
+            catch (SqlException ex)
             { }
-            catch(Exception ex) 
+            catch (Exception ex)
             { }
 
-            return list;
+            return dataSet;
         }
 
         public User GetById(string Id)

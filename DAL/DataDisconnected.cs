@@ -13,6 +13,7 @@ namespace DAL
     public class DataDisconnected
     {
         private static DataSet dataSet = null;
+        private DatabaseSql databaseSql = new DatabaseSql();
 
         public static DataSet Read(string tableName, bool force) 
         {
@@ -51,6 +52,37 @@ namespace DAL
                     throw ex;
                 }
             }
+            return dataSet;
+        }
+
+        public static DataSet ReadAll() 
+        {
+           DataSet TablesNames = DatabaseSql.Read(new SqlCommand("GetAllTablesNames"), null);
+
+            dataSet = dataSet == null ? new DataSet() : dataSet;
+
+            if (TablesNames != null) 
+            {
+                DataTable Table = TablesNames.Tables[0];
+                foreach (DataRow Row in Table.Rows) 
+                {
+                    string storeName = "GetAll" + Row[0].ToString();
+
+                    DataSet data = DatabaseSql.Read(new SqlCommand(storeName), null);
+
+                    if (data != null) 
+                    {
+                        DataTable dataTable = data.Tables[0];
+
+                        DataTable clonedTable = dataTable.Copy();
+                        clonedTable.TableName = Row[0].ToString();
+
+                        dataSet.Tables.Add(clonedTable);
+                    }
+
+                }
+            }
+
             return dataSet;
         }
 

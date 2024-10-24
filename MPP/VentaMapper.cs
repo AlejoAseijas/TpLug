@@ -55,15 +55,43 @@ namespace MPP
             { }
         }
 
-        public List<Venta> GetAll()
-        {
-            List<Venta> ventas = new List<Venta>();
+        //public List<Venta> GetAll()
+        //{
+        //    List<Venta> ventas = new List<Venta>();
 
-            DataTable Tabla = null;
+        //    DataTable Tabla = null;
+
+        //    try
+        //    {
+        //        Tabla = DatabaseSql.Read(new SqlCommand("GetAllVentas"), null).Tables[0];
+        //    }
+        //    catch (SqlException ex)
+        //    {
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //    }
+
+        //    if (Tabla != null && Tabla.Rows.Count > 0)
+        //    {
+        //        foreach (DataRow fila in Tabla.Rows)
+        //        {
+        //            ventas.Add(ToMap(fila));
+        //        }
+        //    }
+
+        //    return ventas;
+        //}
+
+        public DataSet GetAll()
+        {
+            DataSet dataSet = null;
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand("GetAllVentas"), null).Tables[0];
+                dataSet = DatabaseSql.Read(new SqlCommand("GetAllVentas"), null);
             }
             catch (SqlException ex)
             {
@@ -74,15 +102,7 @@ namespace MPP
 
             }
 
-            if (Tabla != null && Tabla.Rows.Count > 0)
-            {
-                foreach (DataRow fila in Tabla.Rows)
-                {
-                    ventas.Add(ToMap(fila));
-                }
-            }
-
-            return ventas;
+            return dataSet;
         }
 
         public Venta GetById(string Id)

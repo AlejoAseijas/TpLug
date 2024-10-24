@@ -45,7 +45,7 @@ namespace Presentacion.views
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Cliente cliente = (Cliente)this.dataGridViewClientes.CurrentRow.DataBoundItem;
-            Inventario inventario = (Inventario)this.dataGridViewProductos.CurrentRow.DataBoundItem;
+            Inventario inventario = GetInventarioByDataGridView();
             int qty = Convert.ToInt32(this.txtQty.Text);
 
             if (cliente != null && inventario != null)
@@ -95,9 +95,52 @@ namespace Presentacion.views
 
         }
 
+        public Inventario GetInventarioByDataGridView()
+        {
+            Inventario inventario = new Inventario();
+            DataGridViewRow data = (DataGridViewRow)this.dataGridViewProductos.CurrentRow;
+
+            if (data != null)
+            {
+                Producto producto = null;
+                string Consumo = data.Cells["Consumo"].Value.ToString();
+
+                if (!string.IsNullOrEmpty(Consumo))
+                {
+                    ProductoElectronico electronico = new ProductoElectronico();
+                    electronico.Consumo = Consumo;
+                    producto = electronico;
+                }
+                else
+                {
+                    ProductoAlimenticio productoAlimenticio = new ProductoAlimenticio();
+                    productoAlimenticio.FechaDeVencimiento = DateTime.Parse(data.Cells["FechaDeVencimiento"].Value.ToString());
+                    producto = productoAlimenticio;
+                }
+
+                producto.Id = Convert.ToInt32(data.Cells["IdProducto"].Value.ToString());
+                producto.Categoria = data.Cells["Categoria"].Value.ToString();
+                producto.SubCategoria = data.Cells["SubCategoria"].Value.ToString();
+                producto.Nombre = data.Cells["Nombre"].Value.ToString();
+                producto.PrecioCosto = 1;
+
+                Proveedor proveedor = new Proveedor();
+                proveedor.Id = Convert.ToInt32(data.Cells["IdProveedor"].Value.ToString());
+                proveedor.Nombre = data.Cells["Proveedor"].Value.ToString();
+
+                producto.Proveedor = proveedor;
+
+                inventario.Producto = producto;
+                inventario.Stock = Convert.ToInt32(data.Cells["Stock"].Value.ToString());
+
+            }
+
+            return inventario;
+        }
+
         private void dataGridViewClientes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Cliente cliente = (Cliente)this.dataGridViewClientes.CurrentRow.DataBoundItem;
+            Cliente cliente = GetClienteByDataGridView();
 
             if (cliente != null) 
             {
@@ -105,6 +148,24 @@ namespace Presentacion.views
             }
 
         }
+
+        public Cliente GetClienteByDataGridView()
+        {
+            Cliente cliente = new Cliente();
+            DataGridViewRow data = (DataGridViewRow)this.dataGridViewClientes.CurrentRow;
+
+            if (data != null)
+            {
+                cliente.Id = Convert.ToInt32(data.Cells["IdCliente"].Value.ToString());
+                cliente.Nombre = data.Cells["Nombre"].Value.ToString();
+                cliente.Apellido = data.Cells["Apellido"].Value.ToString();
+                cliente.DNI = data.Cells["DNI"].Value.ToString();
+            }
+
+
+            return cliente;
+        }
+
 
         private void refreshVentasByCliente(List<Venta> ventas)
         {

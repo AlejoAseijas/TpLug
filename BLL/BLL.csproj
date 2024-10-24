@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="AuthService.cs" />
     <Compile Include="ClienteService.cs" />
-    <Compile Include="InformeService.cs" />
     <Compile Include="InventarioService.cs" />
     <Compile Include="ProductoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -11,6 +11,7 @@ namespace BLL
     public abstract class AbstractService<T> 
     {
         public IMappable<T> Mapper { get; set; }
+        private PersistibleService persistibleService = new PersistibleService();
 
         public virtual int Create(T entity)
         {
@@ -22,9 +23,9 @@ namespace BLL
             Mapper.DeleteById(Id);
         }
 
-        public virtual List<T> GetAll()
+        public virtual DataTable GetAll()
         {
-            return Mapper.GetAll();
+            return persistibleService.getTable(Mapper.TABLE_NAME);
         }
 
         public virtual T GetById(string Id)

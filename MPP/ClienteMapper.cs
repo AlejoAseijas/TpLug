@@ -55,15 +55,43 @@ namespace MPP
             }
         }
 
-        public List<Cliente> GetAll()
-        {
-            List<Cliente> clientes = new List<Cliente>();
+        //public List<Cliente> GetAll()
+        //{
+        //    List<Cliente> clientes = new List<Cliente>();
 
-            DataTable Tabla = null;
+        //    DataTable Tabla = null;
+
+        //    try
+        //    {
+        //        Tabla = DatabaseSql.Read(new SqlCommand("GetAllClientes"), null).Tables[0];
+        //    }
+        //    catch (SqlException ex)
+        //    {
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //    }
+
+        //    if (Tabla != null && Tabla.Rows.Count > 0)
+        //    {
+        //        foreach (DataRow fila in Tabla.Rows)
+        //        {
+        //            clientes.Add(ToMap(fila));
+        //        }
+        //    }
+
+        //    return clientes;
+        //}
+
+        public DataSet GetAll()
+        {
+            DataSet dataSet = null;
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand("GetAllClientes"), null).Tables[0];
+                dataSet = DatabaseSql.Read(new SqlCommand("GetAllClientes"), null);
             }
             catch (SqlException ex)
             {
@@ -74,15 +102,7 @@ namespace MPP
 
             }
 
-            if (Tabla != null && Tabla.Rows.Count > 0)
-            {
-                foreach (DataRow fila in Tabla.Rows)
-                {
-                    clientes.Add(ToMap(fila));
-                }
-            }
-
-            return clientes;
+            return dataSet;
         }
 
         public Cliente GetById(string Id)

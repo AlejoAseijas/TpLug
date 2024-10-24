@@ -164,7 +164,7 @@ namespace Presentacion.views
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            Inventario inventario = (Inventario)this.dataGridView1.CurrentRow.DataBoundItem;
+            Inventario inventario = GetInventarioByDataGridView();
 
             if (inventario != null)
             {
@@ -190,6 +190,49 @@ namespace Presentacion.views
                     this.dateTimePicker1.Value = alimenticio.FechaDeVencimiento;
                 }
             }
+        }
+
+        public Inventario GetInventarioByDataGridView()
+        {
+            Inventario inventario = new Inventario();
+            DataGridViewRow data = (DataGridViewRow)this.dataGridView1.CurrentRow;
+
+            if (data != null) 
+            {
+                Producto producto = null;
+                string Consumo = data.Cells["Consumo"].Value.ToString();
+
+                if (!string.IsNullOrEmpty(Consumo)) 
+                {
+                    ProductoElectronico electronico = new ProductoElectronico();
+                    electronico.Consumo = Consumo;
+                    producto = electronico;
+                }
+                else 
+                {
+                    ProductoAlimenticio productoAlimenticio = new ProductoAlimenticio();
+                    productoAlimenticio.FechaDeVencimiento = DateTime.Parse(data.Cells["FechaDeVencimiento"].Value.ToString());
+                    producto = productoAlimenticio;
+                }
+
+                producto.Id = Convert.ToInt32(data.Cells["IdProducto"].Value.ToString());
+                producto.Categoria = data.Cells["Categoria"].Value.ToString();
+                producto.SubCategoria = data.Cells["SubCategoria"].Value.ToString();
+                producto.Nombre = data.Cells["Nombre"].Value.ToString();
+                producto.PrecioCosto = 1;
+
+                Proveedor proveedor = new Proveedor();
+                proveedor.Id = Convert.ToInt32(data.Cells["IdProveedor"].Value.ToString());
+                proveedor.Nombre = data.Cells["Proveedor"].Value.ToString();
+
+                producto.Proveedor = proveedor;
+
+                inventario.Producto = producto;
+                inventario.Stock = Convert.ToInt32(data.Cells["Stock"].Value.ToString());
+
+            }
+
+            return inventario;
         }
 
         private void txtPrecioCosto_KeyPress(object sender, KeyPressEventArgs e)

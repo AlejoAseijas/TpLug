@@ -62,14 +62,39 @@ namespace MPP
 
         }
 
-        public List<Inventario> GetAll()
+        //public List<Inventario> GetAll()
+        //{
+        //    List<Inventario> inventarios = new List<Inventario>();
+        //    DataTable Tabla = null;
+
+        //    try
+        //    {
+        //        Tabla = DatabaseSql.Read(new SqlCommand("GetAllInventarios"), null).Tables[0];
+        //    }
+        //    catch (SqlException)
+        //    {
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //    }
+
+        //    if (Tabla != null && Tabla.Rows.Count > 0)
+        //    {
+        //        foreach (DataRow fila in Tabla.Rows)
+        //        {
+        //            inventarios.Add(ToMap(fila));
+        //        }
+        //    }
+        //    return inventarios;
+        //}
+
+        public DataSet GetAll()
         {
-            List<Inventario> inventarios = new List<Inventario>();
-            DataTable Tabla = null;
+            DataSet dataSet = null;
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand("GetAllInventarios"), null).Tables[0];
+                dataSet = DatabaseSql.Read(new SqlCommand("GetAllInventarios"), null);
             }
             catch (SqlException)
             {
@@ -78,14 +103,7 @@ namespace MPP
             {
             }
 
-            if (Tabla != null && Tabla.Rows.Count > 0)
-            {
-                foreach (DataRow fila in Tabla.Rows)
-                {
-                    inventarios.Add(ToMap(fila));
-                }
-            }
-            return inventarios;
+            return dataSet;
         }
 
         public Inventario GetById(string Id)

@@ -62,15 +62,68 @@ namespace MPP
             { }
         }
 
-        public List<ClienteVenta> GetAll()
-        {
-            List<ClienteVenta> clientes = new List<ClienteVenta>();
+        //public List<ClienteVenta> GetAll()
+        //{
+        //    List<ClienteVenta> clientes = new List<ClienteVenta>();
 
-            DataTable Tabla = null;
+        //    DataTable Tabla = null;
+
+        //    try
+        //    {
+        //        Tabla = DatabaseSql.Read(new SqlCommand("GetAllClienteVenta"), null).Tables[0];
+        //    }
+        //    catch (SqlException ex)
+        //    {
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+
+        //    }
+
+        //    if (Tabla != null && Tabla.Rows.Count > 0)
+        //    {
+        //        Dictionary<Cliente, List<Venta>> ventasPorCliente = new Dictionary<Cliente, List<Venta>>();
+
+        //        foreach (DataRow fila in Tabla.Rows)
+        //        {
+        //            Cliente cliente = clienteMapper.ToMap(fila);
+        //            Venta venta = VentaMapper.ToMap(fila);
+
+        //            if (cliente != null) 
+        //            {
+        //                if (ventasPorCliente.ContainsKey(cliente))
+        //                {
+        //                    ventasPorCliente[cliente].Add(venta);
+        //                }
+        //                else
+        //                {
+        //                    ventasPorCliente[cliente] = new List<Venta> { venta };
+        //                }
+        //            }
+        //        }
+
+        //        foreach (var entry in ventasPorCliente)
+        //        {
+        //            ClienteVenta clienteVenta = new ClienteVenta
+        //            {
+        //                Cliente = entry.Key,
+        //                Ventas = entry.Value
+        //            };
+        //            clientes.Add(clienteVenta);
+        //        }
+        //    }
+
+        //    return clientes;
+        //}
+
+        public DataSet GetAll()
+        {
+            DataSet dataSet = null;
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand("GetAllClienteVenta"), null).Tables[0];
+                dataSet = DatabaseSql.Read(new SqlCommand("GetAllClienteVenta"), null);
             }
             catch (SqlException ex)
             {
@@ -81,41 +134,9 @@ namespace MPP
 
             }
 
-            if (Tabla != null && Tabla.Rows.Count > 0)
-            {
-                Dictionary<Cliente, List<Venta>> ventasPorCliente = new Dictionary<Cliente, List<Venta>>();
-
-                foreach (DataRow fila in Tabla.Rows)
-                {
-                    Cliente cliente = clienteMapper.ToMap(fila);
-                    Venta venta = VentaMapper.ToMap(fila);
-
-                    if (cliente != null) 
-                    {
-                        if (ventasPorCliente.ContainsKey(cliente))
-                        {
-                            ventasPorCliente[cliente].Add(venta);
-                        }
-                        else
-                        {
-                            ventasPorCliente[cliente] = new List<Venta> { venta };
-                        }
-                    }
-                }
-
-                foreach (var entry in ventasPorCliente)
-                {
-                    ClienteVenta clienteVenta = new ClienteVenta
-                    {
-                        Cliente = entry.Key,
-                        Ventas = entry.Value
-                    };
-                    clientes.Add(clienteVenta);
-                }
-            }
-
-            return clientes;
+            return dataSet;
         }
+
 
         public ClienteVenta GetById(string Id)
         {

@@ -34,3 +34,5 @@ C:\Users\AlejoAseijas\source\repos\TpLug\BE\obj\Debug\BE.csproj.CoreCompileInput
 C:\Users\AlejoAseijas\source\repos\TpLug\BE\obj\Debug\BE.csproj.Up2Date
 C:\Users\AlejoAseijas\source\repos\TpLug\BE\obj\Debug\BE.dll
 C:\Users\AlejoAseijas\source\repos\TpLug\BE\obj\Debug\BE.pdb
+C:\Users\AlejoAseijas\source\repos\TpLug\BE\bin\Debug\DAL.dll
+C:\Users\AlejoAseijas\source\repos\TpLug\BE\bin\Debug\DAL.pdb
