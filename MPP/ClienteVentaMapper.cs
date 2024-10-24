@@ -68,7 +68,7 @@ namespace MPP
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand("GetAllClienteVenta"), null);
+                Tabla = DatabaseSql.Read(new SqlCommand("GetAllClienteVenta"), null).Tables[0];
             }
             catch (SqlException ex)
             {
@@ -123,7 +123,7 @@ namespace MPP
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand("GetAllClienteVenta"), null);
+                Tabla = DatabaseSql.Read(new SqlCommand("GetAllClienteVenta"), null).Tables[0];
             }
             catch (SqlException ex)
             {
@@ -180,7 +180,7 @@ namespace MPP
             try
             {
                 Hashtable queryParams = new Hashtable { { "@IdCliente", IdCliente } };
-                Tabla = DatabaseSql.Read(new SqlCommand("GetVentasByIdCliente"), queryParams);
+                Tabla = DatabaseSql.Read(new SqlCommand("GetVentasByIdCliente"), queryParams).Tables[0];
             }
             catch (SqlException ex)
             {

@@ -61,7 +61,7 @@ namespace MPP
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand("GetAllClientes"), null);
+                Tabla = DatabaseSql.Read(new SqlCommand("GetAllClientes"), null).Tables[0];
             }
             catch (SqlException ex)
             {
@@ -92,7 +92,7 @@ namespace MPP
             try
             {
                 Hashtable queryParams = new Hashtable { { "@IdCliente", int.Parse(Id) } };
-                Tabla = DatabaseSql.Read(new SqlCommand("GetClienteById"), null);
+                Tabla = DatabaseSql.Read(new SqlCommand("GetClienteById"), null).Tables[0];
             }
             catch (SqlException ex)
             {

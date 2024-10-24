@@ -11,14 +11,14 @@ namespace DAL
 {
     public class DatabaseSql
     {
-        private static SqlConnection GetConnection()
+        public static SqlConnection GetConnection()
         {
             return new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ProductosV2;Integrated Security=True;Encrypt=False");
         }
 
-        public static DataTable Read(SqlCommand query, Hashtable queryParams)
+        public static DataSet Read(SqlCommand query, Hashtable queryParams)
         {
-            DataTable tabla = new DataTable();
+            DataSet tabla = new DataSet();
             using (SqlConnection connection = GetConnection())
             {
                 try
@@ -121,7 +121,6 @@ namespace DAL
                 }
             }
         }
-
 
         private static void AddParamsToQuery(SqlCommand query, Hashtable queryParams) 
         {

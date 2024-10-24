@@ -74,7 +74,7 @@ namespace MPP
 
             try
             {
-                Tabla = DatabaseSql.Read(new SqlCommand("GetAllProductos"), null);
+                Tabla = DatabaseSql.Read(new SqlCommand("GetAllProductos"), null).Tables[0];
 
                 if (Tabla != null && Tabla.Rows.Count > 0)
                 {
@@ -167,8 +167,8 @@ namespace MPP
             DataTable Tabla = null;
 
             try
-            {
-                Tabla = DatabaseSql.Read(new SqlCommand("GetAllProveedores"), null);
+            {   
+                Tabla = DatabaseSql.Read(new SqlCommand("GetAllProveedores"), null).Tables[0];
             }
             catch (SqlException ex)
             {

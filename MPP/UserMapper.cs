@@ -58,7 +58,7 @@ namespace MPP
 
             try 
             {
-                DataTable Tabla = DatabaseSql.Read(sqlCommand, null);
+                DataTable Tabla = DatabaseSql.Read(sqlCommand, null).Tables[0];
 
                 if(Tabla != null && Tabla.Rows.Count > 0)
                 {
@@ -88,7 +88,7 @@ namespace MPP
                     SqlCommand sqlCommand = new SqlCommand("GetUserByDNI");
                     Hashtable queryParams = new Hashtable { { "@DNI", int.Parse(Id) } };
 
-                    DataTable Tabla = DatabaseSql.Read(sqlCommand, queryParams);
+                    DataTable Tabla = DatabaseSql.Read(sqlCommand, queryParams).Tables[0];
 
                     if (Tabla != null && Tabla.Rows.Count > 0)
                     {
