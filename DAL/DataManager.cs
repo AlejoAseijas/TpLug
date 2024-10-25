@@ -13,7 +13,8 @@ namespace DAL
         private DataSet DATA_SET = null;
         private static DataManager instance = null;
         private DataXml dataXml = new DataXml();
-        private bool fromDB = false;
+        private bool fromDB = true;
+       
         private DataManager() {}
 
         public static DataManager GetInstance()

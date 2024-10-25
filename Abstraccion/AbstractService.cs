@@ -37,7 +37,7 @@ namespace BLL
             persistibleService.update(Mapper.TABLE_NAME, Mapper.ID_COLUMN, id, GetData(newData));
         }
 
-        private Hashtable GetData(T entity)
+        public virtual Hashtable GetData(T entity)
         {
             Hashtable data = new Hashtable();
             Type type = typeof(T);

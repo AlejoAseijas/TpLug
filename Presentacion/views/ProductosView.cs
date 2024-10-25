@@ -44,7 +44,10 @@ namespace Presentacion.views
             this.comboBox2.DataSource = Enum.GetValues(typeof(TipoDeProducto));
 
             this.comboBox3.DataSource = null;
+
             this.comboBox3.DataSource = productoService.GetProveedores();
+            this.comboBox3.DisplayMember = "Nombre"; 
+            this.comboBox3.ValueMember = "IdProveedor"; 
 
             refresh();
         }
@@ -62,7 +65,7 @@ namespace Presentacion.views
             #region Provedor
             if (this.comboBox2.SelectedItem != null && this.comboBox3.SelectedItem != null) 
             {
-                Proveedor provedor = (Proveedor)this.comboBox3.SelectedItem;
+                Proveedor provedor = GetProveedor();
 
                 #region Valido que radioButton esta checked para generar sus correspondiete Producto
                 TipoDeProducto tipoDeProducto = (TipoDeProducto)this.comboBox2.SelectedItem;
@@ -109,6 +112,20 @@ namespace Presentacion.views
 
             return inventario;
         }
+
+        public Proveedor GetProveedor()
+        {
+            Proveedor proveedor = new Proveedor(); 
+
+            if (comboBox3.SelectedItem is DataRowView selectedRow)
+            {
+                proveedor.Id = Convert.ToInt32(selectedRow["IdProveedor"]); 
+                proveedor.Nombre = selectedRow["Nombre"].ToString(); 
+            }
+
+            return proveedor;
+        }
+
 
         private void btnModificar_Click_1(object sender, EventArgs e)
         {
@@ -244,5 +261,6 @@ namespace Presentacion.views
         {
             e.Handled = !char.IsNumber(e.KeyChar);
         }
+
     }
 }

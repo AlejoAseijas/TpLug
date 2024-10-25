@@ -2,6 +2,7 @@
 using BE.models;
 using MPP;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -22,6 +23,27 @@ namespace BLL
         public DataTable GetProveedores()
         {
             return persistibleService.getTable("Proveedores");
+        }
+
+        public override Hashtable GetData(Producto producto) 
+        {
+            Hashtable data = base.GetData(producto);
+
+            data.Add("IdProveedor", producto.Proveedor.Id);
+
+            if (producto is ProductoAlimenticio) 
+            {
+                ProductoAlimenticio productoAlimenticio = (ProductoAlimenticio)producto;
+                data.Add("FechaDeVencimiento", productoAlimenticio.FechaDeVencimiento);
+            }
+
+            if(producto is ProductoElectronico) 
+            {
+                ProductoElectronico productoElectronico = (ProductoElectronico)producto;
+                data.Add("Consumo", productoElectronico.Consumo);
+            }
+
+            return data;
         }
 
     }
