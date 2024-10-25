@@ -18,7 +18,7 @@ namespace DAL
             return instance = instance == null ? new DataManager() : instance;
         }
 
-        public DataSet ReadAll(bool force) 
+        public DataSet GetDataSet(bool force) 
         {
 
             if(DATA_SET == null || force) 
@@ -29,10 +29,24 @@ namespace DAL
             return DATA_SET;
         }
 
+        public DataSet GetDataSet()
+        {
+            return GetDataSet(false);
+        }
+
+
         public DataTable GetTableByName(string tableName) 
         {
-            DATA_SET = DATA_SET == null ? ReadAll(true) : DATA_SET;
+            DATA_SET = DATA_SET == null ? GetDataSet(true) : DATA_SET;
             return DATA_SET.Tables[tableName];
+        }
+
+        public void UpdateDataSet(DataSet data) 
+        {
+            if (data != null) 
+            {
+                DATA_SET = data;
+            }
         }
     }
 }

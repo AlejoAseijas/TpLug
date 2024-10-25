@@ -112,17 +112,17 @@ namespace Presentacion.views
 
         private void btnModificar_Click_1(object sender, EventArgs e)
         {
-            Inventario inventario = (Inventario)this.dataGridView1.CurrentRow.DataBoundItem;
+            Inventario inventario = GetInventarioByDataGridView();
             Inventario nuevoInventario = getProductoFromUI();
 
-            inventarioService.Update(inventario, nuevoInventario);
+            inventarioService.Update(inventario.Id, nuevoInventario);
 
             refresh();
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
-            Inventario inventario = (Inventario)this.dataGridView1.CurrentRow.DataBoundItem;
+            Inventario inventario = GetInventarioByDataGridView();
             inventarioService.DeleteById(inventario.Id);
             refresh();
         }

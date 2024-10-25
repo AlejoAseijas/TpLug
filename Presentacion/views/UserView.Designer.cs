@@ -33,9 +33,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.userAuthForm1 = new Presentacion.UserAuthForm();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.button3 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -45,6 +45,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(318, 181);
             this.dataGridView1.TabIndex = 42;
             // 
@@ -89,13 +90,15 @@
             this.groupBox1.Text = "groupBox1";
             this.groupBox1.Visible = false;
             // 
-            // textBox1
+            // button3
             // 
-            this.textBox1.Location = new System.Drawing.Point(38, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(93, 20);
-            this.textBox1.TabIndex = 46;
+            this.button3.Location = new System.Drawing.Point(6, 181);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(343, 23);
+            this.button3.TabIndex = 48;
+            this.button3.Text = "Agregar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // label1
             // 
@@ -106,15 +109,13 @@
             this.label1.TabIndex = 47;
             this.label1.Text = "Id";
             // 
-            // button3
+            // textBox1
             // 
-            this.button3.Location = new System.Drawing.Point(6, 181);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(343, 23);
-            this.button3.TabIndex = 48;
-            this.button3.Text = "Agregar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.textBox1.Location = new System.Drawing.Point(38, 30);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(93, 20);
+            this.textBox1.TabIndex = 46;
             // 
             // UserView
             // 

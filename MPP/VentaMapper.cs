@@ -15,6 +15,7 @@ namespace MPP
     public class VentaMapper : IMappable<Venta>
     {
         public string TABLE_NAME => "Ventas";
+        public string ID_COLUMN => "IdVenta";
 
         public int Create(Venta entity)
         {

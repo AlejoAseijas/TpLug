@@ -94,12 +94,12 @@ namespace Presentacion.views
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Cliente clienteAModificar = (Cliente)this.dataGridView1.CurrentRow.DataBoundItem;
+            Cliente clienteAModificar = GetClienteByDataGridView();
 
             if (clienteAModificar != null)
             {
                 Cliente clienteNuevosDatos = getClienteFromUI();
-                clienteService.Update(clienteAModificar, clienteNuevosDatos);
+                clienteService.Update(clienteAModificar.Id, clienteNuevosDatos);
             }
             refreshDataSource();
         }
@@ -111,7 +111,7 @@ namespace Presentacion.views
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
-            Cliente cliente = (Cliente)this.dataGridView1.CurrentRow.DataBoundItem;
+            Cliente cliente = GetClienteByDataGridView();
             clienteService.DeleteById(cliente.Id);
             refreshDataSource();
         }

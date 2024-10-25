@@ -44,7 +44,7 @@ namespace Presentacion.views
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            Cliente cliente = (Cliente)this.dataGridViewClientes.CurrentRow.DataBoundItem;
+            Cliente cliente = GetClienteByDataGridView();
             Inventario inventario = GetInventarioByDataGridView();
             int qty = Convert.ToInt32(this.txtQty.Text);
 

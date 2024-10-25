@@ -16,6 +16,8 @@ namespace MPP
     {
         public string TABLE_NAME => "Clientes";
 
+        public string ID_COLUMN => "IdCliente";
+
         public int Create(Cliente entity)
         {
             Hashtable queryParams = new Hashtable { { "@Nombre", entity.Nombre}, {"@Apellido", entity.Apellido}, { "@DNI", entity.DNI} };

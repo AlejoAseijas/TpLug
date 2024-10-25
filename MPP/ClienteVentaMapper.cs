@@ -18,6 +18,7 @@ namespace MPP
         private ClienteMapper clienteMapper = new ClienteMapper();
 
         public string TABLE_NAME => "ClienteVenta";
+        public string ID_COLUMN => "IdClienteVenta";
 
         public int Create(ClienteVenta entity)
         {

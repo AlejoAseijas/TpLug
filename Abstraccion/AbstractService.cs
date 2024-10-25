@@ -1,26 +1,30 @@
 ﻿using Abstraccion;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace BLL
 {
-    public abstract class AbstractService<T> 
+    public abstract class AbstractService<T>
     {
         public IMappable<T> Mapper { get; set; }
         private PersistibleService persistibleService = new PersistibleService();
 
-        public virtual int Create(T entity)
+
+        public virtual int Create(T entity) 
         {
-            return Mapper.Create(entity);
+            int id = persistibleService.save(Mapper.TABLE_NAME, GetData(entity), Mapper.ID_COLUMN);
+            return id;
         }
 
         public virtual void DeleteById(int Id)
         {
-            Mapper.DeleteById(Id);
+            persistibleService.delete(Mapper.TABLE_NAME, Id, Mapper.ID_COLUMN);
         }
 
         public virtual DataTable GetAll()
@@ -28,14 +32,29 @@ namespace BLL
             return persistibleService.getTable(Mapper.TABLE_NAME);
         }
 
-        public virtual T GetById(string Id)
+        public virtual void Update(int id, T newData)
         {
-            return Mapper.GetById(Id);
+            persistibleService.update(Mapper.TABLE_NAME, Mapper.ID_COLUMN, id, GetData(newData));
         }
 
-        public virtual void Update(T docToUpdate, T newData)
+        private Hashtable GetData(T entity)
         {
-            Mapper.Update(docToUpdate, newData);
+            Hashtable data = new Hashtable();
+            Type type = typeof(T);
+
+            foreach (PropertyInfo property in type.GetProperties())
+            {
+                string propertyName = property.Name;
+
+                if (propertyName != "Id")
+                {
+                    object propertyValue = property.GetValue(entity) ?? DBNull.Value;
+                    data.Add(propertyName, propertyValue);
+                }
+
+            }
+
+            return data;
         }
     }
 }
