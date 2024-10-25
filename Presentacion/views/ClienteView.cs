@@ -88,7 +88,6 @@ namespace Presentacion.views
                 cliente.DNI = data.Cells["DNI"].Value.ToString();
             }
 
-
             return cliente;
         }
 

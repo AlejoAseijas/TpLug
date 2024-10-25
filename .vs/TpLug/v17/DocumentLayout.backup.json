@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\dal\\dataxml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|solutionrelative:dal\\dataxml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\dal\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|solutionrelative:dal\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\dal\\datadisconnected.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|solutionrelative:dal\\datadisconnected.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\dal\\dataxml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|solutionrelative:dal\\dataxml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -30,41 +26,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DataDisconnected.cs",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DataDisconnected.cs",
-              "RelativeDocumentMoniker": "DAL\\DataDisconnected.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DataDisconnected.cs",
-              "RelativeToolTip": "DAL\\DataDisconnected.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADgAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T01:39:31.559Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DataManager.cs",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DataManager.cs",
-              "RelativeDocumentMoniker": "DAL\\DataManager.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DataManager.cs",
-              "RelativeToolTip": "DAL\\DataManager.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAIwGMAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T01:37:24.79Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "DataXml.cs",
               "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DataXml.cs",
               "RelativeDocumentMoniker": "DAL\\DataXml.cs",
               "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DataXml.cs",
               "RelativeToolTip": "DAL\\DataXml.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAmwEgAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAH0AAAAUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T01:31:26.84Z",
+              "WhenOpened": "2024-10-25T03:30:22.361Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DataManager.cs",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DataManager.cs",
+              "RelativeDocumentMoniker": "DAL\\DataManager.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DataManager.cs",
+              "RelativeToolTip": "DAL\\DataManager.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAuwL0AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T03:23:22.683Z",
               "EditorCaption": ""
             }
           ]

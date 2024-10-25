@@ -22,12 +22,12 @@ namespace DAL
 
                 XDocument doc = LoadDocument(file);
 
-                XElement root = doc.Root;
+                XElement element = doc.Root;
 
-                if (root == null)
+                if (element == null)
                 {
-                    root = new XElement("Clientes");
-                    doc.Add(root);
+                    element = new XElement("Clientes");
+                    doc.Add(element);
                 }
 
                 XElement newElement = new XElement("Item");
@@ -37,7 +37,7 @@ namespace DAL
                     newElement.Add(new XElement(entry.Key.ToString(), entry.Value.ToString().Trim()));
                 }
 
-                root.Add(newElement);
+                element.Add(newElement);
 
                 doc.Save(file);
             }
@@ -47,30 +47,54 @@ namespace DAL
             }
         }
 
+        public DataSet ReadAll()
+        {
+            DataSet dataSet = new DataSet();
+
+            List<string> files = getAllFileNames();
+
+            foreach (string file in files)
+            {
+                DataTable dt = this.Read(file);
+
+                if (dt != null)
+                {
+                    dataSet.Tables.Add(dt);
+                }
+            }
+
+            return dataSet;
+        }
+
         public DataTable Read(string fileName)
         {
+            // Crear un DataTable con el nombre del archivo
             DataTable dataTable = new DataTable(fileName);
+            dataTable.TableName = fileName;
 
             try
             {
-                // Cargar el documento XML
-                XDocument doc = XDocument.Load(fileName);
+                XDocument doc = XDocument.Load(fileName+".xml");
 
-                dataTable.Columns.Add("Key", typeof(string));
-                dataTable.Columns.Add("Value", typeof(string));
+                XElement element = doc.Root;
 
-                XElement root = doc.Root;
-
-                if (root != null)
+                if (element != null)
                 {
-                    foreach (XElement item in root.Elements("Item"))
+                    XElement firstItem = element.Element("Item");
+                    if (firstItem != null)
                     {
-                        foreach (XElement child in item.Elements())
+                        foreach (XElement child in firstItem.Elements())
                         {
-                            // Crear una nueva fila
+                            dataTable.Columns.Add(child.Name.ToString(), typeof(string));
+                        }
+
+                        foreach (XElement item in element.Elements("Item"))
+                        {
                             DataRow row = dataTable.NewRow();
-                            row["Key"] = child.Name.ToString();
-                            row["Value"] = child.Value.Trim();
+                            foreach (XElement child in item.Elements())
+                            {
+                                row[child.Name.ToString()] = child.Value.Trim();
+                            }
                             dataTable.Rows.Add(row);
                         }
                     }
@@ -84,7 +108,37 @@ namespace DAL
             return dataTable;
         }
 
-        public XDocument LoadDocument(string fileName)
+        public void DeleteById(string fileName, string IdColumn, int Id)
+        {
+            try
+            {
+                string file = fileName + ".xml";
+
+                XDocument doc = XDocument.Load(file);
+
+                XElement element = doc.Root;
+                if (element != null)
+                {
+                    XElement itemToDelete = element.Elements("Item")
+                        .FirstOrDefault(item =>
+                            (int)item.Element(IdColumn) == Id);
+
+                    if (itemToDelete != null)
+                    {
+                        itemToDelete.Remove();
+
+                        doc.Save(file);
+                    }
+              
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al eliminar el elemento del archivo XML: " + ex.Message);
+            }
+        }
+
+        private XDocument LoadDocument(string fileName)
         {
             XDocument document;
 
@@ -94,12 +148,25 @@ namespace DAL
             }
             else
             {
-                // Crear un nuevo documento con un elemento raíz válido
-                document = new XDocument(new XElement("Clientes"));
+                document = new XDocument(new XElement(fileName));
             }
 
             return document;
         }
 
+        private List<string> getAllFileNames()
+        {
+            string directoryPath = Directory.GetCurrentDirectory();
+            string[] xmlFiles = Directory.GetFiles(directoryPath, "*.xml");
+            List<string> fileNames = new List<string>();
+
+            foreach (string file in xmlFiles)
+            {
+                string fileName = Path.GetFileNameWithoutExtension(file);
+                fileNames.Add(fileName);
+            }
+
+            return fileNames;
+        }
     }
 }

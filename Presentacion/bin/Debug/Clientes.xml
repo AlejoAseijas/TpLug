@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Clientes.xml>
+<Clientes>
   <Item>
-    <DNI>1</DNI>
-    <Apellido>1</Apellido>
-    <Nombre>1</Nombre>
+    <DNI>12</DNI>
+    <Apellido>ase</Apellido>
+    <Nombre>Alf</Nombre>
+    <IdCliente>0</IdCliente>
   </Item>
   <Item>
-    <DNI>2</DNI>
-    <Apellido>2</Apellido>
-    <Nombre>2</Nombre>
+    <DNI>123</DNI>
+    <Apellido>Ase</Apellido>
+    <Nombre>Alejoaaa</Nombre>
+    <IdCliente>13</IdCliente>
   </Item>
-</Clientes.xml>
+</Clientes>

@@ -13,11 +13,8 @@ namespace DAL
         private DataSet DATA_SET = null;
         private static DataManager instance = null;
         private DataXml dataXml = new DataXml();
-
-        private DataManager() 
-        {
-            
-        }
+        private bool fromDB = false;
+        private DataManager() {}
 
         public static DataManager GetInstance()
         {
@@ -29,7 +26,14 @@ namespace DAL
 
             if(DATA_SET == null || force) 
             {
-                DATA_SET = DataDisconnected.ReadAll();
+                if (fromDB)
+                {
+                    DATA_SET = DataDisconnected.ReadAll();
+                }
+                else
+                {
+                    DATA_SET = dataXml.ReadAll();
+                }
             }
 
             return DATA_SET;
@@ -82,7 +86,7 @@ namespace DAL
             {
                 DataRow row = table.NewRow();
 
-                row[Id] = id;
+                data.Add(Id, id);
 
                 foreach (DictionaryEntry entry in data)
                 {
@@ -98,7 +102,12 @@ namespace DAL
                 {
                     table.Rows.Add(row);
                     UpdateDataSet(tableName, table);
-                    dataXml.Write(tableName, data);
+
+                    if (!fromDB) 
+                    {
+                        dataXml.Write(tableName, data);
+                    }
+
                 }
                 catch (Exception ex)
                 {
@@ -129,6 +138,11 @@ namespace DAL
                         }
 
                         UpdateDataSet(tableName, table);
+
+                        if (!fromDB) 
+                        {
+                            dataXml.DeleteById(tableName, idColumn, id);
+                        }
 
                         delete = true;
                     }
@@ -169,6 +183,14 @@ namespace DAL
                         }
 
                         UpdateDataSet(tableName, table);
+                        
+                        if (!fromDB) 
+                        {
+                            dataXml.DeleteById(tableName, idColumn, id);
+                            data.Add(idColumn, id);
+                            dataXml.Write(tableName, data);
+                        }
+
                     }
                     catch (Exception ex)
                     {
@@ -180,7 +202,6 @@ namespace DAL
         }
 
         //Utils
-
         private int GetLastId(string tableName)
         {
             int id = -1;
