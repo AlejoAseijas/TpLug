@@ -13,7 +13,6 @@ namespace DAL
     public class DataDisconnected
     {
         private static DataSet dataSet = null;
-        private DatabaseSql databaseSql = new DatabaseSql();
 
         public static DataSet Read(string tableName, bool force) 
         {

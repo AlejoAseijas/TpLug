@@ -13,7 +13,6 @@ namespace BLL
     public class ProductoService : AbstractService<Producto>
     {
         private ProductoMapper mapper = new ProductoMapper();
-        private PersistibleService persistibleService = new PersistibleService();
 
         public ProductoService() 
         {

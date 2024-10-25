@@ -1,4 +1,5 @@
 ﻿using Abstraccion;
+using DAL;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,8 +14,7 @@ namespace BLL
     public abstract class AbstractService<T>
     {
         public IMappable<T> Mapper { get; set; }
-        private PersistibleService persistibleService = new PersistibleService();
-
+        public DataManager persistibleService = DataManager.GetInstance();
 
         public virtual int Create(T entity) 
         {
