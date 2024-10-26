@@ -89,13 +89,13 @@ namespace MPP
         //    return inventarios;
         //}
 
-        public DataSet GetAll()
+        public DataTable GetAll()
         {
-            DataSet dataSet = null;
+            DataTable dataTable = null;
 
             try
             {
-                dataSet = DatabaseSql.Read(new SqlCommand("GetAllInventarios"), null);
+                dataTable = DatabaseSql.Read(new SqlCommand("GetAllInventarios"), null);
             }
             catch (SqlException)
             {
@@ -104,7 +104,7 @@ namespace MPP
             {
             }
 
-            return dataSet;
+            return dataTable;
         }
 
         public Inventario GetById(string Id)
@@ -115,8 +115,8 @@ namespace MPP
             try
             {
                 Hashtable queryParams = new Hashtable { { "@IdInventario", int.Parse(Id) } };
-                Tabla = DatabaseSql.Read(new SqlCommand("GetInventarioById"), queryParams).Tables[0];
-            }
+                Tabla = DatabaseSql.Read(new SqlCommand("GetInventarioById"), queryParams);
+            }   
             catch (SqlException)
             {
             }

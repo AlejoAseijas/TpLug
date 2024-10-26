@@ -45,6 +45,7 @@
     <Compile Include="ClienteVentaMapper.cs" />
     <Compile Include="InventarioMapper.cs" />
     <Compile Include="ProductoMapper.cs" />
+    <Compile Include="ProveedorMapper.cs" />
     <Compile Include="UserMapper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="VentaMapper.cs" />

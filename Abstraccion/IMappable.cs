@@ -12,10 +12,10 @@ namespace Abstraccion
         string TABLE_NAME { get; }
         string ID_COLUMN { get; }
         T GetById(string Id);
-        DataSet GetAll();
+        DataTable GetAll();
         int Create(T entity);
         void DeleteById(int Id);
-        void Update(T docToUpdate, T newData);
+        void Update(T oldData, T newData);
         T ToMap(DataRow row);
 
     }

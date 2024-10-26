@@ -25,7 +25,7 @@ namespace BLL
         {
             try 
             {
-                DataDisconnected.Update(dataSet, base.Mapper.TABLE_NAME);
+                //DataDisconnected.Update(dataSet, base.Mapper.TABLE_NAME);
                 DataDisconnected.Read(base.Mapper.TABLE_NAME, true);
                 return true;
             }

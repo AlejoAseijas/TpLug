@@ -1,15 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Clientes>
   <Item>
-    <DNI>12</DNI>
-    <Apellido>ase</Apellido>
-    <Nombre>Alf</Nombre>
-    <IdCliente>0</IdCliente>
-  </Item>
-  <Item>
-    <DNI>123</DNI>
-    <Apellido>Ase</Apellido>
-    <Nombre>Alejoaaa</Nombre>
-    <IdCliente>13</IdCliente>
+    <DNI>1</DNI>
+    <Apellido>1</Apellido>
+    <Nombre>1</Nombre>
   </Item>
 </Clientes>

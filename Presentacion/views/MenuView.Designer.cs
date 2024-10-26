@@ -34,6 +34,7 @@
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eXITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sYNCToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,6 +45,7 @@
             this.productosToolStripMenuItem,
             this.clientesToolStripMenuItem,
             this.ventasToolStripMenuItem,
+            this.sYNCToolStripMenuItem,
             this.eXITToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -87,6 +89,13 @@
             this.eXITToolStripMenuItem.Text = "EXIT";
             this.eXITToolStripMenuItem.Click += new System.EventHandler(this.eXITToolStripMenuItem_Click);
             // 
+            // sYNCToolStripMenuItem
+            // 
+            this.sYNCToolStripMenuItem.Name = "sYNCToolStripMenuItem";
+            this.sYNCToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
+            this.sYNCToolStripMenuItem.Text = "SYNC";
+            this.sYNCToolStripMenuItem.Click += new System.EventHandler(this.sYNCToolStripMenuItem_Click);
+            // 
             // MenuView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -112,5 +121,6 @@
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eXITToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sYNCToolStripMenuItem;
     }
 }

@@ -16,9 +16,9 @@ namespace DAL
             return new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=ProductosV2;Integrated Security=True;Encrypt=False");
         }
 
-        public static DataSet Read(SqlCommand query, Hashtable queryParams)
+        public static DataTable Read(SqlCommand query, Hashtable queryParams)
         {
-            DataSet tabla = new DataSet();
+            DataTable tabla = new DataTable();
             using (SqlConnection connection = GetConnection())
             {
                 try

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Productos>
+  <Item>
+    <Stock>1</Stock>
+    <Consumo>MEDIO</Consumo>
+    <Categoria>Teta</Categoria>
+    <Proveedor>Central</Proveedor>
+    <PrecioCosto>1</PrecioCosto>
+    <IdProveedor>1</IdProveedor>
+    <Nombre>T</Nombre>
+    <IdProducto>2</IdProducto>
+    <SubCategoria>T</SubCategoria>
+  </Item>
+</Productos>

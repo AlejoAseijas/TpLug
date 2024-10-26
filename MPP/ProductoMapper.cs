@@ -97,15 +97,15 @@ namespace MPP
 
 
         //    return productos;
-        //}
+        //} 
 
-        public DataSet GetAll()
+        public DataTable GetAll()
         {
-            DataSet dataSet = null;
+            DataTable dataTable = null;
 
             try
             {
-                dataSet = DatabaseSql.Read(new SqlCommand("GetAllProductos"), null);
+                dataTable = DatabaseSql.Read(new SqlCommand("GetAllProductos"), null);
 
             }
             catch (SqlException)
@@ -116,7 +116,7 @@ namespace MPP
             }
 
 
-            return dataSet;
+            return dataTable;
         }
 
         public Producto GetById(string Id)
@@ -183,38 +183,5 @@ namespace MPP
             }
         }
 
-        public List<Proveedor> ObtenerProveedores()
-        {
-            List<Proveedor> proveedors = new List<Proveedor>();
-
-            DataTable Tabla = null;
-
-            try
-            {   
-                Tabla = DatabaseSql.Read(new SqlCommand("GetAllProveedores"), null).Tables[0];
-            }
-            catch (SqlException ex)
-            {
-
-            }
-            catch (Exception ex)
-            {
-            }
-
-            if (Tabla != null && Tabla.Rows.Count > 0)
-            {
-                foreach (DataRow fila in Tabla.Rows)
-                {
-                    Proveedor proveedor = new Proveedor();
-
-                    proveedor.Id = Convert.ToInt32(fila["IdProveedor"]);
-                    proveedor.Nombre = fila["Nombre"].ToString();
-
-                    proveedors.Add(proveedor);
-                }
-            }
-
-            return proveedors;
-        }
     }
 }

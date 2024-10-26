@@ -98,7 +98,7 @@ namespace Presentacion.views
             if (clienteAModificar != null)
             {
                 Cliente clienteNuevosDatos = getClienteFromUI();
-                clienteService.Update(clienteAModificar.Id, clienteNuevosDatos);
+                clienteService.Update(clienteAModificar, clienteNuevosDatos);
             }
             refreshDataSource();
         }

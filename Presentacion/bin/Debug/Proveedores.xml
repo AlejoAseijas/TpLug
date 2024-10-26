@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Proveedores>
+  <Item>
+    <IdProveedor>1</IdProveedor>
+    <Nombre>Central</Nombre>
+  </Item>
+</Proveedores>

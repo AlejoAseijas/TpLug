@@ -80,14 +80,14 @@ namespace MPP
         //    return list;
         //}
 
-        public DataSet GetAll()
+        public DataTable GetAll()
         {
-            DataSet dataSet = new DataSet();
+            DataTable dataTable = new DataTable();
             SqlCommand sqlCommand = new SqlCommand("GetAllUsers");
 
             try
             {
-                dataSet = DatabaseSql.Read(sqlCommand, null);
+                dataTable = DatabaseSql.Read(sqlCommand, null);
 
             }
             catch (SqlException ex)
@@ -95,7 +95,7 @@ namespace MPP
             catch (Exception ex)
             { }
 
-            return dataSet;
+            return dataTable;
         }
 
         public User GetById(string Id)
@@ -109,7 +109,7 @@ namespace MPP
                     SqlCommand sqlCommand = new SqlCommand("GetUserByDNI");
                     Hashtable queryParams = new Hashtable { { "@DNI", int.Parse(Id) } };
 
-                    DataTable Tabla = DatabaseSql.Read(sqlCommand, queryParams).Tables[0];
+                    DataTable Tabla = DatabaseSql.Read(sqlCommand, queryParams);
 
                     if (Tabla != null && Tabla.Rows.Count > 0)
                     {

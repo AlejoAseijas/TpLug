@@ -21,7 +21,7 @@ namespace Presentacion.views
 
         private ProductoService productoService = new ProductoService();
         private InventarioService inventarioService = new InventarioService();
-
+        private ProveedorService proveedorService = new ProveedorService();
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -45,7 +45,7 @@ namespace Presentacion.views
 
             this.comboBox3.DataSource = null;
 
-            this.comboBox3.DataSource = productoService.GetProveedores();
+            this.comboBox3.DataSource = proveedorService.GetAll();
             this.comboBox3.DisplayMember = "Nombre"; 
             this.comboBox3.ValueMember = "IdProveedor"; 
 
@@ -132,7 +132,7 @@ namespace Presentacion.views
             Inventario inventario = GetInventarioByDataGridView();
             Inventario nuevoInventario = getProductoFromUI();
 
-            inventarioService.Update(inventario.Id, nuevoInventario);
+            inventarioService.Update(inventario, nuevoInventario);
 
             refresh();
         }
@@ -244,6 +244,7 @@ namespace Presentacion.views
 
                 producto.Proveedor = proveedor;
 
+                inventario.Id = Convert.ToInt32(data.Cells["IdInventario"].Value.ToString());
                 inventario.Producto = producto;
                 inventario.Stock = Convert.ToInt32(data.Cells["Stock"].Value.ToString());
 

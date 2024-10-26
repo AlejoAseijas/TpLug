@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,7 +17,7 @@ namespace Presentacion.views
         {
             InitializeComponent();
         }
-
+        private SyncService syncService = new SyncService();
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             manageMdi(new UserView());
@@ -55,5 +56,9 @@ namespace Presentacion.views
             manageMdi(new VentasView());
         }
 
+        private void sYNCToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            syncService.sync();
+        }
     }
 }

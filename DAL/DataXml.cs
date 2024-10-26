@@ -14,21 +14,15 @@ namespace DAL
     public class DataXml
     {
 
-        public void Write(string fileName, Hashtable dataToSave)
+        public int Write(string fileName, Hashtable dataToSave)
         {
             try
             {
                 string file = fileName + ".xml";
 
-                XDocument doc = LoadDocument(file);
+                XDocument doc = LoadDocument(fileName);
 
                 XElement element = doc.Root;
-
-                if (element == null)
-                {
-                    element = new XElement("Clientes");
-                    doc.Add(element);
-                }
 
                 XElement newElement = new XElement("Item");
 
@@ -45,6 +39,8 @@ namespace DAL
             {
                 Console.WriteLine("Error al guardar el archivo XML: " + ex.Message);
             }
+
+            return -1;
         }
 
         public DataSet ReadAll()
@@ -74,7 +70,7 @@ namespace DAL
 
             try
             {
-                XDocument doc = XDocument.Load(fileName+".xml");
+                XDocument doc = this.LoadDocument(fileName);
 
                 XElement element = doc.Root;
 
@@ -108,15 +104,16 @@ namespace DAL
             return dataTable;
         }
 
-        public void DeleteById(string fileName, string IdColumn, int Id)
+        public bool DeleteById(string fileName, string IdColumn, int Id)
         {
             try
             {
                 string file = fileName + ".xml";
 
-                XDocument doc = XDocument.Load(file);
+                XDocument doc = this.LoadDocument(fileName);
 
                 XElement element = doc.Root;
+
                 if (element != null)
                 {
                     XElement itemToDelete = element.Elements("Item")
@@ -136,19 +133,25 @@ namespace DAL
             {
                 Console.WriteLine("Error al eliminar el elemento del archivo XML: " + ex.Message);
             }
+            return true;
         }
 
         private XDocument LoadDocument(string fileName)
         {
+            string file = fileName + ".xml";
+
             XDocument document;
 
-            if (File.Exists(fileName))
+            if (File.Exists(file))
             {
-                document = XDocument.Load(fileName);
+                document = XDocument.Load(file);
             }
             else
             {
+
                 document = new XDocument(new XElement(fileName));
+
+                document.Save(file);
             }
 
             return document;

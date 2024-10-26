@@ -11,30 +11,44 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public abstract class AbstractService<T>
+    public abstract class AbstractService<T> where T : AbstracEntity
     {
+        public bool modeConnected = false;
         public IMappable<T> Mapper { get; set; }
         public DataManager persistibleService = DataManager.GetInstance();
 
         public virtual int Create(T entity) 
         {
-            int id = persistibleService.save(Mapper.TABLE_NAME, GetData(entity), Mapper.ID_COLUMN);
-            return id;
+            return modeConnected ? Mapper.Create(entity) : persistibleService.save(Mapper.TABLE_NAME, GetData(entity), Mapper.ID_COLUMN);
         }
 
         public virtual void DeleteById(int Id)
         {
-            persistibleService.delete(Mapper.TABLE_NAME, Id, Mapper.ID_COLUMN);
+            if (modeConnected) 
+            {
+                Mapper.DeleteById(Id);
+            }
+            else 
+            {
+                persistibleService.delete(Mapper.TABLE_NAME, Id, Mapper.ID_COLUMN);
+            }
         }
 
         public virtual DataTable GetAll()
         {
-            return persistibleService.getTable(Mapper.TABLE_NAME);
+            return modeConnected ? Mapper.GetAll() : persistibleService.GetAll(Mapper.TABLE_NAME);
         }
 
-        public virtual void Update(int id, T newData)
+        public virtual void Update(T oldData, T newData)
         {
-            persistibleService.update(Mapper.TABLE_NAME, Mapper.ID_COLUMN, id, GetData(newData));
+            if (modeConnected) 
+            {
+                Mapper.Update(oldData, newData);
+            }
+            else 
+            {
+                persistibleService.update(Mapper.TABLE_NAME, Mapper.ID_COLUMN, oldData.Id, GetData(newData));
+            }
         }
 
         public virtual Hashtable GetData(T entity)

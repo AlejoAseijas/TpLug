@@ -87,13 +87,13 @@ namespace MPP
         //    return clientes;
         //}
 
-        public DataSet GetAll()
+        public DataTable GetAll()
         {
-            DataSet dataSet = null;
+            DataTable dataTable = null;
 
             try
             {
-                dataSet = DatabaseSql.Read(new SqlCommand("GetAllClientes"), null);
+                dataTable = DatabaseSql.Read(new SqlCommand("GetAllClientes"), null);
             }
             catch (SqlException ex)
             {
@@ -104,7 +104,7 @@ namespace MPP
 
             }
 
-            return dataSet;
+            return dataTable;
         }
 
         public Cliente GetById(string Id)
@@ -116,7 +116,7 @@ namespace MPP
             try
             {
                 Hashtable queryParams = new Hashtable { { "@IdCliente", int.Parse(Id) } };
-                Tabla = DatabaseSql.Read(new SqlCommand("GetClienteById"), null).Tables[0];
+                Tabla = DatabaseSql.Read(new SqlCommand("GetClienteById"), null);
             }
             catch (SqlException ex)
             {

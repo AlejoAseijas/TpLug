@@ -20,11 +20,6 @@ namespace BLL
             base.Mapper = mapper;
         }
 
-        public DataTable GetProveedores()
-        {
-            return persistibleService.getTable("Proveedores");
-        }
-
         public override Hashtable GetData(Producto producto) 
         {
             Hashtable data = base.GetData(producto);

@@ -66,6 +66,7 @@ namespace Presentacion.views
                     if(ventaService.checkVenta(inventario, qty)) 
                     {
                         ventaService.Create(clientevVenta);
+
                         this.txtQty.Text = string.Empty;
                         refreshVentasByCliente(ventaService.GetVentasByIdCliente(cliente.Id));
                         refreshProductos();
@@ -80,19 +81,6 @@ namespace Presentacion.views
                     MessageBox.Show(ex.Message);
                 }
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Cliente cliente = (Cliente)this.dataGridViewClientes.CurrentRow.DataBoundItem;
-            Venta venta = this.dataGridView1.CurrentRow != null ? (Venta)this.dataGridView1.CurrentRow.DataBoundItem : null;
-
-            if (cliente != null && venta != null) 
-            {
-                ventaService.DeleteById(venta.Id);
-                refreshVentasByCliente(ventaService.GetVentasByIdCliente(cliente.Id));
-            }
-
         }
 
         public Inventario GetInventarioByDataGridView()

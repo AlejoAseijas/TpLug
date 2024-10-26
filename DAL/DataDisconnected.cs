@@ -13,19 +13,18 @@ namespace DAL
     public class DataDisconnected
     {
         private static DataSet dataSet = null;
-
-        public static DataSet Read(string tableName, bool force) 
+        public static DataTable Read(string tableName, bool force) 
         {
 
             if (dataSet == null | force) 
             {
-                dataSet = Read(tableName);
+                //Cargo en el dataSet la tabla
+                Read(tableName);
             }
 
-            return dataSet;
+            return dataSet.Tables[tableName];
         }
-
-        private static DataSet Read(string tableName)
+        private static DataTable Read(string tableName)
         {
 
             using (SqlConnection connection = DatabaseSql.GetConnection())
@@ -51,29 +50,26 @@ namespace DAL
                     throw ex;
                 }
             }
-            return dataSet;
+            return dataSet.Tables[tableName];
         }
-
         public static DataSet ReadAll() 
         {
-           DataSet TablesNames = DatabaseSql.Read(new SqlCommand("GetAllTablesNames"), null);
+           DataTable TablesNames = DatabaseSql.Read(new SqlCommand("GetAllTablesNames"), null);
 
             dataSet = dataSet == null ? new DataSet() : dataSet;
 
             if (TablesNames != null) 
             {
-                DataTable Table = TablesNames.Tables[0];
-                foreach (DataRow Row in Table.Rows) 
+                foreach (DataRow Row in TablesNames.Rows) 
                 {
                     string storeName = "GetAll" + Row[0].ToString();
 
-                    DataSet data = DatabaseSql.Read(new SqlCommand(storeName), null);
+                    DataTable data = DatabaseSql.Read(new SqlCommand(storeName), null);
 
                     if (data != null) 
                     {
-                        DataTable dataTable = data.Tables[0];
 
-                        DataTable clonedTable = dataTable.Copy();
+                        DataTable clonedTable = data.Copy();
                         clonedTable.TableName = Row[0].ToString();
 
                         dataSet.Tables.Add(clonedTable);
@@ -84,38 +80,141 @@ namespace DAL
 
             return dataSet;
         }
-
-        public static void Update(DataSet dataSet, string tableName)
+        public static void UpdateDB(DataTable table)
         {
             using (SqlConnection connection = DatabaseSql.GetConnection())
             {
                 try
                 {
-                    SqlCommand query = new SqlCommand("SELECT * FROM " + tableName);
-                    query.Connection = connection;
-
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(query))
+                    if (table.TableName != "Table") 
                     {
-                        SqlCommandBuilder Cb = new SqlCommandBuilder(adapter);
+                        SqlCommand query = new SqlCommand("SELECT * FROM " + table.TableName);
+                        query.Connection = connection;
 
-                        adapter.UpdateCommand = Cb.GetUpdateCommand();
-                        adapter.DeleteCommand = Cb.GetDeleteCommand();
-                        adapter.InsertCommand = Cb.GetInsertCommand();
-                        adapter.ContinueUpdateOnError = true;
-                        adapter.Fill(dataSet);
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(query))
+                        {
+                            SqlCommandBuilder Cb = new SqlCommandBuilder(adapter);
 
-                        adapter.Update(dataSet.Tables[0]);
-                    }
+                            adapter.UpdateCommand = Cb.GetUpdateCommand();
+                            adapter.DeleteCommand = Cb.GetDeleteCommand();
+                            adapter.InsertCommand = Cb.GetInsertCommand();
+                            adapter.ContinueUpdateOnError = true;
+
+                            adapter.Fill(dataSet);
+
+                            adapter.Update(table);
+                        }
+                    } 
+                    
                 }
                 catch (SqlException ex)
                 {
-                    throw new Exception($"Error de SQL al actualizar: {ex.Message}");
+                    throw new Exception($"Error de SQL al actualizar: {table.TableName}, {ex.Message}");
                 }
                 catch (Exception ex)
                 {
                     throw ex;
                 }
             }
+        }
+        public static int Write(string tableName, Hashtable data, string IdColumn) 
+        {
+            int id = GetLastId(tableName);
+
+            try 
+            {
+                DataTable table = dataSet.Tables[tableName];
+
+                if (table != null)
+                {
+                    DataRow row = table.NewRow();
+
+                    data.Add(IdColumn, id);
+
+                    foreach (DictionaryEntry entry in data)
+                    {
+                        string columnName = entry.Key.ToString();
+
+                        if (table.Columns.Contains(columnName))
+                        {
+                            row[columnName] = entry.Value ?? DBNull.Value;
+                        }
+                    }
+
+                    table.Rows.Add(row);
+                    UpdateDataSet(tableName, table);
+                }
+            }
+            catch (Exception ex) 
+            {
+                Console.WriteLine($"Error al guardar datos: {ex.Message}");
+            }
+
+            return id;
+        }
+        private static void UpdateDataSet(string tableName, DataTable table)
+        {
+
+            if (dataSet.Tables.Contains(tableName))
+            {
+                dataSet.Tables.Remove(tableName);
+                dataSet.Tables.Add(table);
+            }
+
+        }
+        public static bool delete(string tableName, int id, string idColumn)
+        {
+            DataTable table = dataSet.Tables[tableName];
+            bool delete = false;
+
+            if (table != null)
+            {
+                DataRow[] rowsToDelete = table.Select($"{idColumn} = {id}");
+
+                if (rowsToDelete.Length > 0)
+                {
+                    try
+                    {
+                        foreach (DataRow row in rowsToDelete)
+                        {
+                            table.Rows.Remove(row);
+                        }
+
+                        UpdateDataSet(tableName, table);
+
+                        delete = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error al eliminar la fila: {ex.Message}");
+                    }
+                }
+
+            }
+
+
+            return delete;
+        }
+        private static int GetLastId(string tableName)
+        {
+            int id = -1;
+            DataTable table = dataSet.Tables[tableName];
+
+            if (table != null)
+            {
+                if (table.Rows.Count > 0)
+                {
+                    id = Convert.ToInt32(table.Rows[table.Rows.Count - 1][0]);
+                    id++;
+                }
+                else
+                {
+                    id = 0;
+                }
+            }
+
+
+            return id;
         }
 
     }
