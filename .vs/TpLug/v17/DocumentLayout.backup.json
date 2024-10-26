@@ -3,27 +3,31 @@
   "WorkspaceRootPath": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{7ECD3990-39DC-4C6F-8CD2-8267C4151653}|Abstraccion\\Abstraccion.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\abstraccion\\abstractservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7ECD3990-39DC-4C6F-8CD2-8267C4151653}|Abstraccion\\Abstraccion.csproj|solutionrelative:abstraccion\\abstractservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\dal\\datadisconnected.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|solutionrelative:dal\\datadisconnected.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\dal\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\dal\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|solutionrelative:dal\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\presentacion\\views\\menuview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\presentacion\\views\\menuview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\views\\menuview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\bll\\syncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\bll\\syncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|solutionrelative:bll\\syncservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\presentacion\\views\\menuview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\presentacion\\views\\menuview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\views\\menuview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\bll\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\bll\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|solutionrelative:bll\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -34,7 +38,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -42,7 +46,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "AbstractService.cs",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Abstraccion\\AbstractService.cs",
+              "RelativeDocumentMoniker": "Abstraccion\\AbstractService.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Abstraccion\\AbstractService.cs*",
+              "RelativeToolTip": "Abstraccion\\AbstractService.cs*",
+              "ViewState": "AgIAABUAAAAAAAAAAAAowDUAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-26T17:20:52.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "MenuView.cs",
               "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\views\\MenuView.cs",
               "RelativeDocumentMoniker": "Presentacion\\views\\MenuView.cs",
@@ -50,24 +67,22 @@
               "RelativeToolTip": "Presentacion\\views\\MenuView.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAA9wDwAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T17:11:06.366Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-26T17:11:06.366Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "MenuView.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\views\\MenuView.cs",
               "RelativeDocumentMoniker": "Presentacion\\views\\MenuView.cs",
               "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\views\\MenuView.cs [Dise\u00F1o]",
               "RelativeToolTip": "Presentacion\\views\\MenuView.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T17:11:05.313Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-10-26T17:11:05.313Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "SyncService.cs",
               "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\BLL\\SyncService.cs",
               "RelativeDocumentMoniker": "BLL\\SyncService.cs",
@@ -75,12 +90,11 @@
               "RelativeToolTip": "BLL\\SyncService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwA0AAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T17:10:12.121Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-26T17:10:12.121Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "AuthService.cs",
               "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\BLL\\AuthService.cs",
               "RelativeDocumentMoniker": "BLL\\AuthService.cs",
@@ -88,25 +102,24 @@
               "RelativeToolTip": "BLL\\AuthService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T17:07:35.016Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-26T17:07:35.016Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "DataDisconnected.cs",
               "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DataDisconnected.cs",
               "RelativeDocumentMoniker": "DAL\\DataDisconnected.cs",
               "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DataDisconnected.cs",
               "RelativeToolTip": "DAL\\DataDisconnected.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAqwGkAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGkAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-26T17:06:45.559Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "DataManager.cs",
               "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DataManager.cs",
               "RelativeDocumentMoniker": "DAL\\DataManager.cs",
@@ -114,8 +127,7 @@
               "RelativeToolTip": "DAL\\DataManager.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAAAAAEEAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-26T17:06:13.247Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-26T17:06:13.247Z"
             }
           ]
         }

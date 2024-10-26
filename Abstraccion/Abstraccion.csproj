@@ -44,6 +44,7 @@
     <Compile Include="AbstracEntity.cs" />
     <Compile Include="AbstractService.cs" />
     <Compile Include="IMappable.cs" />
+    <Compile Include="ModesOfPersistible.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

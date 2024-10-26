@@ -23,7 +23,7 @@ namespace BLL
             int id = -1;
             try 
             {
-                if (!base.modeConnected) 
+                if (!ModesOfPersistible.DB.Equals(mode)) 
                 {
                     Hashtable dataProducto = productoService.GetData(entity.Producto);
 
@@ -51,7 +51,7 @@ namespace BLL
         public void Update(Inventario oldData, Inventario newData)
         {
 
-            if (!base.modeConnected) 
+            if (!ModesOfPersistible.DB.Equals(mode)) 
             {
                 Hashtable dataProducto = productoService.GetData(newData.Producto);
 

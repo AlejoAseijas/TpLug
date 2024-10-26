@@ -1,4 +1,5 @@
-﻿using BE.execptions;
+﻿using Abstraccion;
+using BE.execptions;
 using BE.models;
 using MPP;
 using System;
@@ -26,7 +27,7 @@ namespace BLL
         {
             List<Venta> ventas = new List<Venta>();
 
-            if (base.modeConnected) 
+            if (ModesOfPersistible.DB.Equals(mode)) 
             {
                 ventas = clienteVentaMapper.GetVentasByIdCliente(IdCliente);
             }
@@ -66,7 +67,7 @@ namespace BLL
         {
             int id = -1;
 
-            if (!base.modeConnected) 
+            if (!ModesOfPersistible.DB.Equals(mode)) 
             {
                 Hashtable ventaData = GetDataVenta(entity);
                 ventaData.Remove(ventaMapper.ID_COLUMN);

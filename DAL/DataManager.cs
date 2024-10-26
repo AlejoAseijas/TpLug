@@ -10,17 +10,22 @@ namespace DAL
 {
     public class DataManager
     {
+        private enum ModeOfPersistible
+        {
+            XML, DISCONECTED
+        }
+
         private DataSet DATA_SET = null;
         private static DataManager instance = null;
 
         private DataXml dataXml = new DataXml();
         
-        private bool modeXML = false;
+        private ModeOfPersistible modeToSave = ModeOfPersistible.XML;
 
         private DataManager() 
         {
             //Segun el modo cargo su dataSet.
-            if (modeXML) 
+            if (ModeOfPersistible.XML.Equals(modeToSave)) 
             {
                 DATA_SET = dataXml.ReadAll();
             }
@@ -44,18 +49,26 @@ namespace DAL
         public int save(string tableName, Hashtable data, string IdColumn)
         {
          
-            return modeXML ? dataXml.Write(tableName, data) : DataDisconnected.Write(tableName, data, IdColumn);
+            return ModeOfPersistible.XML.Equals(modeToSave) ? dataXml.Write(tableName, data) : DataDisconnected.Write(tableName, data, IdColumn);
 
         }
 
         public bool delete(string tableName, int id, string idColumn)
         {
-            return modeXML ? dataXml.DeleteById(tableName, idColumn, id) : DataDisconnected.delete(tableName, id, idColumn); ;
+            return ModeOfPersistible.XML.Equals(modeToSave) ? dataXml.DeleteById(tableName, idColumn, id) : DataDisconnected.delete(tableName, id, idColumn); ;
         }
 
         public void update(string tableName, string idColumn, int id, Hashtable data)
         {
+            switch (modeToSave)
+            {
+                case ModeOfPersistible.XML:
 
+                    break;
+                case ModeOfPersistible.DISCONECTED:
+                    break;
+
+            }
         }
 
         public void SyncDataDB() 

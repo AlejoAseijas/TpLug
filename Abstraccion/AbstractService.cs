@@ -13,18 +13,20 @@ namespace BLL
 {
     public abstract class AbstractService<T> where T : AbstracEntity
     {
-        public bool modeConnected = false;
+        //Modo desconectado aclarar en DataManeger si es xml o mem
+        public ModesOfPersistible mode = ModesOfPersistible.DISCONECTED;
+
         public IMappable<T> Mapper { get; set; }
         public DataManager persistibleService = DataManager.GetInstance();
 
         public virtual int Create(T entity) 
         {
-            return modeConnected ? Mapper.Create(entity) : persistibleService.save(Mapper.TABLE_NAME, GetData(entity), Mapper.ID_COLUMN);
+            return ModesOfPersistible.DB.Equals(mode) ? Mapper.Create(entity) : persistibleService.save(Mapper.TABLE_NAME, GetData(entity), Mapper.ID_COLUMN);
         }
 
         public virtual void DeleteById(int Id)
         {
-            if (modeConnected) 
+            if (ModesOfPersistible.DB.Equals(mode)) 
             {
                 Mapper.DeleteById(Id);
             }
@@ -36,12 +38,12 @@ namespace BLL
 
         public virtual DataTable GetAll()
         {
-            return modeConnected ? Mapper.GetAll() : persistibleService.GetAll(Mapper.TABLE_NAME);
+            return ModesOfPersistible.DB.Equals(mode) ? Mapper.GetAll() : persistibleService.GetAll(Mapper.TABLE_NAME);
         }
 
         public virtual void Update(T oldData, T newData)
         {
-            if (modeConnected) 
+            if (ModesOfPersistible.DB.Equals(mode)) 
             {
                 Mapper.Update(oldData, newData);
             }
