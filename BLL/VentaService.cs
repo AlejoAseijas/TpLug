@@ -36,14 +36,18 @@ namespace BLL
                 //Filtro Desconectado
                 DataTable dataTable = persistibleService.GetAll(Mapper.TABLE_NAME);
 
-                foreach (DataRow row in dataTable.Rows)
+                if (dataTable != null) 
                 {
-
-                    if (!string.IsNullOrEmpty(row["IdCliente"].ToString()) && IdCliente == Convert.ToInt32(row["IdCliente"].ToString())) 
+                    foreach (DataRow row in dataTable.Rows)
                     {
-                        ventas.Add(GetData(row));
+
+                        if (!string.IsNullOrEmpty(row["IdCliente"].ToString()) && IdCliente == Convert.ToInt32(row["IdCliente"].ToString()))
+                        {
+                            ventas.Add(GetData(row));
+                        }
                     }
                 }
+
             }
 
             return ventas;

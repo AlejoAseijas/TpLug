@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Productos>
   <Item>
-    <Stock>1</Stock>
-    <Consumo>MEDIO</Consumo>
-    <Categoria>Teta</Categoria>
+    <Stock>2</Stock>
+    <Consumo>BAJO</Consumo>
+    <Categoria>Test</Categoria>
     <Proveedor>Central</Proveedor>
-    <PrecioCosto>1</PrecioCosto>
+    <PrecioCosto>122</PrecioCosto>
     <IdProveedor>1</IdProveedor>
-    <Nombre>T</Nombre>
-    <IdProducto>2</IdProducto>
-    <SubCategoria>T</SubCategoria>
+    <Nombre>te</Nombre>
+    <IdProducto>1</IdProducto>
+    <SubCategoria>test</SubCategoria>
   </Item>
 </Productos>

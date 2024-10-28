@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Ventas>
+  <Item>
+    <IdVenta>1</IdVenta>
+    <Qty>1</Qty>
+    <Producto>t  t    t</Producto>
+    <PrecioVenta>1.5</PrecioVenta>
+  </Item>
+</Ventas>

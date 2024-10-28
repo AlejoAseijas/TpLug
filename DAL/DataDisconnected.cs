@@ -119,8 +119,6 @@ namespace DAL
         }
         public static int Write(string tableName, Hashtable data, string IdColumn) 
         {
-            int id = GetLastId(tableName);
-
             try 
             {
                 DataTable table = dataSet.Tables[tableName];
@@ -128,8 +126,6 @@ namespace DAL
                 if (table != null)
                 {
                     DataRow row = table.NewRow();
-
-                    data.Add(IdColumn, id);
 
                     foreach (DictionaryEntry entry in data)
                     {
@@ -150,7 +146,7 @@ namespace DAL
                 Console.WriteLine($"Error al guardar datos: {ex.Message}");
             }
 
-            return id;
+            return Convert.ToInt32(data[IdColumn]);
         }
         public static bool delete(string tableName, int id, string idColumn)
         {
@@ -232,28 +228,6 @@ namespace DAL
                 dataSet.Tables.Add(table);
             }
 
-        }
-        private static int GetLastId(string tableName)
-        {
-            int id = -1;
-            DataTable table = dataSet.Tables[tableName];
-
-            if (table != null)
-            {
-                if (table.Rows.Count > 0)
-                {
-                    id = Convert.ToInt32(table.Rows[table.Rows.Count - 1][0]);
-                    id++;
-                }
-                else
-                {
-                    //1 xq sql empieza en 1 las pk
-                    id = 1;
-                }
-            }
-
-
-            return id;
         }
 
     }

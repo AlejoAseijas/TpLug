@@ -14,7 +14,7 @@ namespace DAL
     public class DataXml
     {
 
-        public int Write(string fileName, Hashtable dataToSave)
+        public void Write(string fileName, Hashtable dataToSave)
         {
             try
             {
@@ -40,7 +40,6 @@ namespace DAL
                 Console.WriteLine("Error al guardar el archivo XML: " + ex.Message);
             }
 
-            return -1;
         }
 
         public DataSet ReadAll()
@@ -136,6 +135,47 @@ namespace DAL
             return true;
         }
 
+        public bool Update(string fileName, string idColumn, int id, Hashtable dataToUpdate)
+        {
+            try
+            {
+                string file = fileName + ".xml";
+
+                XDocument doc = this.LoadDocument(fileName);
+                XElement element = doc.Root;
+
+                if (element != null)
+                {
+                    XElement itemToUpdate = element.Elements("Item")
+                        .FirstOrDefault(item => (int)item.Element(idColumn) == id);
+
+                    if (itemToUpdate != null)
+                    {
+                        foreach (DictionaryEntry entry in dataToUpdate)
+                        {
+                            XElement element1 = itemToUpdate.Element(entry.Key.ToString());
+                            if (element1 != null)
+                            {
+                                element1.Value = entry.Value.ToString().Trim();
+                            }
+                            else
+                            {
+                                itemToUpdate.Add(new XElement(entry.Key.ToString(), entry.Value.ToString().Trim()));
+                            }
+                        }
+
+                        doc.Save(file);
+                        return true;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al actualizar el archivo XML: " + ex.Message);
+            }
+            return false;
+        }
+
         private XDocument LoadDocument(string fileName)
         {
             string file = fileName + ".xml";
@@ -171,5 +211,6 @@ namespace DAL
 
             return fileNames;
         }
+
     }
 }

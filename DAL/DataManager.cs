@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace DAL
 
         private DataXml dataXml = new DataXml();
         
-        private ModeOfPersistible modeToSave = ModeOfPersistible.DISCONECTED;
+        private ModeOfPersistible modeToSave = ModeOfPersistible.XML;
 
         private DataManager() 
         {
@@ -48,14 +49,38 @@ namespace DAL
 
         public int save(string tableName, Hashtable data, string IdColumn)
         {
-         
-            return ModeOfPersistible.XML.Equals(modeToSave) ? dataXml.Write(tableName, data) : DataDisconnected.Write(tableName, data, IdColumn);
+            int id = GetLastId(tableName);
+            data.Add(IdColumn, id);
 
+            if (ModeOfPersistible.XML.Equals(modeToSave))
+            {
+                dataXml.Write(tableName, data);
+                DATA_SET = dataXml.ReadAll();
+            }
+            else 
+            { 
+                DataDisconnected.Write(tableName, data, IdColumn); 
+            }
+
+            return id;
         }
 
         public bool delete(string tableName, int id, string idColumn)
         {
-            return ModeOfPersistible.XML.Equals(modeToSave) ? dataXml.DeleteById(tableName, idColumn, id) : DataDisconnected.delete(tableName, id, idColumn); ;
+            bool status = false;
+
+            if (ModeOfPersistible.XML.Equals(modeToSave))
+            {
+                dataXml.DeleteById(tableName, idColumn, id);
+                DATA_SET = dataXml.ReadAll();
+                status = true; 
+            }
+            else
+            {
+                DataDisconnected.delete(tableName, id, idColumn);
+                status = true;
+            }
+            return  status;
         }
 
         public void update(string tableName, string idColumn, int id, Hashtable data)
@@ -63,6 +88,8 @@ namespace DAL
             switch (modeToSave)
             {
                 case ModeOfPersistible.XML:
+                    dataXml.Update(tableName, idColumn, id, data);
+                    DATA_SET = dataXml.ReadAll();
                     break;
                 case ModeOfPersistible.DISCONECTED:
                     DataDisconnected.update(tableName, id, idColumn, data);
@@ -71,20 +98,38 @@ namespace DAL
             }
         }
 
+        private int GetLastId(string tableName)
+        {
+            int id = 1;
+            DataTable table = DATA_SET.Tables[tableName];
+
+            if (table != null)
+            {
+                if (table.Rows.Count > 0)
+                {
+                    id = Convert.ToInt32(table.Rows[table.Rows.Count - 1][0]);
+                    id++;
+                }
+            }
+
+
+            return id;
+        }
+
         public bool SyncDataDB() 
         {
             bool status = false;
 
-            try
-            {
-                for (int i = 0; i < DATA_SET.Tables.Count; i++)
+                try
                 {
-                    DataDisconnected.UpdateDB(DATA_SET.Tables[i]);
+                    for (int i = 0; i < DATA_SET.Tables.Count; i++)
+                    {
+                        DataDisconnected.UpdateDB(DATA_SET.Tables[i]);
+                    }
+                    status = true;
                 }
-                status = true;
-            }
-            catch (Exception e) 
-            { }
+                catch (Exception e)
+                { }
 
             return status;
         }

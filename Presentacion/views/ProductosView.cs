@@ -239,7 +239,7 @@ namespace Presentacion.views
                 producto.Categoria = data.Cells["Categoria"].Value.ToString();
                 producto.SubCategoria = data.Cells["SubCategoria"].Value.ToString();
                 producto.Nombre = data.Cells["Nombre"].Value.ToString();
-                producto.PrecioCosto = 1;
+                producto.PrecioCosto = Convert.ToInt32(data.Cells["PrecioCosto"].Value.ToString());
 
                 Proveedor proveedor = new Proveedor();
                 proveedor.Id = Convert.ToInt32(data.Cells["IdProveedor"].Value.ToString());

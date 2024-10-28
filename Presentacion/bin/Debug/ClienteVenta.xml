@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClienteVenta>
+  <Item>
+    <IdClienteVenta>1</IdClienteVenta>
+    <IdVenta>1</IdVenta>
+    <Apellido>a</Apellido>
+    <Qty>1</Qty>
+    <IdCliente>1</IdCliente>
+    <PrecioVenta>1.5</PrecioVenta>
+    <Producto>t  t    t</Producto>
+    <DNI>1</DNI>
+    <Nombre>a</Nombre>
+  </Item>
+</ClienteVenta>

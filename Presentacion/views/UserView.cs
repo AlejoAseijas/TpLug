@@ -59,6 +59,8 @@ namespace Presentacion.views
             authService.Create(user);
 
             groupBox1.Visible = false;
+
+            refresh();
         }
 
         private void button1_Click(object sender, EventArgs e)
