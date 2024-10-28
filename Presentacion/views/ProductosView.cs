@@ -140,7 +140,10 @@ namespace Presentacion.views
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             Inventario inventario = GetInventarioByDataGridView();
+
             inventarioService.DeleteById(inventario.Id);
+            productoService.DeleteById(inventario.Producto.Id);
+
             refresh();
         }
 

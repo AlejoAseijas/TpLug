@@ -20,7 +20,7 @@ namespace DAL
 
         private DataXml dataXml = new DataXml();
         
-        private ModeOfPersistible modeToSave = ModeOfPersistible.XML;
+        private ModeOfPersistible modeToSave = ModeOfPersistible.DISCONECTED;
 
         private DataManager() 
         {
@@ -63,21 +63,30 @@ namespace DAL
             switch (modeToSave)
             {
                 case ModeOfPersistible.XML:
-
                     break;
                 case ModeOfPersistible.DISCONECTED:
+                    DataDisconnected.update(tableName, id, idColumn, data);
                     break;
 
             }
         }
 
-        public void SyncDataDB() 
+        public bool SyncDataDB() 
         {
-            //Evito error de mutacion 
-            for (int i = 0; i < DATA_SET.Tables.Count; i++)
+            bool status = false;
+
+            try
             {
-                DataDisconnected.UpdateDB(DATA_SET.Tables[i]);
+                for (int i = 0; i < DATA_SET.Tables.Count; i++)
+                {
+                    DataDisconnected.UpdateDB(DATA_SET.Tables[i]);
+                }
+                status = true;
             }
+            catch (Exception e) 
+            { }
+
+            return status;
         }
 
     }

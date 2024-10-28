@@ -21,21 +21,6 @@ namespace BLL
             base.Mapper = mapper;
         }
 
-        public bool SaveData(DataSet dataSet)
-        {
-            try 
-            {
-                //DataDisconnected.Update(dataSet, base.Mapper.TABLE_NAME);
-                DataDisconnected.Read(base.Mapper.TABLE_NAME, true);
-                return true;
-            }
-            catch(Exception ex) 
-            { 
-                return false; 
-            }
-         
-        }
-
         public bool LogIn(AuthDTO authDto)
         {
             bool valid = false;

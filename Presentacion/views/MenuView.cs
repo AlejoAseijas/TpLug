@@ -18,6 +18,7 @@ namespace Presentacion.views
             InitializeComponent();
         }
         private SyncService syncService = new SyncService();
+
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
             manageMdi(new UserView());
@@ -56,9 +57,24 @@ namespace Presentacion.views
             manageMdi(new VentasView());
         }
 
-        private void sYNCToolStripMenuItem_Click(object sender, EventArgs e)
+        private void MenuView_FormClosed(object sender, FormClosedEventArgs e)
         {
-            syncService.sync();
+            DialogResult result = MessageBox.Show("¿Quiere sincronizar los cambios con la base de datos?", "Confirmar sincronización", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                bool status = syncService.sync();
+
+                if (status)
+                {
+                    MessageBox.Show("Sincronización completada con éxito.", "Éxito", MessageBoxButtons.OK);
+                }
+                else
+                {
+                    MessageBox.Show("La sincronización fallo.", "Error", MessageBoxButtons.OK);
+                }
+            }
         }
+
     }
 }

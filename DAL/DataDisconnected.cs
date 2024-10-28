@@ -152,16 +152,6 @@ namespace DAL
 
             return id;
         }
-        private static void UpdateDataSet(string tableName, DataTable table)
-        {
-
-            if (dataSet.Tables.Contains(tableName))
-            {
-                dataSet.Tables.Remove(tableName);
-                dataSet.Tables.Add(table);
-            }
-
-        }
         public static bool delete(string tableName, int id, string idColumn)
         {
             DataTable table = dataSet.Tables[tableName];
@@ -195,6 +185,54 @@ namespace DAL
 
             return delete;
         }
+        public static bool update(string tableName, int id, string idColumn, Hashtable data)
+        {
+            bool updated = false;
+
+            if (dataSet.Tables.Contains(tableName))
+            {
+                DataTable table = dataSet.Tables[tableName];
+
+                DataRow[] rowsToUpdate = table.Select($"{idColumn} = {id}");
+
+                if (rowsToUpdate.Length > 0)
+                {
+                    try
+                    {
+                        DataRow rowToUpdate = rowsToUpdate[0];
+
+                        foreach (DictionaryEntry entry in data)
+                        {
+                            string columnName = entry.Key.ToString();
+
+                            if (table.Columns.Contains(columnName))
+                            {
+                                rowToUpdate[columnName] = entry.Value ?? DBNull.Value;
+                            }
+                        }
+
+                        UpdateDataSet(tableName, table);
+                        updated = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"Error al actualizar la fila en {tableName}: {ex.Message}");
+                    }
+                }
+            }
+
+            return updated;
+        }
+        private static void UpdateDataSet(string tableName, DataTable table)
+        {
+
+            if (dataSet.Tables.Contains(tableName))
+            {
+                dataSet.Tables.Remove(tableName);
+                dataSet.Tables.Add(table);
+            }
+
+        }
         private static int GetLastId(string tableName)
         {
             int id = -1;
@@ -209,7 +247,8 @@ namespace DAL
                 }
                 else
                 {
-                    id = 0;
+                    //1 xq sql empieza en 1 las pk
+                    id = 1;
                 }
             }
 

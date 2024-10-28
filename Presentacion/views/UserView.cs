@@ -31,43 +31,15 @@ namespace Presentacion.views
             this.dataGridView1.DataSource = null;
             this.dataGridView1.DataSource = authService.GetAll();
 
-            textBox1.Text = string.Empty;
-
             userAuthForm1.DNI = string.Empty;
             userAuthForm1.Password = string.Empty;
 
             groupBox1.Visible = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //if (authService.SaveData(DataSet))
-            //{
-            //    refresh();
-            //}
-            //else 
-            //{
-            //    MessageBox.Show("Error al guardar en la DB");
-            //}
-
-        }
-
         private void button2_Click_1(object sender, EventArgs e)
         {
             groupBox1.Visible = true;
-            //DataTable table = DataSet.Tables[0];
-            //int size = table.Rows.Count;
-
-            //if (size > 0) 
-            //{
-            //    int id = Convert.ToInt32(table.Rows[size - 1][0].ToString());
-            //    id++;
-            //    textBox1.Text = id.ToString();
-            //}
-            //else 
-            //{
-            //    textBox1.Text = "1";
-            //}
 
         }
 
@@ -79,15 +51,27 @@ namespace Presentacion.views
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //DataRow row = DataSet.Tables[0].NewRow();
+            User user = new User();
 
-            //row["IdUser"] = Convert.ToInt32(textBox1.Text);
-            //row["DNI"] = userAuthForm1.DNI;
-            //row["Password"] = authService.GenerateHash(userAuthForm1.Password);
+            user.DNI = userAuthForm1.DNI;
+            user.Password = authService.GenerateHash(userAuthForm1.Password);
 
-            //DataSet.Tables[0].Rows.Add(row);
+            authService.Create(user);
 
-            //refresh();
+            groupBox1.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow data = (DataGridViewRow)this.dataGridView1.CurrentRow;
+
+            if (data != null) 
+            {
+                int IdUser = Convert.ToInt32(data.Cells["IdUser"].Value.ToString());
+                authService.DeleteById(IdUser);
+                refresh();
+            }
+
         }
     }
 }

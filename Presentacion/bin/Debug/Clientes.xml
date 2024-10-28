@@ -5,4 +5,9 @@
     <Apellido>1</Apellido>
     <Nombre>1</Nombre>
   </Item>
+  <Item>
+    <DNI>1</DNI>
+    <Apellido>A</Apellido>
+    <Nombre>A</Nombre>
+  </Item>
 </Clientes>

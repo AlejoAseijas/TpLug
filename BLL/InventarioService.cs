@@ -51,15 +51,15 @@ namespace BLL
         public void Update(Inventario oldData, Inventario newData)
         {
 
-            if (!ModesOfPersistible.DB.Equals(mode)) 
+            if (!ModesOfPersistible.DB.Equals(this.mode)) 
             {
                 Hashtable dataProducto = productoService.GetData(newData.Producto);
 
                 Hashtable dataInventario = dataProducto;
                 dataInventario.Add("Stock", newData.Stock);
 
-                this.productoService.persistibleService.update(this.productoService.Mapper.TABLE_NAME, this.productoService.Mapper.ID_COLUMN, newData.Producto.Id, dataProducto);
-                base.persistibleService.update(base.Mapper.TABLE_NAME, base.Mapper.ID_COLUMN, newData.Id, dataInventario);
+                this.productoService.persistibleService.update(this.productoService.Mapper.TABLE_NAME, this.productoService.Mapper.ID_COLUMN, oldData.Producto.Id, dataProducto);
+                base.persistibleService.update(base.Mapper.TABLE_NAME, base.Mapper.ID_COLUMN, oldData.Id, dataInventario);
             } else 
             {
                 base.Update(oldData, newData);
@@ -67,5 +67,6 @@ namespace BLL
  
 
         }
+
     }
 }

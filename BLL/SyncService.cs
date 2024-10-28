@@ -11,9 +11,9 @@ namespace BLL
     {
         private DataManager dataManager = DataManager.GetInstance();
 
-        public void sync() 
+        public bool sync() 
         {
-            dataManager.SyncDataDB();
+            return dataManager.SyncDataDB();
         }
     }
 }
