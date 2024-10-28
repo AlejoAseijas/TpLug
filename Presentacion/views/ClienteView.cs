@@ -27,7 +27,19 @@ namespace Presentacion.views
 
             try
             {
-                clienteService.Create(cliente);
+                string[] nombresInvalidos = { "Test", "prueba", "adolf" };
+
+                if (nombresInvalidos.Contains(cliente.Nombre, StringComparer.OrdinalIgnoreCase))
+                {
+                    MessageBox.Show("El nombre ingresado no es valido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    this.txtNombreCliente.Text = string.Empty;
+                    this.txtApellidoCliente.Text = string.Empty;
+                    this.txtDniCliente.Text = string.Empty;
+                } else
+                {
+                    clienteService.Create(cliente);
+
+                }
             }
             catch (Exception ex)
             {
@@ -52,7 +64,6 @@ namespace Presentacion.views
 
             if (cliente != null)
             {
-                //List<VentaDTO> ventasDelCliente = null;
 
                 this.txtNombreCliente.Text = cliente.Nombre;
                 this.txtApellidoCliente.Text = cliente.Apellido;
@@ -60,7 +71,7 @@ namespace Presentacion.views
 
                 try
                 {
-                    //ventasDelCliente = ventaService.GetVentasPorCiente(cliente) != null ? ventaService.GetVentasPorCiente(cliente).ventas : new List<VentaDTO>();
+
                 }
                 catch (Exception ex) when (ex.Message == "La clave proporcionada no se encontró en el diccionario.")
                 {
@@ -71,7 +82,6 @@ namespace Presentacion.views
                     MessageBox.Show(ex.Message);
                 }
 
-                //refreshVentas(ventasDelCliente);
             }
         }
 
@@ -107,6 +117,7 @@ namespace Presentacion.views
         {
             return new Cliente(this.txtNombreCliente.Text, this.txtApellidoCliente.Text, this.txtDniCliente.Text);
         }
+
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {

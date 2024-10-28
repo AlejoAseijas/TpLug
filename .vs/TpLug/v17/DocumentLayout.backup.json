@@ -3,36 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\dal\\dataxml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|solutionrelative:dal\\dataxml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\dal\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|solutionrelative:dal\\datamanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\dal\\datadisconnected.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1886B02D-601D-4662-A555-28E715175683}|DAL\\DAL.csproj|solutionrelative:dal\\datadisconnected.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\bll\\ventaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1B5EE338-A118-48CE-AF1B-0FB796C0A658}|BLL\\BLL.csproj|solutionrelative:bll\\ventaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\presentacion\\views\\ventasview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\views\\ventasview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\presentacion\\views\\ventasview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\views\\ventasview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\presentacion\\views\\clienteview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\views\\clienteview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\presentacion\\views\\clienteview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\views\\clienteview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\presentacion\\views\\productosview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\views\\productosview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\presentacion\\userauthform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\userauthform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\presentacion\\userauthform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\userauthform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|c:\\users\\alejoaseijas\\source\\repos\\tplug\\presentacion\\views\\userview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{16E16683-3E34-4F43-9310-3CAADB1A7607}|Presentacion\\Presentacion.csproj|solutionrelative:presentacion\\views\\userview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -51,102 +39,63 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "DataXml.cs",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DataXml.cs",
-              "RelativeDocumentMoniker": "DAL\\DataXml.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DataXml.cs",
-              "RelativeToolTip": "DAL\\DataXml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAALEAAAAAAAAAAAAAAA==",
+              "Title": "ClienteView.cs",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\views\\ClienteView.cs",
+              "RelativeDocumentMoniker": "Presentacion\\views\\ClienteView.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\views\\ClienteView.cs*",
+              "RelativeToolTip": "Presentacion\\views\\ClienteView.cs*",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAQwCkAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T22:32:47.617Z",
+              "WhenOpened": "2024-10-28T22:39:17.044Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "DataManager.cs",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DataManager.cs",
-              "RelativeDocumentMoniker": "DAL\\DataManager.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DataManager.cs",
-              "RelativeToolTip": "DAL\\DataManager.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAowHoAAAAAAAAAAAAAAA==",
+              "Title": "ClienteView.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\views\\ClienteView.cs",
+              "RelativeDocumentMoniker": "Presentacion\\views\\ClienteView.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\views\\ClienteView.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "Presentacion\\views\\ClienteView.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T22:31:08.066Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T22:39:12.693Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DataDisconnected.cs",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DataDisconnected.cs",
-              "RelativeDocumentMoniker": "DAL\\DataDisconnected.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\DAL\\DataDisconnected.cs",
-              "RelativeToolTip": "DAL\\DataDisconnected.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFIAAAA0AAAAAAAAAA==",
+              "Title": "UserAuthForm.cs",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\UserAuthForm.cs",
+              "RelativeDocumentMoniker": "Presentacion\\UserAuthForm.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\UserAuthForm.cs",
+              "RelativeToolTip": "Presentacion\\UserAuthForm.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T22:30:49.867Z",
+              "WhenOpened": "2024-10-28T22:35:52.002Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "VentaService.cs",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\BLL\\VentaService.cs",
-              "RelativeDocumentMoniker": "BLL\\VentaService.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\BLL\\VentaService.cs",
-              "RelativeToolTip": "BLL\\VentaService.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAIA0wCQAAAAQAAAAAAAAAA==",
+              "Title": "UserAuthForm.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\UserAuthForm.cs",
+              "RelativeDocumentMoniker": "Presentacion\\UserAuthForm.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\UserAuthForm.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Presentacion\\UserAuthForm.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T22:25:24.757Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-28T22:35:45.198Z",
+              "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "VentasView.cs",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\views\\VentasView.cs",
-              "RelativeDocumentMoniker": "Presentacion\\views\\VentasView.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\views\\VentasView.cs",
-              "RelativeToolTip": "Presentacion\\views\\VentasView.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAEwIsAAAAXAAAAAAAAAA==",
+              "Title": "UserView.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\views\\UserView.cs",
+              "RelativeDocumentMoniker": "Presentacion\\views\\UserView.cs",
+              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\views\\UserView.cs [Dise\u00F1o]",
+              "RelativeToolTip": "Presentacion\\views\\UserView.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T22:29:13.697Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "VentasView.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\views\\VentasView.cs",
-              "RelativeDocumentMoniker": "Presentacion\\views\\VentasView.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\views\\VentasView.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Presentacion\\views\\VentasView.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T22:29:07.038Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ClienteView.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\views\\ClienteView.cs",
-              "RelativeDocumentMoniker": "Presentacion\\views\\ClienteView.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\views\\ClienteView.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Presentacion\\views\\ClienteView.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T22:29:04.46Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ProductosView.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\views\\ProductosView.cs",
-              "RelativeDocumentMoniker": "Presentacion\\views\\ProductosView.cs",
-              "ToolTip": "C:\\Users\\AlejoAseijas\\source\\repos\\TpLug\\Presentacion\\views\\ProductosView.cs [Dise\u00F1o]",
-              "RelativeToolTip": "Presentacion\\views\\ProductosView.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T22:28:59.999Z",
+              "WhenOpened": "2024-10-28T22:35:27.689Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]
