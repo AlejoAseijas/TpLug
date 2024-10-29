@@ -6,4 +6,10 @@
     <Nombre>a</Nombre>
     <IdCliente>1</IdCliente>
   </Item>
+  <Item>
+    <DNI>1</DNI>
+    <Apellido>v</Apellido>
+    <Nombre>v</Nombre>
+    <IdCliente>2</IdCliente>
+  </Item>
 </Clientes>

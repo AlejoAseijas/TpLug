@@ -11,4 +11,26 @@
     <IdProducto>1</IdProducto>
     <SubCategoria>test</SubCategoria>
   </Item>
+  <Item>
+    <Stock>2</Stock>
+    <Consumo>BAJO</Consumo>
+    <Categoria>Test</Categoria>
+    <Proveedor>Central</Proveedor>
+    <PrecioCosto>1222222</PrecioCosto>
+    <IdProveedor>1</IdProveedor>
+    <Nombre>te</Nombre>
+    <IdProducto>3</IdProducto>
+    <SubCategoria>test</SubCategoria>
+  </Item>
+  <Item>
+    <Stock>12</Stock>
+    <Consumo>ALTO</Consumo>
+    <Categoria>A</Categoria>
+    <Proveedor>Central</Proveedor>
+    <PrecioCosto>1234567</PrecioCosto>
+    <IdProveedor>1</IdProveedor>
+    <Nombre>A</Nombre>
+    <IdProducto>3</IdProducto>
+    <SubCategoria>A</SubCategoria>
+  </Item>
 </Productos>

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Presentacion.views
 {
@@ -26,6 +27,7 @@ namespace Presentacion.views
             refreshClientes();
             refreshProductos();
             refreshVentasByCliente(null);
+            this.comboBox1.DataSource = Enum.GetValues(typeof(SeriesChartType));
         }
 
         private void refreshClientes()
@@ -110,7 +112,7 @@ namespace Presentacion.views
                 producto.Categoria = data.Cells["Categoria"].Value.ToString();
                 producto.SubCategoria = data.Cells["SubCategoria"].Value.ToString();
                 producto.Nombre = data.Cells["Nombre"].Value.ToString();
-                producto.PrecioCosto = 1;
+                producto.PrecioCosto = Convert.ToInt32(data.Cells["PrecioCosto"].Value.ToString());
 
                 Proveedor proveedor = new Proveedor();
                 proveedor.Id = Convert.ToInt32(data.Cells["IdProveedor"].Value.ToString());
@@ -157,8 +159,62 @@ namespace Presentacion.views
 
         private void refreshVentasByCliente(List<Venta> ventas)
         {
-            this.dataGridView1.DataSource = null;
-            this.dataGridView1.DataSource = ventas;
+            groupBox1.Visible = false;
+            if (ventas != null && ventas.Count>0) 
+            {
+                this.dataGridView1.DataSource = null;
+                this.dataGridView1.DataSource = ventas;
+                loadGraph(ventas);
+            }
+        }
+
+        private void loadGraph(List<Venta> ventas)
+        {
+            groupBox1.Visible = true;
+            chart1.Series.Clear();
+
+            Series serie = new Series("Ventas")
+            {
+                ChartType = (SeriesChartType)this.comboBox1.SelectedItem,
+                XValueType = ChartValueType.Int32,
+                YValueType = ChartValueType.Double
+            };
+
+            foreach (var venta in ventas)
+            {
+                serie.Points.AddXY(venta.Qty, venta.PrecioVenta);
+            }
+
+            chart1.Series.Add(serie);
+
+            chart1.ChartAreas[0].AxisX.Title = "Cantidad (Qty)";
+            chart1.ChartAreas[0].AxisY.Title = "Precio de Venta (PrecioVenta)";
+            chart1.ChartAreas[0].AxisX.Interval = 1; 
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Cliente cliente = GetClienteByDataGridView();
+
+            chart1.Series.Clear();
+
+            Series serie = new Series("Ventas")
+            {
+                ChartType = (SeriesChartType)this.comboBox1.SelectedItem,
+                XValueType = ChartValueType.Int32,
+                YValueType = ChartValueType.Double
+            };
+
+            foreach (var venta in ventaService.GetVentasByIdCliente(cliente.Id))
+            {
+                serie.Points.AddXY(venta.Qty, venta.PrecioVenta);
+            }
+
+            chart1.Series.Add(serie);
+
+            chart1.ChartAreas[0].AxisX.Title = "Cantidad (Qty)";
+            chart1.ChartAreas[0].AxisY.Title = "Precio de Venta (PrecioVenta)";
+            chart1.ChartAreas[0].AxisX.Interval = 1;
         }
     }
 }

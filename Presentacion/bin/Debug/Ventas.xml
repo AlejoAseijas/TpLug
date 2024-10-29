@@ -6,4 +6,46 @@
     <Producto>t  t    t</Producto>
     <PrecioVenta>1.5</PrecioVenta>
   </Item>
+  <Item>
+    <IdVenta>2</IdVenta>
+    <Qty>1</Qty>
+    <Producto>Test  test    te</Producto>
+    <PrecioVenta>1.5</PrecioVenta>
+  </Item>
+  <Item>
+    <IdVenta>3</IdVenta>
+    <Qty>1</Qty>
+    <Producto>Test  test    te</Producto>
+    <PrecioVenta>1.5</PrecioVenta>
+  </Item>
+  <Item>
+    <IdVenta>4</IdVenta>
+    <Qty>1</Qty>
+    <Producto>Test  test    te</Producto>
+    <PrecioVenta>1.5</PrecioVenta>
+  </Item>
+  <Item>
+    <IdVenta>5</IdVenta>
+    <Qty>1</Qty>
+    <Producto>Test  test    te</Producto>
+    <PrecioVenta>1.5</PrecioVenta>
+  </Item>
+  <Item>
+    <IdVenta>6</IdVenta>
+    <Qty>7</Qty>
+    <Producto>A  A    A</Producto>
+    <PrecioVenta>1.5</PrecioVenta>
+  </Item>
+  <Item>
+    <IdVenta>7</IdVenta>
+    <Qty>3</Qty>
+    <Producto>A  A    A</Producto>
+    <PrecioVenta>1851851</PrecioVenta>
+  </Item>
+  <Item>
+    <IdVenta>8</IdVenta>
+    <Qty>1</Qty>
+    <Producto>Test  test    te</Producto>
+    <PrecioVenta>1833333</PrecioVenta>
+  </Item>
 </Ventas>

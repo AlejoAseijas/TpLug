@@ -11,4 +11,81 @@
     <DNI>1</DNI>
     <Nombre>a</Nombre>
   </Item>
+  <Item>
+    <IdClienteVenta>2</IdClienteVenta>
+    <IdVenta>2</IdVenta>
+    <Apellido>a</Apellido>
+    <Qty>1</Qty>
+    <IdCliente>1</IdCliente>
+    <PrecioVenta>1.5</PrecioVenta>
+    <Producto>Test  test    te</Producto>
+    <DNI>1</DNI>
+    <Nombre>a</Nombre>
+  </Item>
+  <Item>
+    <IdClienteVenta>3</IdClienteVenta>
+    <IdVenta>3</IdVenta>
+    <Apellido>a</Apellido>
+    <Qty>1</Qty>
+    <IdCliente>1</IdCliente>
+    <PrecioVenta>1.5</PrecioVenta>
+    <Producto>Test  test    te</Producto>
+    <DNI>1</DNI>
+    <Nombre>a</Nombre>
+  </Item>
+  <Item>
+    <IdClienteVenta>4</IdClienteVenta>
+    <IdVenta>4</IdVenta>
+    <Apellido>a</Apellido>
+    <Qty>1</Qty>
+    <IdCliente>1</IdCliente>
+    <PrecioVenta>1.5</PrecioVenta>
+    <Producto>Test  test    te</Producto>
+    <DNI>1</DNI>
+    <Nombre>a</Nombre>
+  </Item>
+  <Item>
+    <IdClienteVenta>5</IdClienteVenta>
+    <IdVenta>5</IdVenta>
+    <Apellido>a</Apellido>
+    <Qty>1</Qty>
+    <IdCliente>1</IdCliente>
+    <PrecioVenta>1.5</PrecioVenta>
+    <Producto>Test  test    te</Producto>
+    <DNI>1</DNI>
+    <Nombre>a</Nombre>
+  </Item>
+  <Item>
+    <IdClienteVenta>6</IdClienteVenta>
+    <IdVenta>6</IdVenta>
+    <Apellido>a</Apellido>
+    <Qty>7</Qty>
+    <IdCliente>1</IdCliente>
+    <PrecioVenta>1.5</PrecioVenta>
+    <Producto>A  A    A</Producto>
+    <DNI>1</DNI>
+    <Nombre>a</Nombre>
+  </Item>
+  <Item>
+    <IdClienteVenta>7</IdClienteVenta>
+    <IdVenta>7</IdVenta>
+    <Apellido>a</Apellido>
+    <Qty>3</Qty>
+    <IdCliente>1</IdCliente>
+    <PrecioVenta>1851851</PrecioVenta>
+    <Producto>A  A    A</Producto>
+    <DNI>1</DNI>
+    <Nombre>a</Nombre>
+  </Item>
+  <Item>
+    <IdClienteVenta>8</IdClienteVenta>
+    <IdVenta>8</IdVenta>
+    <Apellido>a</Apellido>
+    <Qty>1</Qty>
+    <IdCliente>1</IdCliente>
+    <PrecioVenta>1833333</PrecioVenta>
+    <Producto>Test  test    te</Producto>
+    <DNI>1</DNI>
+    <Nombre>a</Nombre>
+  </Item>
 </ClienteVenta>
