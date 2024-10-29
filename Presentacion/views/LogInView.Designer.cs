@@ -90,6 +90,7 @@
             this.Controls.Add(this.textBox1);
             this.Name = "LogInView";
             this.Text = "LogIn";
+            this.Load += new System.EventHandler(this.LogInView_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

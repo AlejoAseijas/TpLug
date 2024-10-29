@@ -98,6 +98,7 @@
             this.Name = "MenuView";
             this.Text = "MenuView";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuView_FormClosed);
+            this.Load += new System.EventHandler(this.MenuView_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

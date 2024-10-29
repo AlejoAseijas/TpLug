@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using Presentacion.translations;
 
 namespace Presentacion.views
 {
@@ -45,5 +46,11 @@ namespace Presentacion.views
             this.textBox2.Text = string.Empty;
         }
 
+        private void LogInView_Load(object sender, EventArgs e)
+        {
+            this.label1.Text = Translation.LogInDNI;
+            this.label2.Text = Translation.LogInPassword;
+            this.button1.Text = Translation.LogInButtonLogIn;
+        }
     }
 }

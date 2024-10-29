@@ -100,3 +100,10 @@ C:\Users\AlejoAseijas\source\repos\TpLug\Presentacion\obj\Debug\Presenta.BC77CD0
 C:\Users\AlejoAseijas\source\repos\TpLug\Presentacion\obj\Debug\Presentacion.exe
 C:\Users\AlejoAseijas\source\repos\TpLug\Presentacion\obj\Debug\Presentacion.pdb
 C:\Users\AlejoAseijas\source\repos\TpLug\Presentacion\obj\Debug\Presentacion.UserAuthForm.resources
+C:\Users\AlejoAseijas\source\repos\TpLug\Presentacion\obj\Debug\Presentacion.translations.Translation.resources
+C:\Users\AlejoAseijas\source\repos\TpLug\Presentacion\bin\Debug\en-US\Presentacion.resources.dll
+C:\Users\AlejoAseijas\source\repos\TpLug\Presentacion\obj\Debug\Presentacion.translations.Translation.en-US.resources
+C:\Users\AlejoAseijas\source\repos\TpLug\Presentacion\obj\Debug\en-US\Presentacion.resources.dll
+C:\Users\AlejoAseijas\source\repos\TpLug\Presentacion\bin\Debug\es-AR\Presentacion.resources.dll
+C:\Users\AlejoAseijas\source\repos\TpLug\Presentacion\obj\Debug\Presentacion.translations.Translation.es-AR.resources
+C:\Users\AlejoAseijas\source\repos\TpLug\Presentacion\obj\Debug\es-AR\Presentacion.resources.dll

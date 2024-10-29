@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Presentacion.translations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -76,5 +77,13 @@ namespace Presentacion.views
             }
         }
 
+        private void MenuView_Load(object sender, EventArgs e)
+        {
+            eXITToolStripMenuItem.Text = Translation.ExitOption;
+            ventasToolStripMenuItem.Text = Translation.VentasOptions;
+            productosToolStripMenuItem.Text = Translation.ProductosOptions;
+            clientesToolStripMenuItem.Text = Translation.ClienteOptions;
+            usersToolStripMenuItem.Text = Translation.UserOption;
+        }
     }
 }
